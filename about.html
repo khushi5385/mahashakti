@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* Reuse all the CSS from the homepage */
         * {
             margin: 0;
             padding: 0;
@@ -15,15 +14,18 @@
         }
 
         :root {
-            /* Light Theme Variables */
-            --primary: #0066b2;
-            --primary-dark: #004e8c;
-            --secondary: #00a651;
-            --secondary-dark: #008f46;
-            --accent: #ffc107;
-            --accent-dark: #e6ac00;
-            --dark: #1a3a5f;
-            --darker: #0d1f33;
+            /* Match Homepage Color Scheme */
+            --primary: #3a86ff;
+            --primary-light: #5d9cff;
+            --primary-dark: #2667cc;
+            --secondary: #ffbe0b;
+            --secondary-light: #ffd166;
+            --secondary-dark: #e6a800;
+            --accent: #8338ec;
+            --accent-light: #9d5bec;
+            --accent-dark: #6a2bc2;
+            --dark: #212529;
+            --darker: #1a1e21;
             --light: #f8f9fa;
             --lighter: #ffffff;
             --text: #333;
@@ -36,23 +38,31 @@
             --gradient-secondary: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
             --gradient-accent: linear-gradient(135deg, var(--accent), var(--accent-dark));
             --gradient-dark: linear-gradient(135deg, var(--dark), var(--darker));
-            --bg-gradient: linear-gradient(rgba(26, 58, 95, 0.85), rgba(26, 58, 95, 0.9));
-            --hero-bg-image: url('https://images.unsplash.com/photo-1624397640148-949b1732bb0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
+            --hero-bg-image-light: url('https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
+            --hero-bg-image-dark: url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
         }
 
-        /* Dark Theme Variables */
+        /* Dark Theme - Matches Homepage */
         [data-theme="dark"] {
+            --primary: #4cc9f0;
+            --primary-light: #6fd8f8;
+            --primary-dark: #2da5c9;
+            --secondary: #f72585;
+            --secondary-light: #ff4d9e;
+            --secondary-dark: #d61a6f;
+            --accent: #7209b7;
+            --accent-light: #8a2be2;
+            --accent-dark: #5a0a9a;
+            --dark: #e9ecef;
+            --darker: #ced4da;
             --light: #121212;
             --lighter: #1e1e1e;
-            --dark: #f0f0f0;
-            --darker: #e0e0e0;
-            --text: #e0e0e0;
-            --text-light: #b0b0b0;
+            --text: #f8f9fa;
+            --text-light: #adb5bd;
             --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
             --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
             --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
-            --bg-gradient: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.95));
-            --hero-bg-image: url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
+            --gradient-dark: linear-gradient(135deg, #121212, #000);
         }
 
         html, body {
@@ -172,7 +182,7 @@
 
         .btn-accent {
             background: var(--gradient-accent);
-            color: var(--darker);
+            color: var(--lighter);
         }
 
         .btn-accent::before {
@@ -347,7 +357,7 @@
 
         /* Hero Section for About Page */
         .about-hero {
-            background: var(--bg-gradient), url('https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
+            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)), var(--hero-bg-image-light);
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -360,6 +370,10 @@
             padding-top: 5rem;
             position: relative;
             overflow: hidden;
+        }
+
+        [data-theme="dark"] .about-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)), var(--hero-bg-image-dark);
         }
 
         .about-hero::before {
@@ -456,6 +470,11 @@
             height: auto;
             display: block;
             transition: var(--transition);
+            filter: brightness(0.95);
+        }
+
+        [data-theme="dark"] .story-image img {
+            filter: brightness(0.85) contrast(1.1);
         }
 
         .story-image:hover img {
@@ -464,12 +483,12 @@
 
         /* Mission and Vision Section */
         .mission-vision {
-            background: linear-gradient(to bottom, var(--light), #e2eaf8);
+            background: linear-gradient(to bottom, var(--light), rgba(233, 245, 240, 0.7));
             padding: 6rem 0;
         }
 
         [data-theme="dark"] .mission-vision {
-            background: linear-gradient(to bottom, var(--light), #1a1a2e);
+            background: linear-gradient(to bottom, var(--light), rgba(10, 31, 21, 0.7));
         }
 
         .mv-container {
@@ -596,12 +615,12 @@
 
         /* Team Section */
         .team {
-            background: linear-gradient(to bottom, var(--light), #e2eaf8);
+            background: linear-gradient(to bottom, var(--light), rgba(233, 245, 240, 0.7));
             padding: 6rem 0;
         }
 
         [data-theme="dark"] .team {
-            background: linear-gradient(to bottom, var(--light), #1a1a2e);
+            background: linear-gradient(to bottom, var(--light), rgba(10, 31, 21, 0.7));
         }
 
         .team-grid {
@@ -635,6 +654,11 @@
             height: 100%;
             object-fit: cover;
             transition: var(--transition);
+            filter: brightness(0.95);
+        }
+
+        [data-theme="dark"] .member-image img {
+            filter: brightness(0.85) contrast(1.1);
         }
 
         .team-member:hover .member-image img {
@@ -670,7 +694,7 @@
             justify-content: center;
             width: 2.5rem;
             height: 2.5rem;
-            background: rgba(0, 102, 178, 0.1);
+            background: rgba(58, 134, 255, 0.1);
             border-radius: 50%;
             color: var(--primary);
             transition: var(--transition);
@@ -683,7 +707,7 @@
         }
 
         /* Footer */
-       footer {
+        footer {
             background: var(--dark);
             color: var(--lighter);
             padding: 5rem 0 0;
@@ -691,7 +715,7 @@
         }
 
         [data-theme="dark"] footer {
-            background: #0d1f33;
+            background: #121212;
         }
 
         .footer-container {
@@ -751,7 +775,7 @@
         }
 
         .footer-links li a:hover {
-            color: var(--lighter);
+            color: var(--accent-light);
             transform: translateX(0.5rem);
         }
 
@@ -878,7 +902,6 @@
                 padding: 0.5rem 0;
             }
             
-            /* FIXED: Reduced spacing for contact info */
             .contact-col .contact-info p {
                 margin-bottom: 0.8rem;
                 font-size: 0.95rem;
@@ -915,47 +938,6 @@
             }
         }
 
-        /* FIXED: Right padding issue on mobile */
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 1rem;
-            }
-            
-            .footer-col {
-                padding: 0 1rem;
-            }
-        }
-
-        /* Additional Mobile-specific adjustments */
-        @media (max-width: 576px) {
-            .footer-col {
-                padding: 0 1rem;
-            }
-            
-            .footer-links {
-                grid-template-columns: 1fr;
-            }
-            
-            .social-links {
-                gap: 0.75rem;
-            }
-        }
-
-        /* Smallest screens */
-        @media (max-width: 400px) {
-            .footer-col {
-                padding: 0 0.8rem;
-            }
-            
-            .contact-col .contact-info p {
-                font-size: 0.9rem;
-            }
-            
-            .contact-col .contact-info i {
-                font-size: 1rem;
-            }
-        }
-        /* Responsive adjustments */
         @media (max-width: 992px) {
             .story-content {
                 flex-direction: column;
@@ -1062,7 +1044,32 @@
                 font-size: 1.2rem;
             }
             
-          
+            .section-header h2 {
+                font-size: 2.3rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .mv-container, .values-grid, .team-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-hero h1 {
+                font-size: 2.25rem;
+            }
+            
+            .about-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .footer-links {
+                grid-template-columns: 1fr;
+            }
+            
+            .social-links {
+                gap: 0.75rem;
+            }
+        }
 
         /* Back to Top Button */
         .back-to-top {
@@ -1136,13 +1143,14 @@
             </a>
             <nav>
                 <ul id="navMenu">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
                     <li><a href="service.html">Services</a></li>
                     <li><a href="product.html">Products</a></li>
-                    <li><a href="global.html">foreign collbaration</a></li>
-<li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="global.html">Foreign Collaboration</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                </ul>
                 
                 <!-- Theme Toggle Button -->
                 <div class="theme-toggle" id="themeToggle">
@@ -1329,7 +1337,7 @@
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="#" class="active">About Us</a></li>
+                        <li><a href="about.html" class="active">About Us</a></li>
                         <li><a href="index.html#services">Services</a></li>
                         <li><a href="index.html#projects">Projects</a></li>
                         <li><a href="index.html#testimonials">Testimonials</a></li>
