@@ -7,23 +7,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* Reusing the existing styles from index.html */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        /* Reusing the color scheme from index.html */
         :root {
             /* Light Theme Variables */
-            --primary: #0066b2;
-            --primary-dark: #004e8c;
-            --secondary: #00a651;
-            --secondary-dark: #008f46;
-            --accent: #ffc107;
-            --accent-dark: #e6ac00;
-            --dark: #1a3a5f;
-            --darker: #0d1f33;
+            --primary: #3a86ff;
+            --primary-light: #5d9cff;
+            --primary-dark: #2667cc;
+            --secondary: #ffbe0b;
+            --secondary-light: #ffd166;
+            --secondary-dark: #e6a800;
+            --accent: #8338ec;
+            --accent-light: #9d5bec;
+            --accent-dark: #6a2bc2;
+            --dark: #212529;
+            --darker: #1a1e21;
             --light: #f8f9fa;
             --lighter: #ffffff;
             --text: #333;
@@ -36,23 +33,38 @@
             --gradient-secondary: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
             --gradient-accent: linear-gradient(135deg, var(--accent), var(--accent-dark));
             --gradient-dark: linear-gradient(135deg, var(--dark), var(--darker));
-            --bg-gradient: linear-gradient(rgba(26, 58, 95, 0.85), rgba(26, 58, 95, 0.9));
-            --hero-bg-image: url('https://images.unsplash.com/photo-1624397640148-949b1732bb0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
+            --bg-gradient: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75));
+            --hero-bg-image: url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
         }
 
         /* Dark Theme Variables */
         [data-theme="dark"] {
+            --primary: #4cc9f0;
+            --primary-light: #6fd8f8;
+            --primary-dark: #2da5c9;
+            --secondary: #f72585;
+            --secondary-light: #ff4d9e;
+            --secondary-dark: #d61a6f;
+            --accent: #7209b7;
+            --accent-light: #8a2be2;
+            --accent-dark: #5a0a9a;
+            --dark: #e9ecef;
+            --darker: #ced4da;
             --light: #121212;
             --lighter: #1e1e1e;
-            --dark: #f0f0f0;
-            --darker: #e0e0e0;
-            --text: #e0e0e0;
-            --text-light: #b0b0b0;
+            --text: #f8f9fa;
+            --text-light: #adb5bd;
             --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
             --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
             --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
             --bg-gradient: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.95));
-            --hero-bg-image: url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
+            --hero-bg-image: url('https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         html, body {
@@ -172,7 +184,7 @@
 
         .btn-accent {
             background: var(--gradient-accent);
-            color: var(--darker);
+            color: var(--lighter);
         }
 
         .btn-accent::before {
@@ -447,7 +459,7 @@
         .form-control:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(0, 102, 178, 0.2);
+            box-shadow: 0 0 0 3px rgba(58, 134, 255, 0.2);
         }
         
         textarea.form-control {
@@ -583,7 +595,7 @@
             display: none;
             text-align: center;
             padding: 3rem;
-            background: rgba(0, 166, 81, 0.1);
+            background: rgba(247, 37, 133, 0.1);
             border-radius: 1rem;
             margin-top: 2rem;
         }
@@ -651,7 +663,7 @@
         }
 
         [data-theme="dark"] footer {
-            background: #0d1f33;
+            background: #121212;
         }
 
         .footer-container {
@@ -711,7 +723,7 @@
         }
 
         .footer-links li a:hover {
-            color: var(--lighter);
+            color: var(--accent-light);
             transform: translateX(0.5rem);
         }
 
@@ -1071,13 +1083,13 @@
             </a>
             <nav>
                 <ul id="navMenu">
-                 <li><a href="index.html" class="active">Home</a></li>
+                 <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="service.html">Services</a></li>
                     <li><a href="product.html">Products</a></li>
-                    <li><a href="global.html">foreign collbaration</a></li>
+                    <li><a href="global.html">Foreign Collaboration</a></li>
 <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
                 </ul>
                 
                 <!-- Theme Toggle Button -->
