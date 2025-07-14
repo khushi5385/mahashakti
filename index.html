@@ -14,7 +14,7 @@
         }
 
         :root {
-            /* New Vibrant Color Scheme */
+            /* Light Theme Color Scheme */
             --primary: #3a86ff;       /* Vibrant blue */
             --primary-light: #5d9cff;
             --primary-dark: #2667cc;
@@ -42,14 +42,20 @@
             --hero-bg-image-dark: url('https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
             --about-image-light: url('https://images.unsplash.com/photo-1489549132488-d00b7eee80f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
             --about-image-dark: url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
+            --project1-image-light: url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
+            --project1-image-dark: url('https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
+            --project2-image-light: url('https://images.unsplash.com/photo-1542273917363-3b1817f1a2ec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
+            --project2-image-dark: url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
+            --project3-image-light: url('https://images.unsplash.com/photo-1570284613060-766c33850e00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
+            --project3-image-dark: url('https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
         }
 
-        /* Dark Theme */
+        /* Dark Theme - Enhanced for better contrast and aesthetics */
         [data-theme="dark"] {
             --primary: #4cc9f0;         /* Bright teal */
             --primary-light: #6fd8f8;
             --primary-dark: #2da5c9;
-            --secondary: #f72585;       /* Pink */
+            --secondary: #f72585;       /* Vibrant pink */
             --secondary-light: #ff4d9e;
             --secondary-dark: #d61a6f;
             --accent: #7209b7;          /* Deep purple */
@@ -362,7 +368,7 @@
 
         /* Hero Section */
         .hero {
-            background: var(--bg-gradient), var(--hero-bg-image-light);
+            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)), var(--hero-bg-image-light);
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -378,7 +384,7 @@
         }
 
         [data-theme="dark"] .hero {
-            background: var(--bg-gradient), var(--hero-bg-image-dark);
+            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)), var(--hero-bg-image-dark);
         }
 
         .hero::before {
@@ -1441,7 +1447,7 @@
             <div class="project-grid">
                 <div class="animate delay-1">
                     <div class="project-card">
-                        <div class="project-image" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');"></div>
+                        <div class="project-image" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), var(--project1-image-light);"></div>
                         <div class="project-content">
                             <h3>Solar Farm Installation</h3>
                             <p>50MW solar farm providing clean energy to 30,000 households in Maharashtra.</p>
@@ -1451,7 +1457,7 @@
                 </div>
                 <div class="animate delay-2">
                     <div class="project-card">
-                        <div class="project-image" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1542273917363-3b1817f1a2ec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');"></div>
+                        <div class="project-image" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), var(--project2-image-light);"></div>
                         <div class="project-content">
                             <h3>Wind Power Complex</h3>
                             <p>120MW wind energy facility powering industrial zones in Gujarat.</p>
@@ -1461,7 +1467,7 @@
                 </div>
                 <div class="animate delay-3">
                     <div class="project-card">
-                        <div class="project-image" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1570284613060-766c33850e00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');"></div>
+                        <div class="project-image" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), var(--project3-image-light);"></div>
                         <div class="project-content">
                             <h3>Hybrid Energy System</h3>
                             <p>Integrated solar-wind solution for remote communities in Rajasthan.</p>
@@ -1726,18 +1732,46 @@
             
             // Update icon
             toggleIcon.className = newTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+            
+            // Update project images based on theme
+            updateProjectImages(newTheme);
         });
+
+        // Function to update project images based on theme
+        function updateProjectImages(theme) {
+            const projectImages = document.querySelectorAll('.project-image');
+            
+            projectImages.forEach((image, index) => {
+                const imageVar = `--project${index + 1}-image-${theme}`;
+                const newImage = getComputedStyle(document.documentElement).getPropertyValue(imageVar).trim();
+                image.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), ${newImage}`;
+            });
+        }
 
         // Detect system preference
         if (currentTheme === 'system' || !currentTheme) {
             if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
                 document.body.setAttribute('data-theme', 'dark');
                 toggleIcon.className = 'fas fa-moon';
+                updateProjectImages('dark');
             } else {
                 document.body.setAttribute('data-theme', 'light');
                 toggleIcon.className = 'fas fa-sun';
+                updateProjectImages('light');
             }
+        } else {
+            // Initialize project images based on current theme
+            updateProjectImages(currentTheme);
         }
+
+        // Listen for system theme changes
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            const newTheme = e.matches ? 'dark' : 'light';
+            document.body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            toggleIcon.className = newTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+            updateProjectImages(newTheme);
+        });
     </script>
 </body>
 </html>
