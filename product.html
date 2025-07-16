@@ -3,1179 +3,851 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products | MahaShakti Energy | Sustainable Power Solutions</title>
+    <title>Products | Mahashakti Energy | Powering Nigeria's Future</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #0a4d7a;
+            --secondary: #f39c12;
+            --accent: #27ae60;
+            --light: #f5f5f5;
+            --dark: #121212;
+            --gray: #777;
+            --shadow: 0 5px 15px rgba(0,0,0,0.1);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --bg-color: #ffffff;
+            --text-color: #333;
+            --card-bg: #ffffff;
+            --header-bg: rgba(255, 255, 255, 0.95);
+            --footer-bg: #222;
+            --gradient: linear-gradient(135deg, var(--primary), #08385a);
+        }
+
+        .dark-mode {
+            --primary: #4da6ff;
+            --secondary: #ffb733;
+            --accent: #2ecc71;
+            --light: #1a1a1a;
+            --dark: #f0f0f0;
+            --gray: #aaa;
+            --shadow: 0 5px 15px rgba(0,0,0,0.4);
+            --bg-color: #121212;
+            --text-color: #f0f0f0;
+            --card-bg: #1e1e1e;
+            --header-bg: rgba(26, 26, 26, 0.95);
+            --footer-bg: #111;
+            --gradient: linear-gradient(135deg, #0a4d7a, #08385a);
+        }
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
-        :root {
-            /* Light Theme Color Scheme */
-            --primary: #3a86ff;       /* Vibrant blue */
-            --primary-light: #5d9cff;
-            --primary-dark: #2667cc;
-            --secondary: #ffbe0b;     /* Golden yellow */
-            --secondary-light: #ffd166;
-            --secondary-dark: #e6a800;
-            --accent: #8338ec;       /* Purple accent */
-            --accent-light: #9d5bec;
-            --accent-dark: #6a2bc2;
-            --dark: #212529;          /* Dark gray */
-            --darker: #1a1e21;
-            --light: #f8f9fa;         /* Light background */
-            --lighter: #ffffff;       /* White background */
-            --text: #333;             /* Dark text */
-            --text-light: #666;       /* Medium text */
-            --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
-            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
-            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.16);
-            --gradient-primary: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            --gradient-secondary: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
-            --gradient-accent: linear-gradient(135deg, var(--accent), var(--accent-dark));
-            --gradient-dark: linear-gradient(135deg, var(--dark), var(--darker));
-            --hero-bg-image: url('https://images.unsplash.com/photo-1624397640148-949b1732bb0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
-        }
-
-        /* Dark Theme - Enhanced for better contrast and aesthetics */
-        [data-theme="dark"] {
-            --primary: #4cc9f0;         /* Bright teal */
-            --primary-light: #6fd8f8;
-            --primary-dark: #2da5c9;
-            --secondary: #f72585;       /* Vibrant pink */
-            --secondary-light: #ff4d9e;
-            --secondary-dark: #d61a6f;
-            --accent: #7209b7;          /* Deep purple */
-            --accent-light: #8a2be2;
-            --accent-dark: #5a0a9a;
-            --dark: #e9ecef;            /* Light text */
-            --darker: #ced4da;
-            --light: #121212;
-            --lighter: #1e1e1e;         /* Darker gray */
-            --text: #f8f9fa;
-            --text-light: #adb5bd;
-            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
-            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
-            --bg-gradient: linear-gradient(rgba(18, 18, 18, 0.65), rgba(18, 18, 18, 0.75));
-            --gradient-dark: linear-gradient(135deg, #121212, #000);
-            --hero-bg-image: url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
-        }
-
-        html, body {
-            width: 100%;
-            overflow-x: hidden;
-            max-width: 100%;
-        }
-
+        
         body {
             font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            background-color: var(--light);
-            scroll-behavior: smooth;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            overflow-x: hidden;
             transition: background-color 0.5s ease, color 0.5s ease;
         }
-
+        
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Poppins', sans-serif;
             font-weight: 700;
-            margin-bottom: 1.25rem;
-            color: var(--dark);
+            margin-bottom: 1rem;
+            color: var(--primary);
             line-height: 1.2;
         }
-
-        p {
-            margin-bottom: 1rem;
-            color: var(--text-light);
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
         }
-
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
         .container {
-            width: 100%;
+            width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 0 15px;
         }
-
-        .section {
-            padding: 5rem 0;
-            position: relative;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 3.5rem;
-        }
-
-        .section-header h2 {
-            font-size: 2.75rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-header h2::after {
-            content: '';
-            position: absolute;
-            bottom: -1rem;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 5rem;
-            height: 0.25rem;
-            background: var(--primary);
-            border-radius: 0.125rem;
-        }
-
+        
         .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--gradient-primary);
-            color: var(--lighter);
-            padding: 0.875rem 2rem;
-            border-radius: 2rem;
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition);
+            display: inline-block;
+            padding: 14px 32px;
+            background: var(--secondary);
+            color: white;
             border: none;
-            cursor: pointer;
-            font-size: 1rem;
+            border-radius: 50px;
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: var(--shadow-sm);
+            letter-spacing: 1.5px;
+            transition: var(--transition);
+            cursor: pointer;
+            font-size: 15px;
+            box-shadow: 0 4px 12px rgba(243, 156, 18, 0.25);
             position: relative;
             overflow: hidden;
             z-index: 1;
         }
-
-        .btn::before {
+        
+        .btn:before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
+            width: 0%;
             height: 100%;
-            background: var(--gradient-dark);
-            opacity: 0;
-            z-index: -1;
+            background: rgba(255,255,255,0.2);
             transition: var(--transition);
+            z-index: -1;
         }
-
+        
+        .btn:hover:before {
+            width: 100%;
+        }
+        
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(243, 156, 18, 0.4);
         }
-
-        .btn:hover::before {
-            opacity: 1;
-        }
-
-        .btn-secondary {
-            background: var(--gradient-secondary);
-        }
-
-        .btn-secondary::before {
-            background: var(--gradient-dark);
-        }
-
-        .btn-accent {
-            background: var(--gradient-accent);
-            color: var(--lighter);
-        }
-
-        .btn-accent::before {
-            background: var(--gradient-dark);
-        }
-
-        /* Theme Toggle */
-        .theme-toggle {
-            position: relative;
-            width: 60px;
-            height: 30px;
+        
+        .btn-primary {
             background: var(--primary);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            transition: background 0.3s ease;
-            margin-left: 1rem;
+            box-shadow: 0 4px 12px rgba(10, 77, 122, 0.25);
         }
-
-        .theme-toggle:hover {
-            background: var(--primary-dark);
+        
+        .btn-primary:hover {
+            box-shadow: 0 8px 20px rgba(10, 77, 122, 0.4);
         }
-
-        .toggle-handle {
+        
+        section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.8rem;
+            text-transform: capitalize;
+            margin-bottom: 20px;
+        }
+        
+        .section-title p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            color: var(--gray);
+        }
+        
+        .section-title:after {
+            content: '';
             position: absolute;
-            width: 24px;
-            height: 24px;
-            background: var(--lighter);
-            border-radius: 50%;
-            left: 4px;
-            transition: transform 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background: var(--secondary);
+            border-radius: 3px;
         }
-
-        [data-theme="dark"] .toggle-handle {
-            transform: translateX(28px);
-        }
-
-        .toggle-handle i {
-            color: var(--primary);
-        }
-
-        /* Header Styles */
+        
+        /* Header */
         header {
-            background-color: rgba(255, 255, 255, 0.98);
-            box-shadow: var(--shadow-sm);
+            background-color: var(--header-bg);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            backdrop-filter: blur(8px);
-            transition: var(--transition);
+            transition: all 0.5s ease;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
         }
-
-        [data-theme="dark"] header {
-            background-color: rgba(30, 30, 30, 0.98);
-        }
-
+        
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 0;
+            padding: 20px 0;
         }
-
+        
         .logo {
             display: flex;
             align-items: center;
-            text-decoration: none;
+            gap: 15px;
         }
-
+        
         .logo-icon {
-            background: var(--gradient-primary);
-            width: 3rem;
-            height: 3rem;
-            border-radius: 0.75rem;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--lighter);
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-right: 0.75rem;
-            transition: var(--transition);
+            color: white;
+            font-size: 24px;
+            box-shadow: 0 4px 10px rgba(10, 77, 122, 0.3);
         }
-
-        .logo:hover .logo-icon {
-            transform: rotate(15deg) scale(1.1);
-        }
-
+        
         .logo-text {
-            font-size: 1.625rem;
+            font-size: 26px;
             font-weight: 800;
             color: var(--primary);
-            letter-spacing: -0.5px;
+            letter-spacing: 1px;
         }
-
+        
         .logo-text span {
             color: var(--secondary);
         }
-
-        nav {
-            display: flex;
-            align-items: center;
-        }
-
-        nav ul {
+        
+        .nav-menu {
             display: flex;
             list-style: none;
+            align-items: center;
+            gap: 30px;
         }
-
-        nav ul li {
-            margin-left: 1.5rem;
+        
+        .nav-menu li a {
+            font-weight: 600;
             position: relative;
+            padding: 5px 0;
+            font-size: 17px;
         }
-
-        nav ul li a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            transition: var(--transition);
-            position: relative;
-            padding: 0.5rem 0.25rem;
-            font-size: 1rem;
-        }
-
-        [data-theme="dark"] nav ul li a {
-            color: var(--darker);
-        }
-
-        nav ul li a:hover {
-            color: var(--primary);
-        }
-
-        nav ul li a::after {
+        
+        .nav-menu li a:after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
             width: 0;
-            height: 0.1875rem;
-            background: var(--primary);
+            height: 3px;
+            background: var(--secondary);
             transition: var(--transition);
-            border-radius: 0.125rem;
+            border-radius: 2px;
         }
-
-        nav ul li a:hover::after {
+        
+        .nav-menu li a:hover:after,
+        .nav-menu li a.active:after {
             width: 100%;
         }
-
-        .mobile-menu-btn {
+        
+        .mobile-toggle {
             display: none;
-            font-size: 1.75rem;
+            font-size: 28px;
             cursor: pointer;
-            color: var(--dark);
-            z-index: 1001;
-            transition: var(--transition);
-            margin-left: 1.5rem;
-        }
-
-        [data-theme="dark"] .mobile-menu-btn {
-            color: var(--darker);
-        }
-
-        .mobile-menu-btn:hover {
             color: var(--primary);
         }
-
-        /* PRODUCT PAGE SPECIFIC STYLES */
-        /* Products Hero */
-        .products-hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)), var(--hero-bg-image);
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            height: 65vh;
+        
+        /* Theme Toggle */
+        .theme-toggle {
+            width: 60px;
+            height: 30px;
+            background: var(--light);
+            border-radius: 50px;
+            position: relative;
+            cursor: pointer;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .theme-toggle:before {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--secondary);
+            top: 3px;
+            left: 3px;
+            transition: var(--transition);
+        }
+        
+        .dark-mode .theme-toggle:before {
+            left: 33px;
+            background: var(--primary);
+        }
+        
+        /* Hero Section */
+        .page-hero {
+            height: 70vh;
             min-height: 500px;
             display: flex;
             align-items: center;
-            text-align: center;
-            color: var(--lighter);
-            padding-top: 5rem;
             position: relative;
             overflow: hidden;
-        }
-
-        .products-hero::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 10rem;
-            background: linear-gradient(to top, var(--light), transparent);
-            z-index: 1;
-        }
-
-        .products-hero-content {
-            max-width: 56.25rem;
-            margin: 0 auto;
-            padding: 0 1.25rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .products-hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--lighter);
-            line-height: 1.15;
-            text-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.2);
-        }
-
-        .products-hero p {
-            font-size: 1.4rem;
-            margin-bottom: 2.5rem;
-            opacity: 0.9;
-            max-width: 43.75rem;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Product Categories */
-        .product-categories {
-            background-color: var(--lighter);
-            padding: 5rem 0;
-        }
-
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .category-card {
-            background: var(--lighter);
-            border-radius: 1rem;
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
+            padding-top: 80px;
             text-align: center;
-            padding: 2.5rem 1.5rem;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            position: relative;
-            z-index: 1;
         }
-
-        [data-theme="dark"] .category-card {
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .category-card:hover {
-            transform: translateY(-1rem);
-            box-shadow: var(--shadow-lg);
-            border-color: transparent;
-        }
-
-        .category-card::before {
+        
+        .page-hero:before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 0;
-            background: var(--gradient-primary);
-            transition: var(--transition);
-            z-index: -1;
-            opacity: 0;
-        }
-
-        .category-card:hover::before {
             height: 100%;
-            opacity: 1;
+            background: var(--gradient);
+            opacity: 0.95;
+            z-index: -1;
         }
-
-        .category-card:hover h3,
-        .category-card:hover p,
-        .category-card:hover .category-icon {
-            color: var(--lighter);
+        
+        .page-hero:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1624397640148-949b1732bb0a?ixlib=rb-4.0.3') no-repeat center center/cover;
+            z-index: -2;
         }
-
-        .category-icon {
-            font-size: 3.75rem;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
+        
+        .page-hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .page-hero h1 {
+            font-size: 3.8rem;
+            margin-bottom: 25px;
+            color: white;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            line-height: 1.1;
+        }
+        
+        .page-hero p {
+            font-size: 1.4rem;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+        
+        /* Products Section */
+        .products {
+            background: var(--bg-color);
+        }
+        
+        .product-categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 50px;
+        }
+        
+        .category-btn {
+            padding: 12px 30px;
+            background: var(--light);
+            border: 1px solid rgba(10, 77, 122, 0.1);
+            border-radius: 50px;
+            cursor: pointer;
             transition: var(--transition);
+            font-weight: 600;
+            font-size: 16px;
         }
-
-        .category-card h3 {
-            font-size: 1.75rem;
-            margin-bottom: 1rem;
-            transition: var(--transition);
+        
+        .category-btn:hover, .category-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
         }
-
-        .category-card p {
-            color: var(--text-light);
-            transition: var(--transition);
-            margin-bottom: 1.5rem;
-        }
-
-        /* Product Showcase */
-        .product-showcase {
-            background: linear-gradient(to bottom, var(--light), rgba(233, 245, 240, 0.7));
-            padding: 5rem 0;
-        }
-
-        [data-theme="dark"] .product-showcase {
-            background: linear-gradient(to bottom, var(--light), rgba(10, 31, 21, 0.7));
-        }
-
-        .product-grid {
+        
+        .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
         }
-
+        
         .product-card {
-            background: var(--lighter);
-            border-radius: 1rem;
+            background: var(--card-bg);
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow);
             transition: var(--transition);
             position: relative;
+            display: none;
         }
-
+        
+        .product-card.active {
+            display: block;
+        }
+        
         .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-15px);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.15);
         }
-
-        .product-image {
+        
+        .product-img {
             height: 250px;
             overflow: hidden;
-            position: relative;
         }
-
-        .product-image img {
+        
+        .product-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: var(--transition);
         }
-
-        .product-card:hover .product-image img {
+        
+        .product-card:hover .product-img img {
             transform: scale(1.1);
         }
-
-        .product-badge {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: var(--accent);
-            color: var(--lighter);
-            padding: 0.5rem 1rem;
-            border-radius: 2rem;
-            font-weight: 600;
-            font-size: 0.9rem;
-            box-shadow: var(--shadow-sm);
-        }
-
+        
         .product-content {
-            padding: 1.5rem;
+            padding: 30px;
         }
-
-        .product-title {
-            font-size: 1.5rem;
-            margin-bottom: 0.75rem;
-            color: var(--dark);
-        }
-
-        .product-description {
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
-        }
-
-        .product-features {
-            margin-bottom: 1.5rem;
-        }
-
-        .product-features h4 {
-            font-size: 1.1rem;
-            margin-bottom: 0.75rem;
-            color: var(--dark);
-            position: relative;
-            display: inline-block;
-        }
-
-        .product-features h4::after {
-            content: '';
-            position: absolute;
-            bottom: -0.25rem;
-            left: 0;
-            width: 2rem;
-            height: 0.15rem;
-            background: var(--primary);
-        }
-
-        .features-list {
-            list-style: none;
-            padding-left: 1.5rem;
-        }
-
-        .features-list li {
-            margin-bottom: 0.5rem;
-            position: relative;
-            color: var(--text-light);
-        }
-
-        .features-list li::before {
-            content: '✓';
-            position: absolute;
-            left: -1.5rem;
-            color: var(--secondary);
-            font-weight: bold;
-        }
-
-        .product-actions {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .product-price {
-            font-size: 1.5rem;
-            font-weight: 700;
+        
+        .product-content h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
             color: var(--primary);
         }
-
-        .btn-product {
-            padding: 0.75rem 1.5rem;
-            font-size: 0.9rem;
+        
+        .product-content p {
+            color: var(--gray);
+            margin-bottom: 20px;
+            font-size: 17px;
         }
-
-        /* Technical Specifications */
-        .tech-specs {
-            background-color: var(--lighter);
-            padding: 5rem 0;
+        
+        .specs-list {
+            list-style: none;
+            margin-bottom: 25px;
         }
-
-        .specs-container {
-            max-width: 900px;
-            margin: 0 auto;
-            overflow-x: auto;
-        }
-
-        .specs-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 2rem;
-            box-shadow: var(--shadow-sm);
-            border-radius: 0.5rem;
-            overflow: hidden;
-            min-width: 600px;
-        }
-
-        .specs-table th, .specs-table td {
-            padding: 1.25rem;
-            text-align: left;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-            white-space: nowrap;
-        }
-
-        [data-theme="dark"] .specs-table th, 
-        [data-theme="dark"] .specs-table td {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .specs-table th {
-            background: var(--gradient-primary);
-            color: var(--lighter);
-            font-weight: 600;
-            font-size: 1.1rem;
-            padding: 1rem 1.25rem;
-        }
-
-        .specs-table td {
-            padding: 1rem 1.25rem;
-            font-size: 0.95rem;
-        }
-
-        .specs-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .specs-table tr:nth-child(even) {
-            background: rgba(58, 134, 255, 0.03);
-        }
-
-        [data-theme="dark"] .specs-table tr:nth-child(even) {
-            background: rgba(76, 201, 240, 0.08);
-        }
-
-        /* FAQ Section */
-        .faq-section {
-            background: linear-gradient(to bottom, var(--light), rgba(233, 245, 240, 0.7));
-            padding: 5rem 0;
-        }
-
-        [data-theme="dark"] .faq-section {
-            background: linear-gradient(to bottom, var(--light), rgba(10, 31, 21, 0.7));
-        }
-
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            margin-bottom: 1.5rem;
-            border-radius: 0.75rem;
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            background: var(--lighter);
-            transition: var(--transition);
-        }
-
-        .faq-item:hover {
-            box-shadow: var(--shadow-md);
-        }
-
-        .faq-question {
-            padding: 1.5rem;
-            background: var(--gradient-primary);
-            color: var(--lighter);
-            cursor: pointer;
+        
+        .specs-list li {
+            margin-bottom: 8px;
             display: flex;
-            justify-content: space-between;
+            align-items: flex-start;
+        }
+        
+        .specs-list li i {
+            color: var(--secondary);
+            margin-right: 10px;
+            margin-top: 5px;
+            font-size: 14px;
+        }
+        
+        .product-icon {
+            position: absolute;
+            top: -25px;
+            right: 25px;
+            width: 60px;
+            height: 60px;
+            background: var(--secondary);
+            border-radius: 50%;
+            display: flex;
             align-items: center;
-            font-weight: 600;
-            font-size: 1.1rem;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            box-shadow: 0 10px 20px rgba(243, 156, 18, 0.3);
+            z-index: 2;
         }
-
-        .faq-question i {
-            transition: var(--transition);
-        }
-
-        .faq-answer {
-            padding: 0 1.5rem;
-            max-height: 0;
+        
+        /* Product Detail Section */
+        .product-detail {
+            background: var(--light);
+            position: relative;
             overflow: hidden;
+        }
+        
+        .product-detail-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .detail-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .detail-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .detail-content {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .detail-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+        }
+        
+        .detail-content p {
+            margin-bottom: 25px;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .feature-item {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+        
+        .feature-text h4 {
+            margin-bottom: 8px;
+            font-size: 20px;
+        }
+        
+        /* Applications Section */
+        .applications {
+            background: var(--bg-color);
+        }
+        
+        .applications-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+        
+        .applications-content {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .applications-grid {
+            flex: 1;
+            min-width: 300px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .app-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: var(--shadow);
             transition: var(--transition);
         }
-
-        .faq-answer.active {
-            padding: 1.5rem;
-            max-height: 500px;
+        
+        .app-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
-
+        
+        .app-card i {
+            font-size: 40px;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        .app-card h4 {
+            font-size: 18px;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: var(--gradient);
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1558442074-3c19857bc1dc?ixlib=rb-4.0.3') no-repeat center center/cover;
+            opacity: 0.1;
+            z-index: 1;
+        }
+        
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-content h2 {
+            font-size: 2.8rem;
+            color: white;
+            margin-bottom: 25px;
+        }
+        
+        .cta-content p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
         /* Footer */
         footer {
-            background: var(--dark);
-            color: var(--lighter);
-            padding: 5rem 0 0;
+            background: var(--footer-bg);
+            color: white;
+            padding: 100px 0 0;
             position: relative;
         }
-
-        [data-theme="dark"] footer {
-            background: #1a1e21;
-        }
-
+        
         .footer-container {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .footer-col {
-            padding: 0 0.5rem;
-        }
-
-        .footer-col h3 {
-            color: var(--lighter);
-            font-size: 1.4rem;
-            margin-bottom: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
             position: relative;
-            padding-bottom: 0.625rem;
+            z-index: 2;
         }
-
-        .footer-col h3::after {
+        
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 30px;
+            font-size: 24px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .footer-col h3:after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 2.5rem;
-            height: 0.25rem;
-            background: var(--primary);
-            border-radius: 0.125rem;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary);
+            border-radius: 2px;
         }
-
+        
+        .footer-col p {
+            margin-bottom: 25px;
+            font-size: 17px;
+            opacity: 0.8;
+        }
+        
         .footer-links {
             list-style: none;
         }
-
+        
         .footer-links li {
-            margin-bottom: 0.75rem;
+            margin-bottom: 15px;
         }
-
-        .footer-links li a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
+        
+        .footer-links a {
+            color: #bbb;
             transition: var(--transition);
-            display: block;
-            font-size: 1.05rem;
-            position: relative;
-            padding-left: 1.25rem;
-        }
-
-        .footer-links li a::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            opacity: 0;
-            transition: var(--transition);
-        }
-
-        .footer-links li a:hover {
-            color: var(--accent-light);
-            transform: translateX(0.5rem);
-        }
-
-        .footer-links li a:hover::before {
-            opacity: 1;
-            left: -0.5rem;
-        }
-
-        .contact-col .contact-info {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 1.05rem;
-            line-height: 1.8;
-        }
-
-        .contact-col .contact-info p {
-            margin-bottom: 1.25rem;
+            font-size: 17px;
             display: flex;
-            align-items: flex-start;
+            align-items: center;
+            gap: 10px;
         }
-
-        .contact-col .contact-info i {
-            margin-right: 0.625rem;
-            color: var(--primary);
-            font-size: 1.2rem;
-            margin-top: 0.25rem;
-            min-width: 1.5rem;
+        
+        .footer-links a i {
+            color: var(--secondary);
+            transition: var(--transition);
         }
-
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+        
+        .footer-links a:hover i {
+            transform: translateX(5px);
+        }
+        
         .social-links {
             display: flex;
-            gap: 1rem;
-            margin-top: 1.75rem;
-            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 25px;
         }
-
+        
         .social-links a {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 3rem;
-            height: 3rem;
-            background: rgba(255, 255, 255, 0.1);
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.1);
             border-radius: 50%;
-            color: var(--lighter);
             transition: var(--transition);
-            font-size: 1.5rem;
+            font-size: 20px;
         }
-
+        
         .social-links a:hover {
-            background: var(--primary);
-            transform: translateY(-0.25rem);
+            background: var(--secondary);
+            transform: translateY(-8px);
         }
-
-        .footer-bottom {
-            background: rgba(0, 0, 0, 0.2);
-            padding: 1.5rem 0;
-            text-align: center;
-        }
-
-        [data-theme="dark"] .footer-bottom {
-            background: rgba(0, 0, 0, 0.4);
-        }
-
+        
         .copyright {
-            font-size: 1rem;
-            opacity: 0.7;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 70px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 16px;
+            color: #bbb;
         }
-
-        /* Back to Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 3rem;
-            height: 3rem;
-            background: var(--gradient-primary);
-            color: var(--lighter);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.25rem;
-            box-shadow: var(--shadow-md);
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-            z-index: 999;
+        
+        .footer-pattern {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            background: url('https://www.transparenttextures.com/patterns/45-degree-fabric-light.png');
+            z-index: 1;
         }
-
-        .back-to-top.active {
-            opacity: 1;
-            visibility: visible;
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-
-        .back-to-top:hover {
-            transform: translateY(-0.5rem);
-            box-shadow: var(--shadow-lg);
+        
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
         }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(2rem);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate {
-            animation: fadeInUp 0.8s ease-out forwards;
+        
+        .animated {
+            animation: fadeIn 1s ease forwards;
             opacity: 0;
         }
-
-        .delay-1 {
-            animation-delay: 0.1s;
+        
+        .float {
+            animation: float 6s ease-in-out infinite;
         }
-
-        .delay-2 {
-            animation-delay: 0.2s;
+        
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            .page-hero h1 {
+                font-size: 3.2rem;
+            }
         }
-
-        .delay-3 {
-            animation-delay: 0.3s;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 992px) {
-            .products-hero h1 {
-                font-size: 3rem;
+        
+        @media (max-width: 991px) {
+            .page-hero h1 {
+                font-size: 2.8rem;
             }
             
-            .product-grid {
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            .section-title h2 {
+                font-size: 2.5rem;
             }
             
-            .footer-container {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1.5rem;
+            .mobile-toggle {
+                display: block;
             }
-        }
-
-        @media (max-width: 768px) {
-            /* Header adjustments */
-            nav ul {
-                display: none;
+            
+            .nav-menu {
                 position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100vh;
-                background: rgba(26, 58, 95, 0.98);
+                top: 90px;
+                left: -100%;
                 flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                padding: 1.25rem 0;
-                z-index: 999;
-                transform: translateY(-100%);
-                transition: var(--transition);
-            }
-            
-            [data-theme="dark"] nav ul {
-                background: rgba(18, 18, 18, 0.98);
-            }
-            
-            nav ul.show {
-                transform: translateY(0);
-                display: flex;
-            }
-            
-            nav ul li {
-                margin: 1.25rem 0;
+                background: var(--header-bg);
                 width: 100%;
+                padding: 30px 0;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                transition: var(--transition);
+                gap: 20px;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-menu li {
                 text-align: center;
             }
             
-            nav ul li a {
-                font-size: 1.5rem;
-                color: var(--lighter);
-                padding: 1rem 1.5rem;
-                display: block;
-                transition: all 0.3s ease;
-            }
-            
-            nav ul li a:hover {
-                background: rgba(255, 255, 255, 0.1);
-                border-radius: 0.5rem;
-            }
-            
-            .header-container {
-                padding: 0.8rem 1rem;
-            }
-            
-            .logo-text {
-                font-size: 1.4rem;
-            }
-            
-            .logo-icon {
-                width: 2.5rem;
-                height: 2.5rem;
-                font-size: 1rem;
-            }
-            
             .theme-toggle {
-                width: 50px;
-                height: 25px;
-                margin-left: 1rem;
+                margin: 20px auto 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .page-hero {
+                min-height: 450px;
             }
             
-            .toggle-handle {
-                width: 20px;
-                height: 20px;
+            .page-hero h1 {
+                font-size: 2.3rem;
             }
             
-            [data-theme="dark"] .toggle-handle {
-                transform: translateX(25px);
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-                margin-left: 1rem;
-                font-size: 1.5rem;
-            }
-            
-            .products-hero {
-                height: 50vh;
-                min-height: 400px;
-            }
-            
-            .products-hero h1 {
-                font-size: 2.5rem;
-                margin-bottom: 1rem;
-            }
-            
-            .products-hero p {
+            .page-hero p {
                 font-size: 1.1rem;
-                margin-bottom: 2rem;
             }
             
-            .footer-container {
-                display: flex;
-                flex-direction: row;
-                overflow-x: auto;
-                scroll-snap-type: x mandatory;
-                scrollbar-width: none;
-                -ms-overflow-style: none;
-                padding-bottom: 1.5rem;
-                margin-bottom: 2rem;
-                gap: 0;
+            .section-title h2 {
+                font-size: 2.2rem;
             }
             
-            .footer-container::-webkit-scrollbar {
-                display: none;
-            }
-            
-            .footer-col {
-                flex: 0 0 90%;
-                scroll-snap-align: start;
-                padding: 0 1.5rem;
-                min-height: 100%;
-                display: flex;
+            .product-detail-container, .applications-container {
                 flex-direction: column;
-                justify-content: center;
-            }
-            
-            .footer-col h3 {
-                font-size: 1.5rem;
-                padding-bottom: 0.5rem;
-                margin-bottom: 1.2rem;
-            }
-            
-            .footer-col h3::after {
-                width: 2rem;
-                height: 0.2rem;
-            }
-            
-            .footer-links {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-            }
-            
-            .footer-links li {
-                margin-bottom: 0.5rem;
-            }
-            
-            .footer-links li a {
-                font-size: 1rem;
-                padding: 0.5rem 0;
-            }
-            
-            .contact-col .contact-info p {
-                margin-bottom: 0.8rem;
-                font-size: 0.95rem;
-                display: flex;
-                align-items: center;
-                flex-wrap: wrap;
-            }
-            
-            .contact-col .contact-info i {
-                font-size: 1.1rem;
-                min-width: 1.3rem;
-                margin-right: 0.5rem;
-                margin-top: 0;
-            }
-            
-            .social-links {
-                justify-content: flex-start;
-                margin-top: 1.5rem;
-                gap: 0.8rem;
-            }
-            
-            .social-links a {
-                width: 2.8rem;
-                height: 2.8rem;
-                font-size: 1.4rem;
-            }
-            
-            .footer-bottom {
-                padding: 1.5rem 1rem;
-            }
-            
-            .copyright {
-                font-size: 0.9rem;
             }
         }
-
+        
         @media (max-width: 576px) {
-            .footer-col {
-                padding: 0 1rem;
-            }
-            
-            .footer-links {
-                grid-template-columns: 1fr;
-            }
-            
-            .social-links {
-                gap: 0.75rem;
-            }
-        }
-
-        @media (max-width: 400px) {
-            .footer-col {
-                padding: 0 0.8rem;
-                flex: 0 0 92%;
-            }
-            
-            .contact-col .contact-info p {
-                font-size: 0.9rem;
-            }
-            
-            .contact-col .contact-info i {
-                font-size: 1rem;
-            }
-            
-            .products-hero {
-                min-height: 350px;
-            }
-            
-            .products-hero h1 {
+            .page-hero h1 {
                 font-size: 2rem;
             }
             
-            .footer-links {
-                grid-template-columns: 1fr;
+            .logo-text {
+                font-size: 22px;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .category-btn {
+                padding: 10px 20px;
+                font-size: 14px;
             }
         }
     </style>
@@ -1184,160 +856,179 @@
     <!-- Header -->
     <header>
         <div class="container header-container">
-            <a href="index.html" class="logo">
-                <div class="logo-icon">MSE</div>
-                <div class="logo-text">MAHA<span>SHAKTI</span></div>
-            </a>
-            <nav>
-                <ul id="navMenu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="service.html">Services</a></li>
-                    <li><a href="product.html" class="active">Products</a></li>
-                    <li><a href="global.html">Foreign Collaboration</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-                
-                <!-- Theme Toggle Button -->
-                <div class="theme-toggle" id="themeToggle">
-                    <div class="toggle-handle">
-                        <i class="fas fa-sun"></i>
-                    </div>
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-bolt"></i>
                 </div>
-                
-                <div class="mobile-menu-btn" id="mobileMenuBtn">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </nav>
+                <div class="logo-text">MAHASHAKTI <span>ENERGY</span></div>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="product.html" class="active">Products</a></li>
+                <li><a href="golbal.html">Global</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <div class="theme-toggle" id="themeToggle"></div>
+                </li>
+            </ul>
+            
+            <div class="mobile-toggle">
+                <i id="mobileToggleIcon" class="fas fa-bars"></i>
+            </div>
         </div>
     </header>
 
-    <!-- Products Hero -->
-    <section class="products-hero">
-        <div class="container products-hero-content animate">
-            <h1>Innovative Energy Solutions</h1>
-            <p>Discover our cutting-edge renewable energy products designed for efficiency, sustainability, and performance</p>
-            <div style="margin-top: 2rem;">
-                <a href="#products" class="btn">Explore Products</a>
-            </div>
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="container page-hero-content">
+            <h1>Advanced Energy Solutions</h1>
+            <p>Explore our range of innovative products designed to optimize energy efficiency and reliability</p>
+            <a href="#products" class="btn">View Products</a>
         </div>
     </section>
 
-    <!-- Product Categories -->
-    <section class="product-categories" id="categories">
+    <!-- Products Section -->
+    <section id="products" class="products">
         <div class="container">
-            <div class="section-header animate">
-                <h2>Our Product Categories</h2>
-                <p>Comprehensive solutions for all your energy needs</p>
+            <div class="section-title">
+                <h2>Our Product Range</h2>
+                <p>Quality solutions for diverse energy needs</p>
             </div>
-            <div class="categories-grid">
-                <div class="category-card animate">
-                    <div class="category-icon">
-                        <i class="fas fa-solar-panel"></i>
-                    </div>
-                    <h3>Solar Energy</h3>
-                    <p>High-efficiency solar panels and systems for residential, commercial, and industrial applications</p>
-                    <a href="#solar-products" class="btn btn-secondary">View Products</a>
-                </div>
-                <div class="category-card animate delay-1">
-                    <div class="category-icon">
-                        <i class="fas fa-wind"></i>
-                    </div>
-                    <h3>Wind Energy</h3>
-                    <p>Advanced wind turbines and hybrid systems for optimal energy generation in various conditions</p>
-                    <a href="#wind-products" class="btn btn-secondary">View Products</a>
-                </div>
-                <div class="category-card animate delay-2">
-                    <div class="category-icon">
-                        <i class="fas fa-battery-full"></i>
-                    </div>
-                    <h3>Energy Storage</h3>
-                    <p>Cutting-edge battery storage solutions to maximize your renewable energy utilization</p>
-                    <a href="#storage-products" class="btn btn-secondary">View Products</a>
-                </div>
+            
+            <div class="product-categories">
+                <button class="category-btn active" data-category="all">All Products</button>
+                <button class="category-btn" data-category="smart-meters">Smart Meters</button>
+                <button class="category-btn" data-category="transformers">Transformers</button>
+                <button class="category-btn" data-category="substations">Compact Substations</button>
             </div>
-        </div>
-    </section>
-
-    <!-- Product Showcase -->
-    <section class="product-showcase" id="products">
-        <div class="container">
-            <div class="section-header animate">
-                <h2>Featured Products</h2>
-                <p>Our top-performing renewable energy solutions</p>
-            </div>
-            <div class="product-grid">
-                <!-- Solar Product 1 -->
-                <div class="product-card animate" id="solar-products">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="MSE SolarMax Pro Panel">
-                        <div class="product-badge">BEST SELLER</div>
+            
+            <div class="products-grid">
+                <!-- Smart Meter 1 -->
+                <div class="product-card animated active" data-category="smart-meters">
+                    <div class="product-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1581093458799-6d0b0e6e45c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Advanced Smart Meter">
                     </div>
                     <div class="product-content">
-                        <h3 class="product-title">MSE SolarMax Pro</h3>
-                        <p class="product-description">High-efficiency monocrystalline solar panels with 22.5% conversion rate and 25-year performance warranty.</p>
-                        <div class="product-features">
-                            <h4>Key Features</h4>
-                            <ul class="features-list">
-                                <li>450W output per panel</li>
-                                <li>Anti-reflective coating</li>
-                                <li>Salt mist and ammonia resistant</li>
-                                <li>PID-resistant technology</li>
-                            </ul>
-                        </div>
-                        <div class="product-actions">
-                            <div class="product-price">$299/panel</div>
-                            <a href="#" class="btn btn-accent btn-product">Enquire Now</a>
-                        </div>
+                        <h3>Advanced Smart Meter</h3>
+                        <p>Precision energy monitoring with real-time data analytics for optimized consumption.</p>
+                        <ul class="specs-list">
+                            <li><i class="fas fa-check-circle"></i> <span>Accuracy Class: 0.5S / 0.2S</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span>Communication: GSM/GPRS, PLC, RF</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span>Tamper Detection: Advanced anti-theft</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span>Load Profile: 15-minute intervals</span></li>
+                        </ul>
+                        <a href="#smart-meter-detail" class="btn btn-primary">View Details</a>
                     </div>
                 </div>
-
-                <!-- Wind Product 1 -->
-                <div class="product-card animate delay-1" id="wind-products">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1495055154266-1a4c9f417d76?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="MSE WindStream 5kW Turbine">
-                        <div class="product-badge">NEW</div>
+                
+                <!-- Transformer 1 -->
+                <div class="product-card animated active" data-category="transformers">
+                    <div class="product-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1624397640148-949b1732bb0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Distribution Transformer">
                     </div>
                     <div class="product-content">
-                        <h3 class="product-title">MSE WindStream 5kW</h3>
-                        <p class="product-description">Vertical axis wind turbine ideal for urban and rural applications with low noise operation.</p>
-                        <div class="product-features">
-                            <h4>Key Features</h4>
-                            <ul class="features-list">
-                                <li>5kW rated output</li>
-                                <li>Starts at 2.5 m/s wind speed</li>
-                                <li>Omnidirectional wind capture</li>
-                                <li>20-year design life</li>
-                            </ul>
-                        </div>
-                        <div class="product-actions">
-                            <div class="product-price">$4,999</div>
-                            <a href="#" class="btn btn-accent btn-product">Enquire Now</a>
-                        </div>
+                        <h3>Distribution Transformer</h3>
+                        <p>High-efficiency transformers for reliable power distribution networks.</p>
+                        <ul class="specs-list">
+                            <li><i class="fas fa-check-circle"></i> <span>Capacity: 25kVA to 2500kVA</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span>Voltage: Up to 33kV</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span>Cooling: ONAN/ONAF</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span>Efficiency: Up to 99.5%</span></li>
+                        </ul>
+                        <a href="#transformer-detail" class="btn btn-primary">View Details</a>
                     </div>
                 </div>
-
-                <!-- Storage Product 1 -->
-                <div class="product-card animate delay-2" id="storage-products">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1605980776566-0486c3ac7617?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="MSE PowerVault 10kWh">
+                
+                <!-- Compact Substation -->
+                <div class="product-card animated active" data-category="substations">
+                    <div class="product-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1576675466969-38eeae4b41a4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Compact Substation">
                     </div>
                     <div class="product-content">
-                        <h3 class="product-title">MSE PowerVault 10kWh</h3>
-                        <p class="product-description">Lithium-ion battery storage system with smart energy management for residential use.</p>
-                        <div class="product-features">
-                            <h4>Key Features</h4>
-                            <ul class="features-list">
-                                <li>10kWh usable capacity</li>
-                                <li>90% depth of discharge</li>
-                                <li>10-year warranty</li>
-                                <li>Grid-tie and off-grid capable</li>
-                            </ul>
+                        <h3>Compact Substation</h3>
+                        <p>Integrated power distribution solution for urban and industrial applications.</p>
+                        <ul class="specs-list">
+                            <li><i class="fas fa-check-circle"></i> <span>Voltage: Up to 36kV</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span>Enclosure: Weatherproof steel</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span>Modules: Transformer, LV Panel, MV Panel</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span>Protection: IP54 standard</span></li>
+                        </ul>
+                        <a href="#substation-detail" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Detail Section: Smart Meters -->
+    <section id="smart-meter-detail" class="product-detail">
+        <div class="container">
+            <div class="section-title">
+                <h2>Smart Metering Solutions</h2>
+                <p>Advanced technology for modern energy management</p>
+            </div>
+            
+            <div class="product-detail-container">
+                <div class="detail-image animated">
+                    <img src="https://images.unsplash.com/photo-1581093458799-6d0b0e6e45c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Smart Meter Detail">
+                </div>
+                <div class="detail-content animated">
+                    <h2>Advanced Smart Metering Technology</h2>
+                    <p>Our smart meters provide real-time monitoring and analytics for both utilities and consumers. With bidirectional communication capabilities, these devices enable precise energy accounting and support dynamic pricing models.</p>
+                    <p>Designed for the Nigerian power sector, our meters are built to withstand harsh environmental conditions while maintaining accuracy and reliability. Tamper-proof design ensures revenue protection for utilities.</p>
+                    
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Real-time Analytics</h4>
+                                <p>Monitor consumption patterns and identify inefficiencies</p>
+                            </div>
                         </div>
-                        <div class="product-actions">
-                            <div class="product-price">$6,499</div>
-                            <a href="#" class="btn btn-accent btn-product">Enquire Now</a>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Tamper Detection</h4>
+                                <p>Advanced security features to prevent unauthorized access</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-plug"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Remote Control</h4>
+                                <p>Enable/disable supply remotely for efficient operations</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Mobile Integration</h4>
+                                <p>Consumer apps for energy monitoring and bill payment</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1345,294 +1036,298 @@
         </div>
     </section>
 
-    <!-- Technical Specifications -->
-    <section class="tech-specs">
+    <!-- Product Detail Section: Transformers -->
+    <section id="transformer-detail" class="product-detail" style="background: var(--bg-color);">
         <div class="container">
-            <div class="section-header animate">
-                <h2>Technical Specifications</h2>
-                <p>Detailed performance data for our flagship products</p>
+            <div class="section-title">
+                <h2>Transformer Solutions</h2>
+                <p>Powering Nigeria with reliable energy transformation</p>
             </div>
-            <div class="specs-container animate delay-1">
-                <table class="specs-table">
-                    <thead>
-                        <tr>
-                            <th>Model</th>
-                            <th>MSE SolarMax Pro</th>
-                            <th>MSE WindStream 5kW</th>
-                            <th>MSE PowerVault 10kWh</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Type</td>
-                            <td>Monocrystalline Solar Panel</td>
-                            <td>Vertical Axis Wind Turbine</td>
-                            <td>Lithium-ion Battery System</td>
-                        </tr>
-                        <tr>
-                            <td>Rated Power</td>
-                            <td>450W</td>
-                            <td>5kW</td>
-                            <td>10kWh</td>
-                        </tr>
-                        <tr>
-                            <td>Efficiency</td>
-                            <td>22.5%</td>
-                            <td>42% (at rated wind speed)</td>
-                            <td>95% round-trip</td>
-                        </tr>
-                        <tr>
-                            <td>Dimensions</td>
-                            <td>2000 × 1000 × 35mm</td>
-                            <td>4.5m height × 3m diameter</td>
-                            <td>600 × 800 × 200mm</td>
-                        </tr>
-                        <tr>
-                            <td>Weight</td>
-                            <td>22.5kg</td>
-                            <td>250kg</td>
-                            <td>120kg</td>
-                        </tr>
-                        <tr>
-                            <td>Warranty</td>
-                            <td>25 years</td>
-                            <td>10 years</td>
-                            <td>10 years</td>
-                        </tr>
-                    </tbody>
-                </table>
+            
+            <div class="product-detail-container">
+                <div class="detail-content animated">
+                    <h2>High-Efficiency Transformers</h2>
+                    <p>Our transformers are designed for optimal performance in Nigeria's challenging climate conditions. Built with high-quality materials and advanced cooling technology, they ensure reliable power distribution with minimal energy loss.</p>
+                    <p>From distribution to specialized applications, our transformer range meets all regulatory standards while offering superior efficiency and longevity. Custom configurations available for specific project requirements.</p>
+                    
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Energy Efficient</h4>
+                                <p>Up to 40% lower losses compared to conventional transformers</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-hard-hat"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Robust Design</h4>
+                                <p>Built to withstand harsh environmental conditions</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Low Maintenance</h4>
+                                <p>Sealed design requires minimal maintenance</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>High Capacity</h4>
+                                <p>Available up to 100MVA for industrial applications</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="detail-image animated">
+                    <img src="https://images.unsplash.com/photo-1624397640148-949b1732bb0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Transformer Detail">
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="faq-section">
+    <!-- Applications Section -->
+    <section class="applications">
         <div class="container">
-            <div class="section-header animate">
-                <h2>Frequently Asked Questions</h2>
-                <p>Find answers to common questions about our products</p>
+            <div class="section-title">
+                <h2>Product Applications</h2>
+                <p>Versatile solutions for diverse sectors</p>
             </div>
-            <div class="faq-container">
-                <div class="faq-item animate delay-1">
-                    <div class="faq-question">
-                        <span>What is the expected lifespan of your solar panels?</span>
-                        <i class="fas fa-chevron-down"></i>
+            
+            <div class="applications-container">
+                <div class="applications-content animated">
+                    <h2>Where Our Products Make a Difference</h2>
+                    <p>Mahashakti Energy products are engineered to serve various sectors across Nigeria, providing reliable and efficient power solutions tailored to specific needs.</p>
+                    <p>From urban centers to remote communities, our products deliver consistent performance in diverse environments, helping to bridge Nigeria's energy gap.</p>
+                    <p>Our solutions are designed with local conditions in mind, ensuring optimal performance even in challenging climates and under demanding operational requirements.</p>
+                </div>
+                
+                <div class="applications-grid animated">
+                    <div class="app-card">
+                        <i class="fas fa-city"></i>
+                        <h4>Urban Infrastructure</h4>
+                        <p>Powering cities and municipalities</p>
                     </div>
-                    <div class="faq-answer">
-                        <p>Our MSE SolarMax Pro panels are designed to last 30+ years with proper maintenance. They come with a 25-year performance warranty guaranteeing at least 80% of rated output after 25 years of use.</p>
+                    
+                    <div class="app-card">
+                        <i class="fas fa-industry"></i>
+                        <h4>Industrial Zones</h4>
+                        <p>Supporting manufacturing and production</p>
+                    </div>
+                    
+                    <div class="app-card">
+                        <i class="fas fa-home"></i>
+                        <h4>Residential</h4>
+                        <p>Reliable power for homes and communities</p>
+                    </div>
+                    
+                    <div class="app-card">
+                        <i class="fas fa-hospital"></i>
+                        <h4>Healthcare</h4>
+                        <p>Critical power for medical facilities</p>
+                    </div>
+                    
+                    <div class="app-card">
+                        <i class="fas fa-shopping-cart"></i>
+                        <h4>Commercial</h4>
+                        <p>Supporting businesses and retail</p>
+                    </div>
+                    
+                    <div class="app-card">
+                        <i class="fas fa-tractor"></i>
+                        <h4>Agriculture</h4>
+                        <p>Power for irrigation and processing</p>
                     </div>
                 </div>
-                <div class="faq-item animate delay-2">
-                    <div class="faq-question">
-                        <span>How much maintenance do the wind turbines require?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>The MSE WindStream turbines require minimal maintenance. We recommend an annual inspection by a qualified technician. The sealed bearings are designed to last 10+ years before needing replacement.</p>
-                    </div>
-                </div>
-                <div class="faq-item animate delay-3">
-                    <div class="faq-question">
-                        <span>Can the battery systems be expanded?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes, our MSE PowerVault systems are modular and can be expanded in 5kWh increments up to 30kWh total capacity. Additional battery modules can be added at any time.</p>
-                    </div>
-                </div>
-                <div class="faq-item animate delay-1">
-                    <div class="faq-question">
-                        <span>Do you offer installation services?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes, we have a network of certified installers across the country. Installation can be arranged through our sales team and is typically completed within 2-4 weeks of order confirmation.</p>
-                    </div>
-                </div>
-                <div class="faq-item animate delay-2">
-                    <div class="faq-question">
-                        <span>What financing options are available?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>We offer several financing options including 0% interest plans for 12 months, 5-year loans with competitive rates, and lease-to-own programs. Government incentives and rebates may also be available in your area.</p>
-                    </div>
-                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Power Your Future?</h2>
+                <p>Contact our experts to discuss how Mahashakti Energy solutions can transform your energy infrastructure</p>
+                <a href="contact.html" class="btn">Get in Touch</a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contact">
+    <footer>
+        <div class="footer-pattern"></div>
         <div class="container">
             <div class="footer-container">
-                <!-- Quick Links Column -->
+                <div class="footer-col">
+                    <div class="logo-text">MAHASHAKTI <span>ENERGY</span></div>
+                    <p>Leading energy solutions provider powering Nigeria's future since 2008 with reliable and efficient power systems.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
                 <div class="footer-col">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="service.html">Services</a></li>
-                        <li><a href="product.html">Products</a></li>
-                        <li><a href="global.html">Foreign Collaboration</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="service.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="product.html"><i class="fas fa-chevron-right"></i> Products</a></li>
+                        <li><a href="golbal.html"><i class="fas fa-chevron-right"></i> Global</a></li>
                     </ul>
                 </div>
                 
-                <!-- Services Column -->
                 <div class="footer-col">
-                    <h3>Our Services</h3>
+                    <h3>Our Products</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Solar Power Systems</a></li>
-                        <li><a href="#">Wind Energy Solutions</a></li>
-                        <li><a href="#">Energy Storage</a></li>
-                        <li><a href="#">Commercial Projects</a></li>
-                        <li><a href="#">Residential Solutions</a></li>
-                        <li><a href="#">Energy Consulting</a></li>
+                        <li><a href="#smart-meter-detail"><i class="fas fa-chevron-right"></i> Smart Meters</a></li>
+                        <li><a href="#transformer-detail"><i class="fas fa-chevron-right"></i> Transformers</a></li>
+                        <li><a href="#substation-detail"><i class="fas fa-chevron-right"></i> Compact Substations</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Switchgear</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Power Capacitors</a></li>
                     </ul>
                 </div>
                 
-                <!-- Resources Column -->
                 <div class="footer-col">
-                    <h3>Resources</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">News & Media</a></li>
-                        <li><a href="#">Case Studies</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Sustainability Reports</a></li>
-                        <li><a href="#">Blog</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Contact Us Column -->
-                <div class="footer-col contact-col">
                     <h3>Contact Us</h3>
-                    <div class="contact-info">
-                        <p><i class="fas fa-map-marker-alt"></i> 123 Energy Park, Mumbai, India</p>
-                        <p><i class="fas fa-phone-alt"></i> +91 98765 43210</p>
-                        <p><i class="fas fa-envelope"></i> info@mahashakti.com</p>
-                        <p><i class="fas fa-clock"></i> Mon-Fri: 9AM - 6PM</p>
-                        <p><i class="fas fa-globe"></i> www.mahashaktienergy.com</p>
-                    </div>
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    </div>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> 123 Energy Street, Lagos, Nigeria</a></li>
+                        <li><a href="tel:+2348123456789"><i class="fas fa-phone"></i> +234 812 345 6789</a></li>
+                        <li><a href="mailto:info@mahashaktienergy.com"><i class="fas fa-envelope"></i> info@mahashaktienergy.com</a></li>
+                        <li><a href="#"><i class="fas fa-clock"></i> Mon-Fri: 8AM - 6PM</a></li>
+                    </ul>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <p class="copyright">&copy; 2023 MahaShakti Energy. All Rights Reserved. | 
-                    <a href="#" style="color: rgba(255,255,255,0.7);">Privacy Policy</a> | 
-                    <a href="#" style="color: rgba(255,255,255,0.7);">Terms of Service</a>
-                </p>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Mahashakti Energy Pvt Limited. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: var(--secondary);"></i> for Nigeria's Energy Future</p>
             </div>
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <div class="back-to-top" id="backToTop">
-        <i class="fas fa-arrow-up"></i>
-    </div>
-
     <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navMenu = document.getElementById('navMenu');
+        // Mobile Navigation Toggle
+        const mobileToggle = document.querySelector('.mobile-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        const mobileToggleIcon = document.getElementById('mobileToggleIcon');
         
-        mobileMenuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('show');
-            mobileMenuBtn.innerHTML = navMenu.classList.contains('show') 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            if (navMenu.classList.contains('active')) {
+                mobileToggleIcon.classList.remove('fa-bars');
+                mobileToggleIcon.classList.add('fa-times');
+            } else {
+                mobileToggleIcon.classList.remove('fa-times');
+                mobileToggleIcon.classList.add('fa-bars');
+            }
         });
-
-        // FAQ Accordion
-        const faqQuestions = document.querySelectorAll('.faq-question');
         
-        faqQuestions.forEach(question => {
-            question.addEventListener('click', () => {
-                const answer = question.nextElementSibling;
-                const icon = question.querySelector('i');
-                
-                answer.classList.toggle('active');
-                icon.classList.toggle('fa-chevron-down');
-                icon.classList.toggle('fa-chevron-up');
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileToggleIcon.classList.remove('fa-times');
+                mobileToggleIcon.classList.add('fa-bars');
             });
         });
-
-        // Theme Toggle
+        
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 90,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.05)';
+                header.style.backdropFilter = 'blur(10px)';
+            }
+        });
+        
+        // Dark/Light Mode Toggle
         const themeToggle = document.getElementById('themeToggle');
-        const body = document.body;
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
         
-        // Check for saved theme preference or use preferred color scheme
-        const currentTheme = localStorage.getItem('theme') || 
-                            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        
-        // Apply the current theme
-        if (currentTheme === 'dark') {
-            body.setAttribute('data-theme', 'dark');
+        // Set initial theme
+        if (prefersDarkScheme.matches) {
+            document.body.classList.add('dark-mode');
         }
         
         themeToggle.addEventListener('click', () => {
-            if (body.getAttribute('data-theme')) {
-                body.removeAttribute('data-theme');
-                localStorage.setItem('theme', 'light');
-            } else {
-                body.setAttribute('data-theme', 'dark');
-                localStorage.setItem('theme', 'dark');
-            }
-        });
-
-        // Back to Top Button
-        const backToTopBtn = document.getElementById('backToTop');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopBtn.classList.add('active');
-            } else {
-                backToTopBtn.classList.remove('active');
-            }
+            document.body.classList.toggle('dark-mode');
         });
         
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Scroll Animation
-        const animateElements = document.querySelectorAll('.animate');
+        // Animation on scroll
+        const animatedElements = document.querySelectorAll('.animated');
         
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = 1;
+                    entry.target.style.animationPlayState = 'running';
+                    entry.target.style.opacity = '1';
                 }
             });
         }, {
             threshold: 0.1
         });
         
-        animateElements.forEach(element => {
+        animatedElements.forEach(element => {
+            element.style.opacity = '0';
             observer.observe(element);
         });
-
-        // Close mobile menu when clicking on a link
-        const navLinks = document.querySelectorAll('nav ul li a');
         
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                if (navMenu.classList.contains('show')) {
-                    navMenu.classList.remove('show');
-                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                }
+        // Product category filtering
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const productCards = document.querySelectorAll('.product-card');
+        
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                const category = btn.dataset.category;
+                
+                // Filter products
+                productCards.forEach(card => {
+                    if (category === 'all' || card.dataset.category === category) {
+                        card.classList.add('active');
+                    } else {
+                        card.classList.remove('active');
+                    }
+                });
             });
         });
     </script>

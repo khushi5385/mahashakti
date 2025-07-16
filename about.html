@@ -3,1133 +3,1088 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | MahaShakti Energy | Sustainable Power Solutions</title>
+    <title>About Us | Mahashakti Energy</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <style>
+        :root {
+            --primary: #0a4d7a;
+            --secondary: #f39c12;
+            --accent: #27ae60;
+            --light: #f5f5f5;
+            --dark: #121212;
+            --gray: #777;
+            --shadow: 0 5px 15px rgba(0,0,0,0.1);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --bg-color: #ffffff;
+            --text-color: #333;
+            --card-bg: #ffffff;
+            --header-bg: rgba(255, 255, 255, 0.95);
+            --footer-bg: #222;
+            --gradient: linear-gradient(135deg, var(--primary), #08385a);
+        }
+
+        .dark-mode {
+            --primary: #4da6ff;
+            --secondary: #ffb733;
+            --accent: #2ecc71;
+            --light: #1a1a1a;
+            --dark: #f0f0f0;
+            --gray: #aaa;
+            --shadow: 0 5px 15px rgba(0,0,0,0.4);
+            --bg-color: #121212;
+            --text-color: #f0f0f0;
+            --card-bg: #1e1e1e;
+            --header-bg: rgba(26, 26, 26, 0.95);
+            --footer-bg: #111;
+            --gradient: linear-gradient(135deg, #0a4d7a, #08385a);
+        }
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
-        :root {
-            /* Match Homepage Color Scheme */
-            --primary: #3a86ff;
-            --primary-light: #5d9cff;
-            --primary-dark: #2667cc;
-            --secondary: #ffbe0b;
-            --secondary-light: #ffd166;
-            --secondary-dark: #e6a800;
-            --accent: #8338ec;
-            --accent-light: #9d5bec;
-            --accent-dark: #6a2bc2;
-            --dark: #212529;
-            --darker: #1a1e21;
-            --light: #f8f9fa;
-            --lighter: #ffffff;
-            --text: #333;
-            --text-light: #666;
-            --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
-            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
-            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.16);
-            --gradient-primary: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            --gradient-secondary: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
-            --gradient-accent: linear-gradient(135deg, var(--accent), var(--accent-dark));
-            --gradient-dark: linear-gradient(135deg, var(--dark), var(--darker));
-            --hero-bg-image-light: url('https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
-            --hero-bg-image-dark: url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
-        }
-
-        /* Dark Theme - Matches Homepage */
-        [data-theme="dark"] {
-            --primary: #4cc9f0;
-            --primary-light: #6fd8f8;
-            --primary-dark: #2da5c9;
-            --secondary: #f72585;
-            --secondary-light: #ff4d9e;
-            --secondary-dark: #d61a6f;
-            --accent: #7209b7;
-            --accent-light: #8a2be2;
-            --accent-dark: #5a0a9a;
-            --dark: #e9ecef;
-            --darker: #ced4da;
-            --light: #121212;
-            --lighter: #1e1e1e;
-            --text: #f8f9fa;
-            --text-light: #adb5bd;
-            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
-            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
-            --gradient-dark: linear-gradient(135deg, #121212, #000);
-        }
-
-        html, body {
-            width: 100%;
-            overflow-x: hidden;
-            max-width: 100%;
-        }
-
+        
         body {
             font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            background-color: var(--light);
-            scroll-behavior: smooth;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            overflow-x: hidden;
             transition: background-color 0.5s ease, color 0.5s ease;
         }
-
+        
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Poppins', sans-serif;
             font-weight: 700;
-            margin-bottom: 1.25rem;
-            color: var(--dark);
+            margin-bottom: 1rem;
+            color: var(--primary);
             line-height: 1.2;
         }
-
-        p {
-            margin-bottom: 1rem;
-            color: var(--text-light);
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
         }
-
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
         .container {
-            width: 100%;
+            width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 0 15px;
         }
-
-        .section {
-            padding: 5rem 0;
-            position: relative;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 3.5rem;
-        }
-
-        .section-header h2 {
-            font-size: 2.75rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-header h2::after {
-            content: '';
-            position: absolute;
-            bottom: -1rem;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 5rem;
-            height: 0.25rem;
-            background: var(--primary);
-            border-radius: 0.125rem;
-        }
-
+        
         .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--gradient-primary);
-            color: var(--lighter);
-            padding: 0.875rem 2rem;
-            border-radius: 2rem;
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition);
+            display: inline-block;
+            padding: 14px 32px;
+            background: var(--secondary);
+            color: white;
             border: none;
-            cursor: pointer;
-            font-size: 1rem;
+            border-radius: 50px;
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: var(--shadow-sm);
+            letter-spacing: 1.5px;
+            transition: var(--transition);
+            cursor: pointer;
+            font-size: 15px;
+            box-shadow: 0 4px 12px rgba(243, 156, 18, 0.25);
             position: relative;
             overflow: hidden;
             z-index: 1;
         }
-
-        .btn::before {
+        
+        .btn:before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
+            width: 0%;
             height: 100%;
-            background: var(--gradient-dark);
-            opacity: 0;
-            z-index: -1;
+            background: rgba(255,255,255,0.2);
             transition: var(--transition);
+            z-index: -1;
         }
-
+        
+        .btn:hover:before {
+            width: 100%;
+        }
+        
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(243, 156, 18, 0.4);
         }
-
-        .btn:hover::before {
-            opacity: 1;
-        }
-
-        .btn-secondary {
-            background: var(--gradient-secondary);
-        }
-
-        .btn-secondary::before {
-            background: var(--gradient-dark);
-        }
-
-        .btn-accent {
-            background: var(--gradient-accent);
-            color: var(--lighter);
-        }
-
-        .btn-accent::before {
-            background: var(--gradient-dark);
-        }
-
-        /* Theme Toggle */
-        .theme-toggle {
-            position: relative;
-            width: 60px;
-            height: 30px;
+        
+        .btn-primary {
             background: var(--primary);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            transition: background 0.3s ease;
-            margin-left: 1rem;
+            box-shadow: 0 4px 12px rgba(10, 77, 122, 0.25);
         }
-
-        .theme-toggle:hover {
-            background: var(--primary-dark);
+        
+        .btn-primary:hover {
+            box-shadow: 0 8px 20px rgba(10, 77, 122, 0.4);
         }
-
-        .toggle-handle {
+        
+        section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.8rem;
+            text-transform: capitalize;
+            margin-bottom: 20px;
+        }
+        
+        .section-title p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            color: var(--gray);
+        }
+        
+        .section-title:after {
+            content: '';
             position: absolute;
-            width: 24px;
-            height: 24px;
-            background: var(--lighter);
-            border-radius: 50%;
-            left: 4px;
-            transition: transform 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background: var(--secondary);
+            border-radius: 3px;
         }
-
-        [data-theme="dark"] .toggle-handle {
-            transform: translateX(28px);
-        }
-
-        .toggle-handle i {
-            color: var(--primary);
-        }
-
-        /* Header Styles */
+        
+        /* Header */
         header {
-            background-color: rgba(255, 255, 255, 0.98);
-            box-shadow: var(--shadow-sm);
+            background-color: var(--header-bg);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            backdrop-filter: blur(8px);
-            transition: var(--transition);
+            transition: all 0.5s ease;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
         }
-
-        [data-theme="dark"] header {
-            background-color: rgba(30, 30, 30, 0.98);
-        }
-
+        
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 0;
+            padding: 20px 0;
         }
-
+        
         .logo {
             display: flex;
             align-items: center;
-            text-decoration: none;
+            gap: 15px;
         }
-
+        
         .logo-icon {
-            background: var(--gradient-primary);
-            width: 3rem;
-            height: 3rem;
-            border-radius: 0.75rem;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--lighter);
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-right: 0.75rem;
-            transition: var(--transition);
+            color: white;
+            font-size: 24px;
+            box-shadow: 0 4px 10px rgba(10, 77, 122, 0.3);
         }
-
-        .logo:hover .logo-icon {
-            transform: rotate(15deg) scale(1.1);
-        }
-
+        
         .logo-text {
-            font-size: 1.625rem;
+            font-size: 26px;
             font-weight: 800;
             color: var(--primary);
-            letter-spacing: -0.5px;
+            letter-spacing: 1px;
         }
-
+        
         .logo-text span {
             color: var(--secondary);
         }
-
-        nav {
-            display: flex;
-            align-items: center;
-        }
-
-        nav ul {
+        
+        .nav-menu {
             display: flex;
             list-style: none;
+            align-items: center;
+            gap: 30px;
         }
-
-        nav ul li {
-            margin-left: 1.5rem;
+        
+        .nav-menu li a {
+            font-weight: 600;
             position: relative;
+            padding: 5px 0;
+            font-size: 17px;
         }
-
-        nav ul li a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            transition: var(--transition);
-            position: relative;
-            padding: 0.5rem 0.25rem;
-            font-size: 1rem;
-        }
-
-        [data-theme="dark"] nav ul li a {
-            color: var(--darker);
-        }
-
-        nav ul li a:hover {
-            color: var(--primary);
-        }
-
-        nav ul li a::after {
+        
+        .nav-menu li a:after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
             width: 0;
-            height: 0.1875rem;
-            background: var(--primary);
+            height: 3px;
+            background: var(--secondary);
             transition: var(--transition);
-            border-radius: 0.125rem;
+            border-radius: 2px;
         }
-
-        nav ul li a:hover::after {
+        
+        .nav-menu li a:hover:after,
+        .nav-menu li a.active:after {
             width: 100%;
         }
-
-        .mobile-menu-btn {
+        
+        .mobile-toggle {
             display: none;
-            font-size: 1.75rem;
+            font-size: 28px;
             cursor: pointer;
-            color: var(--dark);
-            z-index: 1001;
-            transition: var(--transition);
-            margin-left: 1.5rem;
-        }
-
-        [data-theme="dark"] .mobile-menu-btn {
-            color: var(--darker);
-        }
-
-        .mobile-menu-btn:hover {
             color: var(--primary);
         }
-
-        /* Hero Section for About Page */
-        .about-hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)), var(--hero-bg-image-light);
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            height: 70vh;
-            min-height: 500px;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            color: var(--lighter);
-            padding-top: 5rem;
+        
+        /* Theme Toggle */
+        .theme-toggle {
+            width: 60px;
+            height: 30px;
+            background: var(--light);
+            border-radius: 50px;
             position: relative;
-            overflow: hidden;
+            cursor: pointer;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
         }
-
-        [data-theme="dark"] .about-hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)), var(--hero-bg-image-dark);
-        }
-
-        .about-hero::before {
+        
+        .theme-toggle:before {
             content: '';
             position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 10rem;
-            background: linear-gradient(to top, var(--light), transparent);
-            z-index: 1;
-        }
-
-        .about-hero-content {
-            max-width: 56.25rem;
-            margin: 0 auto;
-            padding: 0 1.25rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .about-hero h1 {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-            color: var(--lighter);
-            line-height: 1.15;
-            text-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.2);
-        }
-
-        .about-hero p {
-            font-size: 1.4rem;
-            margin-bottom: 2.5rem;
-            opacity: 0.9;
-            max-width: 43.75rem;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* About Company Section */
-        .company-story {
-            background-color: var(--lighter);
-            padding: 6rem 0;
-        }
-
-        .story-content {
-            display: flex;
-            align-items: center;
-            gap: 3.75rem;
-        }
-
-        .story-text {
-            flex: 1;
-        }
-
-        .story-text h2 {
-            font-size: 2.75rem;
-            margin-bottom: 1.5rem;
-            color: var(--dark);
-        }
-
-        .story-image {
-            flex: 1;
-            border-radius: 1.25rem;
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-            transform: rotate(2deg);
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .story-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-primary);
-            opacity: 0.1;
-            z-index: 1;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--secondary);
+            top: 3px;
+            left: 3px;
             transition: var(--transition);
         }
-
-        .story-image:hover {
-            transform: rotate(0);
+        
+        .dark-mode .theme-toggle:before {
+            left: 33px;
+            background: var(--primary);
         }
-
-        .story-image:hover::before {
-            opacity: 0;
-        }
-
-        .story-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: var(--transition);
-            filter: brightness(0.95);
-        }
-
-        [data-theme="dark"] .story-image img {
-            filter: brightness(0.85) contrast(1.1);
-        }
-
-        .story-image:hover img {
-            transform: scale(1.05);
-        }
-
-        /* Mission and Vision Section */
-        .mission-vision {
-            background: linear-gradient(to bottom, var(--light), rgba(233, 245, 240, 0.7));
-            padding: 6rem 0;
-        }
-
-        [data-theme="dark"] .mission-vision {
-            background: linear-gradient(to bottom, var(--light), rgba(10, 31, 21, 0.7));
-        }
-
-        .mv-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .mv-card {
-            background: var(--lighter);
-            padding: 3rem 2.5rem;
-            border-radius: 1.25rem;
-            box-shadow: var(--shadow-md);
-            transition: var(--transition);
+        
+        /* Parallax Hero */
+        .parallax-hero {
+            height: 80vh;
+            min-height: 600px;
             position: relative;
             overflow: hidden;
-            text-align: center;
-        }
-
-        .mv-card:hover {
-            transform: translateY(-0.75rem);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .mv-icon {
-            width: 6rem;
-            height: 6rem;
-            margin: 0 auto 1.5rem;
+            padding-top: 120px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: var(--gradient-primary);
-            color: var(--lighter);
-            border-radius: 50%;
-            font-size: 2.5rem;
+            text-align: center;
+        }
+        
+        .parallax-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 120%;
+            background: url('https://images.unsplash.com/photo-1558442074-3c19857bc1dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            transform: translate3d(0,0,0);
+            will-change: transform;
+            z-index: -2;
+        }
+        
+        .parallax-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient);
+            opacity: 0.92;
+            z-index: -1;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            color: white;
+            position: relative;
+            z-index: 2;
+            padding: 0 20px;
+        }
+        
+        .hero-content h1 {
+            font-size: 4.2rem;
+            margin-bottom: 25px;
+            color: white;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            line-height: 1.1;
+        }
+        
+        .hero-content p {
+            font-size: 1.4rem;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            font-size: 1.1rem;
+            margin-top: 20px;
+        }
+        
+        .breadcrumb a {
+            opacity: 0.8;
             transition: var(--transition);
         }
-
-        .mv-card:hover .mv-icon {
-            transform: rotate(15deg) scale(1.1);
+        
+        .breadcrumb a:hover {
+            opacity: 1;
+            color: var(--secondary);
         }
-
-        .mv-card h3 {
-            font-size: 1.75rem;
-            margin-bottom: 1rem;
+        
+        .breadcrumb span {
+            opacity: 0.7;
+        }
+        
+        /* About Company */
+        .about-company {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .about-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
             color: var(--primary);
         }
-
-        /* Values Section */
-        .values {
-            background-color: var(--lighter);
-            padding: 6rem 0;
+        
+        .about-content p {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            color: var(--gray);
         }
-
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .value-card {
-            background: var(--lighter);
-            padding: 2.5rem 1.875rem;
-            border-radius: 1rem;
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
-            text-align: center;
-            border: 1px solid rgba(0, 0, 0, 0.05);
+        
+        .about-img {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
             position: relative;
-            z-index: 1;
+            height: 500px;
+            perspective: 1000px;
         }
-
-        [data-theme="dark"] .value-card {
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        
+        .about-img-inner {
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80') no-repeat center center/cover;
+            transition: transform 0.5s ease;
+            transform-style: preserve-3d;
+            will-change: transform;
         }
-
-        .value-card:hover {
-            transform: translateY(-1rem);
-            box-shadow: var(--shadow-lg);
-            border-color: transparent;
+        
+        .about-img:hover .about-img-inner {
+            transform: rotateY(5deg) rotateX(5deg) scale(1.05);
         }
-
-        .value-card::before {
+        
+        .about-img:before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 0;
-            background: var(--gradient-primary);
-            transition: var(--transition);
-            z-index: -1;
-            opacity: 0;
-        }
-
-        .value-card:hover::before {
             height: 100%;
-            opacity: 1;
+            background: var(--gradient);
+            opacity: 0.1;
+            z-index: 1;
         }
-
-        .value-card:hover h3,
-        .value-card:hover p,
-        .value-card:hover .value-icon {
-            color: var(--lighter);
+        
+        /* Stats Section */
+        .stats-section {
+            background: var(--gradient);
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
         }
-
-        .value-icon {
-            font-size: 3rem;
+        
+        .stats-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1558442074-3c19857bc1dc?ixlib=rb-4.0.3') no-repeat center center/cover;
+            opacity: 0.1;
+            z-index: 1;
+        }
+        
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 40px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .stat-item {
+            flex: 1;
+            min-width: 220px;
+            padding: 20px;
+            perspective: 1000px;
+        }
+        
+        .stat-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.8s;
+        }
+        
+        .stat-item:hover .stat-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .stat-front, .stat-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .stat-back {
+            transform: rotateY(180deg);
+            background: rgba(10, 77, 122, 0.8);
+        }
+        
+        .stat-item .number {
+            font-size: 4.5rem;
+            font-weight: 800;
+            color: var(--secondary);
+            line-height: 1;
+            margin-bottom: 15px;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .stat-item .label {
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            opacity: 0.9;
+        }
+        
+        .stat-back p {
+            font-size: 1rem;
+            margin-top: 15px;
+            opacity: 0.9;
+        }
+        
+        /* Mission Vision */
+        .mission-vision {
+            background: var(--light);
+            position: relative;
+        }
+        
+        .mv-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+        
+        .mv-card {
+            background: var(--card-bg);
+            padding: 50px 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(10, 77, 122, 0.1);
+        }
+        
+        .mv-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .mv-icon {
+            font-size: 70px;
+            color: var(--secondary);
+            margin-bottom: 25px;
+            transition: var(--transition);
+        }
+        
+        .mv-card:hover .mv-icon {
+            transform: scale(1.1);
+        }
+        
+        .mv-card h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
             color: var(--primary);
-            margin-bottom: 1.5rem;
+        }
+        
+        .mv-card p {
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+        
+        /* Values Section */
+        .values {
+            background: var(--bg-color);
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+        }
+        
+        .value-card {
+            background: var(--card-bg);
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(10, 77, 122, 0.1);
+        }
+        
+        .value-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 0;
+            background: var(--secondary);
             transition: var(--transition);
         }
-
+        
+        .value-card:hover:before {
+            height: 100%;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .value-icon {
+            font-size: 50px;
+            color: var(--secondary);
+            margin-bottom: 25px;
+            transition: var(--transition);
+        }
+        
+        .value-card:hover .value-icon {
+            transform: scale(1.1);
+        }
+        
         .value-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            transition: var(--transition);
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--primary);
         }
-
+        
         .value-card p {
-            color: var(--text-light);
-            transition: var(--transition);
+            color: var(--gray);
+            font-size: 17px;
         }
-
+        
         /* Team Section */
         .team {
-            background: linear-gradient(to bottom, var(--light), rgba(233, 245, 240, 0.7));
-            padding: 6rem 0;
+            background: var(--light);
         }
-
-        [data-theme="dark"] .team {
-            background: linear-gradient(to bottom, var(--light), rgba(10, 31, 21, 0.7));
-        }
-
+        
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 35px;
         }
-
+        
         .team-member {
-            background: var(--lighter);
-            border-radius: 1.25rem;
+            background: var(--card-bg);
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow);
             transition: var(--transition);
             text-align: center;
+            position: relative;
+            transform-style: preserve-3d;
         }
-
+        
         .team-member:hover {
-            transform: translateY(-0.75rem);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-15px) rotateY(5deg);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.15);
         }
-
-        .member-image {
-            width: 100%;
-            height: 300px;
+        
+        .member-img {
+            height: 320px;
             overflow: hidden;
+            position: relative;
         }
-
-        .member-image img {
+        
+        .member-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: var(--transition);
-            filter: brightness(0.95);
         }
-
-        [data-theme="dark"] .member-image img {
-            filter: brightness(0.85) contrast(1.1);
-        }
-
-        .team-member:hover .member-image img {
+        
+        .team-member:hover .member-img img {
             transform: scale(1.1);
         }
-
+        
         .member-info {
-            padding: 1.5rem;
+            padding: 30px 20px;
         }
-
+        
         .member-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--dark);
-        }
-
-        .member-info p {
+            font-size: 22px;
+            margin-bottom: 8px;
             color: var(--primary);
-            font-weight: 500;
-            margin-bottom: 1rem;
         }
-
-        .member-social {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .member-social a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 2.5rem;
-            height: 2.5rem;
-            background: rgba(58, 134, 255, 0.1);
-            border-radius: 50%;
-            color: var(--primary);
-            transition: var(--transition);
-        }
-
-        .member-social a:hover {
-            background: var(--primary);
-            color: var(--lighter);
-            transform: translateY(-0.25rem);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--dark);
-            color: var(--lighter);
-            padding: 5rem 0 0;
-            position: relative;
-        }
-
-        [data-theme="dark"] footer {
-            background: #121212;
-        }
-
-        .footer-container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .footer-col {
-            padding: 0 0.5rem;
-        }
-
-        .footer-col h3 {
-            color: var(--lighter);
-            font-size: 1.4rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-            padding-bottom: 0.625rem;
-        }
-
-        .footer-col h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 2.5rem;
-            height: 0.25rem;
-            background: var(--primary);
-            border-radius: 0.125rem;
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.75rem;
-        }
-
-        .footer-links li a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            transition: var(--transition);
+        
+        .member-position {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 15px;
             display: block;
-            font-size: 1.05rem;
-            position: relative;
-            padding-left: 1.25rem;
         }
-
-        .footer-links li a::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            opacity: 0;
-            transition: var(--transition);
+        
+        .member-info p {
+            color: var(--gray);
+            margin-bottom: 20px;
+            font-size: 16px;
         }
-
-        .footer-links li a:hover {
-            color: var(--accent-light);
-            transform: translateX(0.5rem);
-        }
-
-        .footer-links li a:hover::before {
-            opacity: 1;
-            left: -0.5rem;
-        }
-
-        .contact-col .contact-info {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 1.05rem;
-            line-height: 1.8;
-        }
-
-        .contact-col .contact-info p {
-            margin-bottom: 1.25rem;
-            display: flex;
-            align-items: flex-start;
-        }
-
-        .contact-col .contact-info i {
-            margin-right: 0.625rem;
-            color: var(--primary);
-            font-size: 1.2rem;
-            margin-top: 0.25rem;
-            min-width: 1.5rem;
-        }
-
+        
         .social-links {
             display: flex;
-            gap: 1rem;
-            margin-top: 1.75rem;
-            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
         }
-
+        
         .social-links a {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 3rem;
-            height: 3rem;
-            background: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            background: var(--light);
             border-radius: 50%;
-            color: var(--lighter);
             transition: var(--transition);
-            font-size: 1.5rem;
+            color: var(--primary);
         }
-
+        
         .social-links a:hover {
             background: var(--primary);
-            transform: translateY(-0.25rem);
+            color: white;
+            transform: translateY(-5px);
         }
-
-        .footer-bottom {
-            background: rgba(0, 0, 0, 0.2);
-            padding: 1.5rem 0;
-            text-align: center;
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 80px 0;
+            background: var(--bg-color);
         }
-
-        [data-theme="dark"] .footer-bottom {
-            background: rgba(0, 0, 0, 0.4);
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 4px;
+            height: 100%;
+            background: var(--primary);
+            transform: translateX(-50%);
         }
-
-        .copyright {
-            font-size: 1rem;
-            opacity: 0.7;
+        
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding: 20px 40px;
         }
-
-        /* FIXED: Horizontal Footer for Mobile */
-        @media (max-width: 768px) {
-            footer {
-                padding: 3rem 0 0;
-            }
-            
-            .footer-container {
-                display: flex;
-                flex-direction: row;
-                overflow-x: auto;
-                scroll-snap-type: x mandatory;
-                scrollbar-width: none;
-                -ms-overflow-style: none;
-                padding-bottom: 1.5rem;
-                margin-bottom: 2rem;
-                gap: 0;
-            }
-            
-            .footer-container::-webkit-scrollbar {
-                display: none;
-            }
-            
-            .footer-col {
-                flex: 0 0 90%;
-                scroll-snap-align: start;
-                padding: 0 1.5rem;
-                min-height: 100%;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-            }
-            
-            .footer-col h3 {
-                font-size: 1.5rem;
-                padding-bottom: 0.5rem;
-                margin-bottom: 1.2rem;
-            }
-            
-            .footer-col h3::after {
-                width: 2rem;
-                height: 0.2rem;
-            }
-            
-            .footer-links {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-            }
-            
-            .footer-links li {
-                margin-bottom: 0.5rem;
-            }
-            
-            .footer-links li a {
-                font-size: 1rem;
-                padding: 0.5rem 0;
-            }
-            
-            .contact-col .contact-info p {
-                margin-bottom: 0.8rem;
-                font-size: 0.95rem;
-                display: flex;
-                align-items: center;
-                flex-wrap: wrap;
-            }
-            
-            .contact-col .contact-info i {
-                font-size: 1.1rem;
-                min-width: 1.3rem;
-                margin-right: 0.5rem;
-                margin-top: 0;
-            }
-            
-            .social-links {
-                justify-content: flex-start;
-                margin-top: 1.5rem;
-                gap: 0.8rem;
-            }
-            
-            .social-links a {
-                width: 2.8rem;
-                height: 2.8rem;
-                font-size: 1.4rem;
-            }
-            
-            .footer-bottom {
-                padding: 1.5rem 1rem;
-            }
-            
-            .copyright {
-                font-size: 0.9rem;
-            }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
         }
-
-        @media (max-width: 992px) {
-            .story-content {
-                flex-direction: column;
-            }
-            
-            .story-image {
-                margin-top: 3rem;
-                max-width: 80%;
-            }
-            
-            .footer-container {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1.5rem;
-            }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
         }
-
-        @media (max-width: 768px) {
-            /* Header adjustments */
-            nav ul {
-                display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100vh;
-                background: rgba(26, 58, 95, 0.98);
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                padding: 1.25rem 0;
-                z-index: 999;
-                transform: translateY(-100%);
-                transition: var(--transition);
-            }
-            
-            [data-theme="dark"] nav ul {
-                background: rgba(18, 18, 18, 0.98);
-            }
-            
-            nav ul.show {
-                transform: translateY(0);
-                display: flex;
-            }
-            
-            nav ul li {
-                margin: 1.25rem 0;
-                width: 100%;
-                text-align: center;
-            }
-            
-            nav ul li a {
-                font-size: 1.5rem;
-                color: var(--lighter);
-                padding: 1rem 1.5rem;
-                display: block;
-                transition: all 0.3s ease;
-            }
-            
-            nav ul li a:hover {
-                background: rgba(255, 255, 255, 0.1);
-                border-radius: 0.5rem;
-            }
-            
-            .header-container {
-                padding: 0.8rem 1rem;
-            }
-            
-            .logo-text {
-                font-size: 1.4rem;
-            }
-            
-            .logo-icon {
-                width: 2.5rem;
-                height: 2.5rem;
-                font-size: 1rem;
-            }
-            
-            .theme-toggle {
-                width: 50px;
-                height: 25px;
-                margin-left: 1rem;
-            }
-            
-            .toggle-handle {
-                width: 20px;
-                height: 20px;
-            }
-            
-            [data-theme="dark"] .toggle-handle {
-                transform: translateX(25px);
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-                margin-left: 1rem;
-                font-size: 1.5rem;
-            }
-            
-            .about-hero h1 {
-                font-size: 2.75rem;
-            }
-            
-            .about-hero p {
-                font-size: 1.2rem;
-            }
-            
-            .section-header h2 {
-                font-size: 2.3rem;
-            }
+        
+        .timeline-content {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            position: relative;
         }
-
-        @media (max-width: 576px) {
-            .mv-container, .values-grid, .team-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .about-hero h1 {
-                font-size: 2.25rem;
-            }
-            
-            .about-hero p {
-                font-size: 1.1rem;
-            }
-            
-            .footer-links {
-                grid-template-columns: 1fr;
-            }
-            
-            .social-links {
-                gap: 0.75rem;
-            }
+        
+        .timeline-content:after {
+            content: '';
+            position: absolute;
+            top: 30px;
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            transform: rotate(45deg);
         }
-
-        /* Back to Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 3rem;
-            height: 3rem;
-            background: var(--gradient-primary);
-            color: var(--lighter);
+        
+        .timeline-item:nth-child(odd) .timeline-content:after {
+            right: -10px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content:after {
+            left: -10px;
+        }
+        
+        .timeline-year {
+            position: absolute;
+            top: 20px;
+            width: 80px;
+            height: 80px;
+            background: var(--secondary);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.25rem;
-            box-shadow: var(--shadow-md);
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
+            color: white;
+            font-weight: 700;
+            font-size: 1.5rem;
+            z-index: 1;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-year {
+            right: -40px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-year {
+            left: -40px;
+        }
+        
+        /* Call to Action */
+        .cta-section {
+            padding: 100px 0;
+            background: var(--gradient);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1558442074-3c19857bc1dc?ixlib=rb-4.0.3') no-repeat center center/cover;
+            opacity: 0.1;
+            z-index: 1;
+        }
+        
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-content h2 {
+            font-size: 2.8rem;
+            color: white;
+            margin-bottom: 25px;
+        }
+        
+        .cta-content p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--footer-bg);
+            color: white;
+            padding: 100px 0 0;
+            position: relative;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 30px;
+            font-size: 24px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        .footer-col p {
+            margin-bottom: 25px;
+            font-size: 17px;
+            opacity: 0.8;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links a {
+            color: #bbb;
             transition: var(--transition);
-            z-index: 999;
+            font-size: 17px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
-
-        .back-to-top.active {
-            opacity: 1;
-            visibility: visible;
+        
+        .footer-links a i {
+            color: var(--secondary);
+            transition: var(--transition);
         }
-
-        .back-to-top:hover {
-            transform: translateY(-0.5rem);
-            box-shadow: var(--shadow-lg);
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
         }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(2rem);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        
+        .footer-links a:hover i {
+            transform: translateX(5px);
         }
-
-        .animate {
-            animation: fadeInUp 0.8s ease-out forwards;
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+            font-size: 20px;
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary);
+            transform: translateY(-8px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 70px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 16px;
+            color: #bbb;
+        }
+        
+        .footer-pattern {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            background: url('https://www.transparenttextures.com/patterns/45-degree-fabric-light.png');
+            z-index: 1;
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+        
+        .animated {
+            animation: fadeIn 1s ease forwards;
             opacity: 0;
         }
-
-        .delay-1 {
-            animation-delay: 0.1s;
+        
+        .float {
+            animation: float 6s ease-in-out infinite;
         }
-
-        .delay-2 {
-            animation-delay: 0.2s;
+        
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            .hero-content h1 {
+                font-size: 3.5rem;
+            }
         }
-
-        .delay-3 {
-            animation-delay: 0.3s;
+        
+        @media (max-width: 991px) {
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 90px;
+                left: -100%;
+                flex-direction: column;
+                background: var(--header-bg);
+                width: 100%;
+                padding: 30px 0;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                transition: var(--transition);
+                gap: 20px;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-menu li {
+                text-align: center;
+            }
+            
+            .theme-toggle {
+                margin: 20px auto 0;
+            }
+            
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline:before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-year,
+            .timeline-item:nth-child(even) .timeline-year {
+                left: 0;
+                top: 20px;
+            }
+            
+            .timeline-content:after {
+                left: -10px;
+                right: auto;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .stat-item {
+                min-width: 100%;
+            }
+            
+            .mv-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .logo-text {
+                font-size: 22px;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .stat-item .number {
+                font-size: 3.5rem;
+            }
         }
     </style>
 </head>
@@ -1137,89 +1092,208 @@
     <!-- Header -->
     <header>
         <div class="container header-container">
-            <a href="index.html" class="logo">
-                <div class="logo-icon">MSE</div>
-                <div class="logo-text">MAHA<span>SHAKTI</span></div>
-            </a>
-            <nav>
-                <ul id="navMenu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html" class="active">About</a></li>
-                    <li><a href="service.html">Services</a></li>
-                    <li><a href="product.html">Products</a></li>
-                    <li><a href="global.html">Foreign Collaboration</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-                
-                <!-- Theme Toggle Button -->
-                <div class="theme-toggle" id="themeToggle">
-                    <div class="toggle-handle">
-                        <i class="fas fa-sun"></i>
-                    </div>
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-bolt"></i>
                 </div>
-                
-                <div class="mobile-menu-btn" id="mobileMenuBtn">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </nav>
+                <div class="logo-text">MAHASHAKTI <span>ENERGY</span></div>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="product.html">Product</a></li>
+                <li><a href="golbal.html">Global</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <div class="theme-toggle" id="themeToggle"></div>
+                </li>
+            </ul>
+            
+            <div class="mobile-toggle">
+                <i id="mobileToggleIcon" class="fas fa-bars"></i>
+            </div>
         </div>
     </header>
 
-    <!-- Hero Section for About Page -->
-    <section class="about-hero">
-        <div class="container about-hero-content animate">
-            <h1>Our Journey Towards a Sustainable Future</h1>
-            <p>Discover the story behind MahaShakti Energy and our commitment to transforming the energy landscape</p>
+    <!-- Parallax Hero -->
+    <section class="parallax-hero" id="hero">
+        <div class="parallax-bg" id="parallaxBg"></div>
+        <div class="parallax-overlay"></div>
+        <div class="hero-content">
+            <h1 data-aos="fade-down">About Mahashakti Energy</h1>
+            <p data-aos="fade-up" data-aos-delay="200">Powering Nigeria's future with sustainable energy solutions since 2008</p>
+            <div class="breadcrumb" data-aos="fade-up" data-aos-delay="400">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <a href="about.html">About Us</a>
+            </div>
         </div>
     </section>
 
-    <!-- Company Story Section -->
-    <section class="company-story">
+    <!-- About Company Section -->
+    <section class="about-company">
         <div class="container">
-            <div class="story-content">
-                <div class="story-text animate">
-                    <h2>Our Story</h2>
-                    <p>Founded in 2010, MahaShakti Energy began with a simple yet powerful vision: to revolutionize the way India generates and consumes energy. What started as a small team of passionate engineers in Mumbai has grown into one of India's leading renewable energy providers.</p>
-                    
-                    <p>Our journey began with the installation of our first solar farm in Maharashtra. Today, we operate across 12 states, powering over 500 industrial units, 200 commercial complexes, and thousands of homes with clean, renewable energy.</p>
-                    
-                    <p>At MahaShakti Energy, we believe that sustainable energy solutions should be accessible, affordable, and reliable. Our team of over 200 dedicated professionals works tirelessly to innovate and implement cutting-edge technologies that drive our mission forward.</p>
-                    
-                    <div style="margin-top: 2.5rem;">
-                        <a href="#contact" class="btn">Join Our Mission</a>
+            <div class="about-grid">
+                <div class="about-content" data-aos="fade-right">
+                    <h2>Our Journey in Powering Nigeria</h2>
+                    <p>Founded in 2008, Mahashakti Energy has grown to become a leading force in Nigeria's energy sector. Our journey began with a simple mission: to provide reliable and sustainable power solutions to communities and industries across Nigeria.</p>
+                    <p>Over the past 15 years, we've expanded our capabilities to include innovative renewable energy solutions, power infrastructure development, and energy efficiency consulting. Today, we serve clients across multiple sectors including manufacturing, healthcare, telecommunications, and government institutions.</p>
+                    <p>At Mahashakti, we believe that reliable energy is the foundation of economic growth and social development. Our dedicated team of engineers, technicians, and energy specialists work tirelessly to deliver solutions that power Nigeria's future.</p>
+                    <a href="service.html" class="btn btn-primary">Our Services</a>
+                </div>
+                <div class="about-img" data-aos="fade-left" data-aos-delay="200">
+                    <div class="about-img-inner"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-container">
+                <div class="stat-item" data-aos="flip-left">
+                    <div class="stat-inner">
+                        <div class="stat-front">
+                            <div class="number">15+</div>
+                            <div class="label">Years Experience</div>
+                        </div>
+                        <div class="stat-back">
+                            <div class="number">15+</div>
+                            <div class="label">Years Experience</div>
+                            <p>Delivering reliable energy solutions since 2008</p>
+                        </div>
                     </div>
                 </div>
-                <div class="story-image animate delay-1">
-                    <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="MahaShakti Energy Team">
+                <div class="stat-item" data-aos="flip-left" data-aos-delay="100">
+                    <div class="stat-inner">
+                        <div class="stat-front">
+                            <div class="number">500+</div>
+                            <div class="label">Projects</div>
+                        </div>
+                        <div class="stat-back">
+                            <div class="number">500+</div>
+                            <div class="label">Projects</div>
+                            <p>Completed across Nigeria and West Africa</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="stat-item" data-aos="flip-left" data-aos-delay="200">
+                    <div class="stat-inner">
+                        <div class="stat-front">
+                            <div class="number">150+</div>
+                            <div class="label">Team Members</div>
+                        </div>
+                        <div class="stat-back">
+                            <div class="number">150+</div>
+                            <div class="label">Team Members</div>
+                            <p>Highly skilled engineers and technicians</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="stat-item" data-aos="flip-left" data-aos-delay="300">
+                    <div class="stat-inner">
+                        <div class="stat-front">
+                            <div class="number">25+</div>
+                            <div class="label">MW Capacity</div>
+                        </div>
+                        <div class="stat-back">
+                            <div class="number">25+</div>
+                            <div class="label">MW Capacity</div>
+                            <p>Installed renewable energy systems</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Mission and Vision Section -->
+    <!-- Mission & Vision Section -->
     <section class="mission-vision">
         <div class="container">
-            <div class="section-header animate">
+            <div class="section-title">
                 <h2>Our Mission & Vision</h2>
-                <p>Driving innovation for a sustainable tomorrow</p>
+                <p>Guiding principles that drive our energy solutions</p>
             </div>
             
-            <div class="mv-container">
-                <div class="mv-card animate">
+            <div class="mv-grid">
+                <div class="mv-card" data-aos="zoom-in">
                     <div class="mv-icon">
                         <i class="fas fa-bullseye"></i>
                     </div>
                     <h3>Our Mission</h3>
-                    <p>To accelerate India's transition to renewable energy through innovative, reliable, and affordable solutions that empower communities, businesses, and industries to thrive sustainably.</p>
+                    <p>To provide innovative, reliable, and sustainable energy solutions that power Nigeria's economic growth while reducing environmental impact. We are committed to delivering exceptional value through cutting-edge technology and unparalleled customer service.</p>
                 </div>
                 
-                <div class="mv-card animate delay-1">
+                <div class="mv-card" data-aos="zoom-in" data-aos-delay="200">
                     <div class="mv-icon">
                         <i class="fas fa-eye"></i>
                     </div>
                     <h3>Our Vision</h3>
-                    <p>To create an energy-independent India powered by 100% renewable sources, where clean energy is accessible to all, and sustainable practices are integrated into every aspect of life.</p>
+                    <p>To be Nigeria's leading energy solutions provider, recognized for excellence in sustainable power generation and distribution. We envision a future where every Nigerian has access to reliable, affordable, and clean energy that drives prosperity and development.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Journey</h2>
+                <p>Key milestones in our company history</p>
+            </div>
+            
+            <div class="timeline-container">
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-year">2008</div>
+                    <div class="timeline-content">
+                        <h3>Company Founded</h3>
+                        <p>Mahashakti Energy established in Lagos with a focus on industrial power solutions.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-year">2012</div>
+                    <div class="timeline-content">
+                        <h3>Renewable Energy Division</h3>
+                        <p>Launched our solar energy division to provide sustainable power solutions.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-year">2015</div>
+                    <div class="timeline-content">
+                        <h3>National Expansion</h3>
+                        <p>Expanded operations to 5 states across Nigeria with regional offices.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-year">2018</div>
+                    <div class="timeline-content">
+                        <h3>ISO Certification</h3>
+                        <p>Achieved ISO 9001 certification for quality management systems.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-year">2021</div>
+                    <div class="timeline-content">
+                        <h3>West Africa Expansion</h3>
+                        <p>Expanded operations to Ghana and Cote d'Ivoire, establishing regional presence.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-year">2023</div>
+                    <div class="timeline-content">
+                        <h3>25MW Milestone</h3>
+                        <p>Surpassed 25MW of installed renewable energy capacity across projects.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1228,42 +1302,58 @@
     <!-- Values Section -->
     <section class="values">
         <div class="container">
-            <div class="section-header animate">
+            <div class="section-title">
                 <h2>Our Core Values</h2>
-                <p>The principles that guide everything we do</p>
+                <p>The foundation of everything we do</p>
             </div>
             
             <div class="values-grid">
-                <div class="value-card animate">
+                <div class="value-card" data-aos="fade-up">
                     <div class="value-icon">
-                        <i class="fas fa-leaf"></i>
+                        <i class="fas fa-shield-alt"></i>
                     </div>
-                    <h3>Sustainability</h3>
-                    <p>We are committed to solutions that protect our environment and preserve resources for future generations.</p>
+                    <h3>Integrity</h3>
+                    <p>We conduct our business with the highest ethical standards, ensuring transparency and accountability.</p>
                 </div>
                 
-                <div class="value-card animate delay-1">
+                <div class="value-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="value-icon">
                         <i class="fas fa-lightbulb"></i>
                     </div>
                     <h3>Innovation</h3>
-                    <p>Continuous research and development drive our cutting-edge renewable energy technologies.</p>
+                    <p>We embrace cutting-edge technologies to address Nigeria's evolving energy challenges.</p>
                 </div>
                 
-                <div class="value-card animate delay-2">
-                    <div class="value-icon">
-                        <i class="fas fa-handshake"></i>
-                    </div>
-                    <h3>Integrity</h3>
-                    <p>We build trust through transparency, ethical practices, and accountability in all our operations.</p>
-                </div>
-                
-                <div class="value-card animate delay-3">
+                <div class="value-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="value-icon">
                         <i class="fas fa-users"></i>
                     </div>
-                    <h3>Community</h3>
-                    <p>We empower communities by creating local jobs and supporting sustainable development initiatives.</p>
+                    <h3>Customer Focus</h3>
+                    <p>Our clients are at the heart of everything we do. We listen, understand, and deliver solutions.</p>
+                </div>
+                
+                <div class="value-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="value-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Sustainability</h3>
+                    <p>We are committed to environmentally responsible practices for a cleaner, greener future.</p>
+                </div>
+                
+                <div class="value-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Partnership</h3>
+                    <p>We believe in building strong, collaborative relationships for mutual success.</p>
+                </div>
+                
+                <div class="value-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="value-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>Excellence</h3>
+                    <p>We pursue the highest standards of quality in every project, delivering superior performance.</p>
                 </div>
             </div>
         </div>
@@ -1272,21 +1362,21 @@
     <!-- Team Section -->
     <section class="team">
         <div class="container">
-            <div class="section-header animate">
+            <div class="section-title">
                 <h2>Leadership Team</h2>
-                <p>The visionaries driving our renewable energy revolution</p>
+                <p>Experienced professionals driving our vision</p>
             </div>
             
             <div class="team-grid">
-                <div class="team-member animate">
-                    <div class="member-image">
-                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Rajiv Sharma">
+                <div class="team-member" data-aos="flip-left">
+                    <div class="member-img">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="CEO">
                     </div>
                     <div class="member-info">
-                        <h3>Rajiv Sharma</h3>
-                        <p>Founder & CEO</p>
-                        <p>25+ years in renewable energy</p>
-                        <div class="member-social">
+                        <h3>Chinedu Okoro</h3>
+                        <span class="member-position">Chief Executive Officer</span>
+                        <p>With over 20 years in energy sector leadership, Chinedu drives Mahashakti's strategic vision.</p>
+                        <div class="social-links">
                             <a href="#"><i class="fab fa-linkedin-in"></i></a>
                             <a href="#"><i class="fab fa-twitter"></i></a>
                             <a href="#"><i class="fas fa-envelope"></i></a>
@@ -1294,15 +1384,15 @@
                     </div>
                 </div>
                 
-                <div class="team-member animate delay-1">
-                    <div class="member-image">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Priya Patel">
+                <div class="team-member" data-aos="flip-left" data-aos-delay="100">
+                    <div class="member-img">
+                        <img src="https://images.unsplash.com/photo-1556157382-97eda2f9e946?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="CTO">
                     </div>
                     <div class="member-info">
-                        <h3>Priya Patel</h3>
-                        <p>Chief Technology Officer</p>
-                        <p>Solar energy specialist</p>
-                        <div class="member-social">
+                        <h3>Fatima Bello</h3>
+                        <span class="member-position">Chief Technical Officer</span>
+                        <p>Renewable energy expert with a PhD in Electrical Engineering and 15+ patents to her name.</p>
+                        <div class="social-links">
                             <a href="#"><i class="fab fa-linkedin-in"></i></a>
                             <a href="#"><i class="fab fa-twitter"></i></a>
                             <a href="#"><i class="fas fa-envelope"></i></a>
@@ -1310,15 +1400,31 @@
                     </div>
                 </div>
                 
-                <div class="team-member animate delay-2">
-                    <div class="member-image">
-                        <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Amit Kumar">
+                <div class="team-member" data-aos="flip-left" data-aos-delay="200">
+                    <div class="member-img">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Operations Director">
                     </div>
                     <div class="member-info">
-                        <h3>Amit Kumar</h3>
-                        <p>Operations Director</p>
-                        <p>Infrastructure development</p>
-                        <div class="member-social">
+                        <h3>Tunde Adebayo</h3>
+                        <span class="member-position">Operations Director</span>
+                        <p>Project management specialist with a track record of delivering complex energy infrastructure projects.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-member" data-aos="flip-left" data-aos-delay="300">
+                    <div class="member-img">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Finance Director">
+                    </div>
+                    <div class="member-info">
+                        <h3>Ngozi Eze</h3>
+                        <span class="member-position">Finance Director</span>
+                        <p>Chartered accountant with extensive experience in energy project financing and investment.</p>
+                        <div class="social-links">
                             <a href="#"><i class="fab fa-linkedin-in"></i></a>
                             <a href="#"><i class="fab fa-twitter"></i></a>
                             <a href="#"><i class="fas fa-envelope"></i></a>
@@ -1329,115 +1435,117 @@
         </div>
     </section>
 
-     <footer id="contact">
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 data-aos="fade-down">Ready to Power Your Future?</h2>
+                <p data-aos="fade-up" data-aos-delay="200">Join hundreds of satisfied clients who have transformed their operations with Mahashakti Energy solutions.</p>
+                <a href="contact.html" class="btn" data-aos="zoom-in" data-aos-delay="400">Contact Us Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-pattern"></div>
         <div class="container">
             <div class="footer-container">
-                <!-- Quick Links Column -->
+                <div class="footer-col">
+                    <div class="logo-text">MAHASHAKTI <span>ENERGY</span></div>
+                    <p>Leading energy solutions provider powering Nigeria's future since 2008 with reliable and efficient power systems.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
                 <div class="footer-col">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html" class="active">About Us</a></li>
-                        <li><a href="index.html#services">Services</a></li>
-                        <li><a href="index.html#projects">Projects</a></li>
-                        <li><a href="index.html#testimonials">Testimonials</a></li>
-                        <li><a href="index.html#contact">Contact Us</a></li>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="service.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="product.html"><i class="fas fa-chevron-right"></i> Products</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
                     </ul>
                 </div>
                 
-                <!-- Services Column -->
                 <div class="footer-col">
                     <h3>Our Services</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Solar Power Systems</a></li>
-                        <li><a href="#">Wind Energy Solutions</a></li>
-                        <li><a href="#">Energy Storage</a></li>
-                        <li><a href="#">Commercial Projects</a></li>
-                        <li><a href="#">Residential Solutions</a></li>
-                        <li><a href="#">Energy Consulting</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Energy Consulting</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Power Infrastructure</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Renewable Solutions</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Maintenance Services</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Emergency Support</a></li>
                     </ul>
                 </div>
                 
-                <!-- Resources Column -->
                 <div class="footer-col">
-                    <h3>Resources</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">News & Media</a></li>
-                        <li><a href="#">Case Studies</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Sustainability Reports</a></li>
-                        <li><a href="#">Blog</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Contact Us Column -->
-                <div class="footer-col contact-col">
                     <h3>Contact Us</h3>
-                    <div class="contact-info">
-                        <p><i class="fas fa-map-marker-alt"></i> 123 Energy Park, Mumbai, India</p>
-                        <p><i class="fas fa-phone-alt"></i> +91 98765 43210</p>
-                        <p><i class="fas fa-envelope"></i> info@mahashakti.com</p>
-                        <p><i class="fas fa-clock"></i> Mon-Fri: 9AM - 6PM</p>
-                        <p><i class="fas fa-globe"></i> www.mahashaktienergy.com</p>
-                    </div>
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    </div>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> 123 Energy Street, Lagos, Nigeria</a></li>
+                        <li><a href="tel:+2348123456789"><i class="fas fa-phone"></i> +234 812 345 6789</a></li>
+                        <li><a href="mailto:info@mahashaktienergy.com"><i class="fas fa-envelope"></i> info@mahashaktienergy.com</a></li>
+                        <li><a href="#"><i class="fas fa-clock"></i> Mon-Fri: 8AM - 6PM</a></li>
+                    </ul>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <p class="copyright">&copy; 2023 MahaShakti Energy. All Rights Reserved. | 
-                    <a href="#" style="color: rgba(255,255,255,0.7);">Privacy Policy</a> | 
-                    <a href="#" style="color: rgba(255,255,255,0.7);">Terms of Service</a>
-                </p>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Mahashakti Energy Pvt Limited. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: var(--secondary);"></i> for Nigeria's Energy Future</p>
             </div>
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <div class="back-to-top" id="backToTop">
-        <i class="fas fa-arrow-up"></i>
-    </div>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navMenu = document.getElementById('navMenu');
+        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 800,
+            once: true,
+            easing: 'ease-in-out'
+        });
+
+        // Mobile Navigation Toggle
+        const mobileToggle = document.querySelector('.mobile-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        const mobileToggleIcon = document.getElementById('mobileToggleIcon');
         
-        mobileMenuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('show');
-            mobileMenuBtn.querySelector('i').classList.toggle('fa-bars');
-            mobileMenuBtn.querySelector('i').classList.toggle('fa-times');
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            if (navMenu.classList.contains('active')) {
+                mobileToggleIcon.classList.remove('fa-bars');
+                mobileToggleIcon.classList.add('fa-times');
+            } else {
+                mobileToggleIcon.classList.remove('fa-times');
+                mobileToggleIcon.classList.add('fa-bars');
+            }
         });
         
-        // Smooth Scrolling for Navigation Links
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileToggleIcon.classList.remove('fa-times');
+                mobileToggleIcon.classList.add('fa-bars');
+            });
+        });
+        
+        // Smooth Scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const target = document.querySelector(targetId);
+                const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     window.scrollTo({
-                        top: target.offsetTop - 80,
+                        top: target.offsetTop - 90,
                         behavior: 'smooth'
                     });
-                    
-                    // Close mobile menu if open
-                    if (navMenu.classList.contains('show')) {
-                        navMenu.classList.remove('show');
-                        mobileMenuBtn.querySelector('i').classList.add('fa-bars');
-                        mobileMenuBtn.querySelector('i').classList.remove('fa-times');
-                    }
                 }
             });
         });
@@ -1445,90 +1553,54 @@
         // Header scroll effect
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
-            const backToTop = document.getElementById('backToTop');
-            
             if (window.scrollY > 100) {
-                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+                header.style.backdropFilter = 'blur(10px)';
             } else {
-                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
-            }
-            
-            if (document.body.getAttribute('data-theme') === 'dark') {
-                if (window.scrollY > 100) {
-                    header.style.background = 'rgba(30, 30, 30, 0.98)';
-                } else {
-                    header.style.background = 'rgba(30, 30, 30, 0.98)';
-                }
-            }
-            
-            // Back to top button
-            if (window.scrollY > 300) {
-                backToTop.classList.add('active');
-            } else {
-                backToTop.classList.remove('active');
+                header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.05)';
+                header.style.backdropFilter = 'blur(10px)';
             }
         });
         
-        // Back to top functionality
-        document.getElementById('backToTop').addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+        // Dark/Light Mode Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+        
+        // Set initial theme
+        if (prefersDarkScheme.matches) {
+            document.body.classList.add('dark-mode');
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
         });
         
-        // Animation on scroll
-        const animateElements = document.querySelectorAll('.animate');
+        // Parallax effect
+        const parallaxBg = document.getElementById('parallaxBg');
+        
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.pageYOffset;
+            parallaxBg.style.transform = `translate3d(0, ${scrollPosition * 0.5}px, 0)`;
+        });
+        
+        // Animation on scroll for elements without AOS
+        const animatedElements = document.querySelectorAll('.animated');
         
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = 1;
                     entry.target.style.animationPlayState = 'running';
+                    entry.target.style.opacity = '1';
                 }
             });
-        }, { 
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+        }, {
+            threshold: 0.1
         });
         
-        animateElements.forEach(element => {
+        animatedElements.forEach(element => {
+            element.style.opacity = '0';
             observer.observe(element);
         });
-
-        // Theme Toggle Functionality
-        const themeToggle = document.getElementById('themeToggle');
-        const toggleIcon = themeToggle.querySelector('i');
-        const currentTheme = localStorage.getItem('theme') || 'light';
-
-        // Set initial theme
-        document.body.setAttribute('data-theme', currentTheme);
-        toggleIcon.className = currentTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
-
-        // Toggle theme
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = document.body.getAttribute('data-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            
-            document.body.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            
-            // Update icon
-            toggleIcon.className = newTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
-        });
-
-        // Detect system preference
-        if (currentTheme === 'system' || !currentTheme) {
-            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                document.body.setAttribute('data-theme', 'dark');
-                toggleIcon.className = 'fas fa-moon';
-            } else {
-                document.body.setAttribute('data-theme', 'light');
-                toggleIcon.className = 'fas fa-sun';
-            }
-        }
     </script>
 </body>
 </html>

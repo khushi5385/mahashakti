@@ -3,1273 +3,869 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MahaShakti Energy | Sustainable Power Solutions</title>
+    <title>Mahashakti Energy | Powering Nigeria's Future</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #0a4d7a;
+            --secondary: #f39c12;
+            --accent: #27ae60;
+            --light: #f5f5f5;
+            --dark: #121212;
+            --gray: #777;
+            --shadow: 0 5px 15px rgba(0,0,0,0.1);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --bg-color: #ffffff;
+            --text-color: #333;
+            --card-bg: #ffffff;
+            --header-bg: rgba(255, 255, 255, 0.95);
+            --footer-bg: #222;
+            --gradient: linear-gradient(135deg, var(--primary), #08385a);
+        }
+
+        .dark-mode {
+            --primary: #4da6ff;
+            --secondary: #ffb733;
+            --accent: #2ecc71;
+            --light: #1a1a1a;
+            --dark: #f0f0f0;
+            --gray: #aaa;
+            --shadow: 0 5px 15px rgba(0,0,0,0.4);
+            --bg-color: #121212;
+            --text-color: #f0f0f0;
+            --card-bg: #1e1e1e;
+            --header-bg: rgba(26, 26, 26, 0.95);
+            --footer-bg: #111;
+            --gradient: linear-gradient(135deg, #0a4d7a, #08385a);
+        }
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
-        :root {
-            /* Light Theme Color Scheme */
-            --primary: #3a86ff;       /* Vibrant blue */
-            --primary-light: #5d9cff;
-            --primary-dark: #2667cc;
-            --secondary: #ffbe0b;     /* Golden yellow */
-            --secondary-light: #ffd166;
-            --secondary-dark: #e6a800;
-            --accent: #8338ec;       /* Purple accent */
-            --accent-light: #9d5bec;
-            --accent-dark: #6a2bc2;
-            --dark: #212529;          /* Dark gray */
-            --darker: #1a1e21;
-            --light: #f8f9fa;         /* Light background */
-            --lighter: #ffffff;       /* White background */
-            --text: #333;             /* Dark text */
-            --text-light: #666;       /* Medium text */
-            --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
-            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
-            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.16);
-            --gradient-primary: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            --gradient-secondary: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
-            --gradient-accent: linear-gradient(135deg, var(--accent), var(--accent-dark));
-            --gradient-dark: linear-gradient(135deg, var(--dark), var(--darker));
-            --hero-bg-image-light: url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
-            --hero-bg-image-dark: url('https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
-            --about-image-light: url('https://images.unsplash.com/photo-1489549132488-d00b7eee80f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
-            --about-image-dark: url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
-            --project1-image-light: url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
-            --project1-image-dark: url('https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
-            --project2-image-light: url('https://images.unsplash.com/photo-1542273917363-3b1817f1a2ec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
-            --project2-image-dark: url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
-            --project3-image-light: url('https://images.unsplash.com/photo-1570284613060-766c33850e00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
-            --project3-image-dark: url('https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
-        }
-
-        /* Dark Theme - Enhanced for better contrast and aesthetics */
-        [data-theme="dark"] {
-            --primary: #4cc9f0;         /* Bright teal */
-            --primary-light: #6fd8f8;
-            --primary-dark: #2da5c9;
-            --secondary: #f72585;       /* Vibrant pink */
-            --secondary-light: #ff4d9e;
-            --secondary-dark: #d61a6f;
-            --accent: #7209b7;          /* Deep purple */
-            --accent-light: #8a2be2;
-            --accent-dark: #5a0a9a;
-            --dark: #e9ecef;            /* Light text */
-            --darker: #ced4da;
-            --light: #121212;
-            --lighter: #1e1e1e;         /* Darker gray */
-            --text: #f8f9fa;
-            --text-light: #adb5bd;
-            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
-            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
-            --bg-gradient: linear-gradient(rgba(18, 18, 18, 0.65), rgba(18, 18, 18, 0.75));
-            --gradient-dark: linear-gradient(135deg, #121212, #000);
-        }
-
-        /* Body Styles */
+        
         body {
             font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            background-color: var(--light);
-            scroll-behavior: smooth;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            overflow-x: hidden;
             transition: background-color 0.5s ease, color 0.5s ease;
-            overflow-x: hidden;
         }
-
-        html, body {
-            width: 100%;
-            overflow-x: hidden;
-            max-width: 100%;
-        }
-
+        
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Poppins', sans-serif;
             font-weight: 700;
-            margin-bottom: 1.25rem;
-            color: var(--dark);
+            margin-bottom: 1rem;
+            color: var(--primary);
             line-height: 1.2;
         }
-
-        p {
-            margin-bottom: 1rem;
-            color: var(--text-light);
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
         }
-
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
         .container {
-            width: 100%;
+            width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 0 15px;
         }
-
-        .section {
-            padding: 5rem 0;
-            position: relative;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 3.5rem;
-        }
-
-        .section-header h2 {
-            font-size: 2.75rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-header h2::after {
-            content: '';
-            position: absolute;
-            bottom: -1rem;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 5rem;
-            height: 0.25rem;
-            background: var(--primary);
-            border-radius: 0.125rem;
-        }
-
+        
         .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--gradient-primary);
-            color: var(--lighter);
-            padding: 0.875rem 2rem;
-            border-radius: 2rem;
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition);
+            display: inline-block;
+            padding: 14px 32px;
+            background: var(--secondary);
+            color: white;
             border: none;
-            cursor: pointer;
-            font-size: 1rem;
+            border-radius: 50px;
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: var(--shadow-sm);
+            letter-spacing: 1.5px;
+            transition: var(--transition);
+            cursor: pointer;
+            font-size: 15px;
+            box-shadow: 0 4px 12px rgba(243, 156, 18, 0.25);
             position: relative;
             overflow: hidden;
             z-index: 1;
         }
-
-        .btn::before {
+        
+        .btn:before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
+            width: 0%;
             height: 100%;
-            background: var(--gradient-dark);
-            opacity: 0;
-            z-index: -1;
+            background: rgba(255,255,255,0.2);
             transition: var(--transition);
+            z-index: -1;
         }
-
+        
+        .btn:hover:before {
+            width: 100%;
+        }
+        
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(243, 156, 18, 0.4);
         }
-
-        .btn:hover::before {
-            opacity: 1;
-        }
-
-        .btn-secondary {
-            background: var(--gradient-secondary);
-        }
-
-        .btn-secondary::before {
-            background: var(--gradient-dark);
-        }
-
-        .btn-accent {
-            background: var(--gradient-accent);
-            color: var(--lighter);
-        }
-
-        .btn-accent::before {
-            background: var(--gradient-dark);
-        }
-
-        /* Theme Toggle */
-        .theme-toggle {
-            position: relative;
-            width: 60px;
-            height: 30px;
+        
+        .btn-primary {
             background: var(--primary);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            transition: background 0.3s ease;
-            margin-left: 1rem;
+            box-shadow: 0 4px 12px rgba(10, 77, 122, 0.25);
         }
-
-        .theme-toggle:hover {
-            background: var(--primary-dark);
+        
+        .btn-primary:hover {
+            box-shadow: 0 8px 20px rgba(10, 77, 122, 0.4);
         }
-
-        .toggle-handle {
+        
+        section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.8rem;
+            text-transform: capitalize;
+            margin-bottom: 20px;
+        }
+        
+        .section-title p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            color: var(--gray);
+        }
+        
+        .section-title:after {
+            content: '';
             position: absolute;
-            width: 24px;
-            height: 24px;
-            background: var(--lighter);
-            border-radius: 50%;
-            left: 4px;
-            transition: transform 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background: var(--secondary);
+            border-radius: 3px;
         }
-
-        [data-theme="dark"] .toggle-handle {
-            transform: translateX(28px);
-        }
-
-        .toggle-handle i {
-            color: var(--primary);
-        }
-
-        /* Header Styles */
+        
+        /* Header */
         header {
-            background-color: rgba(255, 255, 255, 0.98);
-            box-shadow: var(--shadow-sm);
+            background-color: var(--header-bg);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            backdrop-filter: blur(8px);
-            transition: var(--transition);
+            transition: all 0.5s ease;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
         }
-
-        [data-theme="dark"] header {
-            background-color: rgba(30, 30, 30, 0.98);
-        }
-
+        
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 0;
+            padding: 20px 0;
         }
-
+        
         .logo {
             display: flex;
             align-items: center;
-            text-decoration: none;
+            gap: 15px;
         }
-
+        
         .logo-icon {
-            background: var(--gradient-primary);
-            width: 3rem;
-            height: 3rem;
-            border-radius: 0.75rem;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--lighter);
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-right: 0.75rem;
-            transition: var(--transition);
+            color: white;
+            font-size: 24px;
+            box-shadow: 0 4px 10px rgba(10, 77, 122, 0.3);
         }
-
-        .logo:hover .logo-icon {
-            transform: rotate(15deg) scale(1.1);
-        }
-
+        
         .logo-text {
-            font-size: 1.625rem;
+            font-size: 26px;
             font-weight: 800;
             color: var(--primary);
-            letter-spacing: -0.5px;
+            letter-spacing: 1px;
         }
-
+        
         .logo-text span {
             color: var(--secondary);
         }
-
-        nav {
-            display: flex;
-            align-items: center;
-        }
-
-        nav ul {
+        
+        .nav-menu {
             display: flex;
             list-style: none;
+            align-items: center;
+            gap: 30px;
         }
-
-        nav ul li {
-            margin-left: 1.5rem;
+        
+        .nav-menu li a {
+            font-weight: 600;
             position: relative;
+            padding: 5px 0;
+            font-size: 17px;
         }
-
-        nav ul li a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            transition: var(--transition);
-            position: relative;
-            padding: 0.5rem 0.25rem;
-            font-size: 1rem;
-        }
-
-        [data-theme="dark"] nav ul li a {
-            color: var(--darker);
-        }
-
-        nav ul li a:hover {
-            color: var(--primary);
-        }
-
-        nav ul li a::after {
+        
+        .nav-menu li a:after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
             width: 0;
-            height: 0.1875rem;
-            background: var(--primary);
+            height: 3px;
+            background: var(--secondary);
             transition: var(--transition);
-            border-radius: 0.125rem;
+            border-radius: 2px;
         }
-
-        nav ul li a:hover::after {
+        
+        .nav-menu li a:hover:after,
+        .nav-menu li a.active:after {
             width: 100%;
         }
-
-        .mobile-menu-btn {
+        
+        .mobile-toggle {
             display: none;
-            font-size: 1.75rem;
+            font-size: 28px;
             cursor: pointer;
-            color: var(--dark);
-            z-index: 1001;
-            transition: var(--transition);
-            margin-left: 1.5rem;
-        }
-
-        [data-theme="dark"] .mobile-menu-btn {
-            color: var(--darker);
-        }
-
-        .mobile-menu-btn:hover {
             color: var(--primary);
         }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)), var(--hero-bg-image-light);
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            height: 100vh;
-            min-height: 700px;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            color: var(--lighter);
-            padding-top: 5rem;
+        
+        /* Theme Toggle */
+        .theme-toggle {
+            width: 60px;
+            height: 30px;
+            background: var(--light);
+            border-radius: 50px;
             position: relative;
-            overflow: hidden;
+            cursor: pointer;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
         }
-
-        [data-theme="dark"] .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)), var(--hero-bg-image-dark);
-        }
-
-        .hero::before {
+        
+        .theme-toggle:before {
             content: '';
             position: absolute;
-            bottom: 0;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--secondary);
+            top: 3px;
+            left: 3px;
+            transition: var(--transition);
+        }
+        
+        .dark-mode .theme-toggle:before {
+            left: 33px;
+            background: var(--primary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            min-height: 800px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+        
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
             left: 0;
             width: 100%;
-            height: 10rem;
-            background: linear-gradient(to top, var(--light), transparent);
-            z-index: 1;
+            height: 100%;
+            background: var(--gradient);
+            opacity: 0.95;
+            z-index: -1;
         }
-
+        
+        .hero:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1624397640148-949b1732bb0a?ixlib=rb-4.0.3') no-repeat center center/cover;
+            z-index: -2;
+        }
+        
         .hero-content {
-            max-width: 56.25rem;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 0 1.25rem;
+            text-align: center;
+            color: white;
             position: relative;
             z-index: 2;
         }
-
+        
         .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-            color: var(--lighter);
-            line-height: 1.15;
-            text-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.5);
+            font-size: 4.2rem;
+            margin-bottom: 25px;
+            color: white;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            line-height: 1.1;
         }
-
-        .hero h1 span {
-            color: var(--secondary-light);
-            position: relative;
-            display: inline-block;
-        }
-
-        .hero h1 span::after {
-            content: '';
-            position: absolute;
-            bottom: 0.5rem;
-            left: 0;
-            width: 100%;
-            height: 0.5rem;
-            background: rgba(255, 190, 11, 0.3);
-            z-index: -1;
-            border-radius: 0.25rem;
-        }
-
+        
         .hero p {
             font-size: 1.4rem;
-            margin-bottom: 2.5rem;
-            opacity: 0.95;
-            max-width: 43.75rem;
+            margin-bottom: 40px;
+            max-width: 700px;
             margin-left: auto;
             margin-right: auto;
-            text-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.5);
+            opacity: 0.9;
         }
-
-        .hero-buttons {
+        
+        .hero-btns {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
-            margin-top: 2rem;
+            gap: 25px;
+            margin-top: 40px;
         }
-
-        /* Services Section */
+        
+        /* Features */
+        .features {
+            background: var(--light);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 35px;
+        }
+        
+        .feature-card {
+            background: var(--card-bg);
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(10, 77, 122, 0.1);
+        }
+        
+        .feature-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 0;
+            background: var(--secondary);
+            transition: var(--transition);
+        }
+        
+        .feature-card:hover:before {
+            height: 100%;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .feature-icon {
+            font-size: 60px;
+            color: var(--secondary);
+            margin-bottom: 25px;
+            transition: var(--transition);
+        }
+        
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1);
+        }
+        
+        .feature-card h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .feature-card p {
+            color: var(--gray);
+            font-size: 17px;
+        }
+        
+        /* Stats */
+        .stats-section {
+            background: var(--gradient);
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stats-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1558442074-3c19857bc1dc?ixlib=rb-4.0.3') no-repeat center center/cover;
+            opacity: 0.1;
+            z-index: 1;
+        }
+        
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 40px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .stat-item {
+            flex: 1;
+            min-width: 220px;
+            padding: 20px;
+        }
+        
+        .stat-item .number {
+            font-size: 4.5rem;
+            font-weight: 800;
+            color: var(--secondary);
+            line-height: 1;
+            margin-bottom: 15px;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .stat-item .label {
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            opacity: 0.9;
+        }
+        
+        /* Services */
         .services {
-            background-color: var(--lighter);
+            background: var(--bg-color);
         }
         
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
         }
-
+        
         .service-card {
-            background: var(--lighter);
-            border-radius: 1rem;
+            background: var(--card-bg);
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: var(--shadow-sm);
+            box-shadow: var(--shadow);
             transition: var(--transition);
-            text-align: center;
-            padding: 2.5rem 1.875rem;
-            border: 1px solid rgba(0, 0, 0, 0.05);
             position: relative;
-            z-index: 1;
         }
-
-        [data-theme="dark"] .service-card {
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
+        
         .service-card:hover {
-            transform: translateY(-1rem);
-            box-shadow: var(--shadow-lg);
-            border-color: transparent;
+            transform: translateY(-15px);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.15);
         }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
+        
+        .service-img {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .service-img img {
             width: 100%;
-            height: 0;
-            background: var(--gradient-primary);
-            transition: var(--transition);
-            z-index: -1;
-            opacity: 0;
-        }
-
-        .service-card:hover::before {
             height: 100%;
-            opacity: 1;
-        }
-
-        .service-card:hover h3,
-        .service-card:hover p,
-        .service-card:hover .service-icon {
-            color: var(--lighter) !important;
-        }
-
-        .service-icon {
-            font-size: 3.75rem;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-            transition: var(--transition);
-        }
-
-        .service-card h3 {
-            font-size: 1.75rem;
-            margin-bottom: 1rem;
-            transition: var(--transition);
-        }
-
-        .service-card p {
-            color: var(--text-light);
+            object-fit: cover;
             transition: var(--transition);
         }
         
-        /* About Section */
-        .about {
-            background: linear-gradient(to bottom, var(--light), rgba(233, 245, 240, 0.7));
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
         }
-
-        [data-theme="dark"] .about {
-            background: linear-gradient(to bottom, var(--light), rgba(10, 31, 21, 0.7));
+        
+        .service-content {
+            padding: 30px;
         }
-
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 3.75rem;
+        
+        .service-content h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--primary);
         }
-
-        .about-text {
-            flex: 1;
+        
+        .service-content p {
+            color: var(--gray);
+            margin-bottom: 25px;
+            font-size: 17px;
         }
-
-        .about-text h2 {
-            font-size: 2.75rem;
-            margin-bottom: 1.5rem;
-            color: var(--dark);
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.25rem;
-            margin-top: 2rem;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            background: rgba(255, 255, 255, 0.7);
-            padding: 1.25rem;
-            border-radius: 0.75rem;
-            backdrop-filter: blur(5px);
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
-        }
-
-        [data-theme="dark"] .feature-item {
-            background: rgba(30, 30, 30, 0.7);
-        }
-
-        .feature-item:hover {
-            transform: translateY(-0.5rem);
-            box-shadow: var(--shadow-md);
-        }
-
-        .feature-icon {
-            background: var(--primary);
-            color: var(--lighter);
-            width: 3rem;
-            height: 3rem;
-            border-radius: 0.75rem;
+        
+        .service-icon {
+            position: absolute;
+            top: -25px;
+            right: 25px;
+            width: 60px;
+            height: 60px;
+            background: var(--secondary);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.25rem;
-            flex-shrink: 0;
-            transition: var(--transition);
+            color: white;
+            font-size: 28px;
+            box-shadow: 0 10px 20px rgba(243, 156, 18, 0.3);
+            z-index: 2;
         }
-
-        .feature-item:hover .feature-icon {
-            background: var(--gradient-primary);
-            transform: rotate(15deg) scale(1.1);
-        }
-
-        .about-image {
-            flex: 1;
-            border-radius: 1.25rem;
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-            transform: rotate(-2deg);
-            transition: var(--transition);
+        
+        /* Testimonials */
+        .testimonials {
+            background: var(--light);
             position: relative;
-            background: var(--about-image-light);
-            background-size: cover;
-            background-position: center;
-            height: 450px;
+            overflow: hidden;
         }
-
-        [data-theme="dark"] .about-image {
-            background: var(--about-image-dark);
-        }
-
-        .about-image::before {
+        
+        .testimonials:before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: var(--gradient-primary);
-            opacity: 0.1;
+            background: url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3') no-repeat center center/cover;
+            opacity: 0.05;
             z-index: 1;
-            transition: var(--transition);
         }
-
-        [data-theme="dark"] .about-image::before {
-            opacity: 0.3;
-            background: rgba(0, 0, 0, 0.5);
+        
+        .testimonials-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
-
-        .about-image:hover {
-            transform: rotate(0);
-        }
-
-        .about-image:hover::before {
-            opacity: 0;
-        }
-
-        /* Stats Section */
-        .stats {
-            background: var(--gradient-dark);
-            color: var(--lighter);
+        
+        .testimonial {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
             text-align: center;
-            padding: 6rem 0;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-        }
-
-        .stat-item {
+            margin: 20px;
             position: relative;
-            padding: 2rem;
-            border-radius: 1rem;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            box-shadow: var(--shadow-md);
-            transition: var(--transition);
-            overflow: hidden;
+            border: 1px solid rgba(10, 77, 122, 0.1);
         }
-
-        [data-theme="dark"] .stat-item {
-            background: rgba(0, 0, 0, 0.2);
-        }
-
-        .stat-item:hover {
-            transform: translateY(-0.5rem);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .stat-item h3 {
-            font-size: 3.5rem;
-            color: var(--lighter);
-            margin-bottom: 0.625rem;
-            font-weight: 700;
-        }
-
-        .stat-item p {
-            font-size: 1.2rem;
-            opacity: 0.95;
-            color: rgba(255, 255, 255, 0.95);
-        }
-
-        /* Testimonials */
-        .testimonials {
-            background-color: var(--lighter);
-        }
-
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(21.875rem, 1fr));
-            gap: 2rem;
-        }
-
-        .testimonial-card {
-            background: var(--lighter);
-            padding: 2.5rem 1.875rem;
-            border-radius: 1rem;
-            position: relative;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
-        }
-
-        [data-theme="dark"] .testimonial-card {
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-0.5rem);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .testimonial-card::before {
+        
+        .testimonial:before {
             content: '"';
             position: absolute;
-            top: 1.25rem;
-            left: 1.25rem;
-            font-size: 5rem;
-            color: var(--primary-light);
-            opacity: 0.1;
-            font-family: serif;
+            top: 20px;
+            left: 30px;
+            font-size: 100px;
+            font-family: Georgia, serif;
+            color: var(--secondary);
+            opacity: 0.2;
             line-height: 1;
-            z-index: 0;
         }
-
-        .testimonial-text {
-            margin-bottom: 2rem;
+        
+        .testimonial-content {
             font-style: italic;
-            font-size: 1.1rem;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
             line-height: 1.8;
-            color: var(--text);
             position: relative;
-            z-index: 1;
+            z-index: 2;
         }
-
-        .testimonial-author {
+        
+        .client {
             display: flex;
             align-items: center;
+            justify-content: center;
         }
-
-        .author-image {
-            width: 3.75rem;
-            height: 3.75rem;
+        
+        .client-img {
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
             overflow: hidden;
-            margin-right: 1.25rem;
-            border: 3px solid var(--primary);
-            transition: var(--transition);
-            background-color: #f0f0f0;
+            margin-right: 20px;
+            border: 3px solid var(--secondary);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-
-        [data-theme="dark"] .author-image {
-            background-color: #333;
+        
+        .client-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
-
-        .testimonial-card:hover .author-image {
-            transform: scale(1.1);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .author-info h4 {
-            margin-bottom: 0.3125rem;
-            font-size: 1.3rem;
-        }
-
-        .author-info p {
+        
+        .client-info h4 {
+            margin-bottom: 8px;
+            font-size: 20px;
             color: var(--primary);
-            font-weight: 500;
         }
-
+        
+        .client-info p {
+            color: var(--gray);
+            font-size: 16px;
+        }
+        
         /* Footer */
         footer {
-            background: var(--dark);
-            color: var(--lighter);
-            padding: 5rem 0 0;
+            background: var(--footer-bg);
+            color: white;
+            padding: 100px 0 0;
             position: relative;
         }
         
-        [data-theme="dark"] footer {
-            background: #121212;
-        }
-
         .footer-container {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .footer-col {
-            padding: 0 0.5rem;
-        }
-
-        .footer-col h3 {
-            color: var(--lighter);
-            font-size: 1.4rem;
-            margin-bottom: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
             position: relative;
-            padding-bottom: 0.625rem;
+            z-index: 2;
         }
-
-        .footer-col h3::after {
+        
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 30px;
+            font-size: 24px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .footer-col h3:after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 2.5rem;
-            height: 0.25rem;
-            background: var(--primary);
-            border-radius: 0.125rem;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary);
+            border-radius: 2px;
         }
-
+        
+        .footer-col p {
+            margin-bottom: 25px;
+            font-size: 17px;
+            opacity: 0.8;
+        }
+        
         .footer-links {
             list-style: none;
         }
-
+        
         .footer-links li {
-            margin-bottom: 0.75rem;
+            margin-bottom: 15px;
         }
-
-        .footer-links li a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
+        
+        .footer-links a {
+            color: #bbb;
             transition: var(--transition);
-            display: block;
-            font-size: 1.05rem;
-            position: relative;
-            padding-left: 1.25rem;
-        }
-
-        .footer-links li a::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            opacity: 0;
-            transition: var(--transition);
-        }
-
-        .footer-links li a:hover {
-            color: var(--accent-light);
-            transform: translateX(0.5rem);
-        }
-
-        .footer-links li a:hover::before {
-            opacity: 1;
-            left: -0.5rem;
-        }
-
-        .contact-col .contact-info {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 1.05rem;
-            line-height: 1.8;
-        }
-
-        .contact-col .contact-info p {
-            margin-bottom: 1.25rem;
+            font-size: 17px;
             display: flex;
-            align-items: flex-start;
+            align-items: center;
+            gap: 10px;
         }
-
-        .contact-col .contact-info i {
-            margin-right: 0.625rem;
-            color: var(--primary);
-            font-size: 1.2rem;
-            margin-top: 0.25rem;
-            min-width: 1.5rem;
+        
+        .footer-links a i {
+            color: var(--secondary);
+            transition: var(--transition);
         }
-
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+        
+        .footer-links a:hover i {
+            transform: translateX(5px);
+        }
+        
         .social-links {
             display: flex;
-            gap: 1rem;
-            margin-top: 1.75rem;
-            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 25px;
         }
-
+        
         .social-links a {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 3rem;
-            height: 3rem;
-            background: rgba(255, 255, 255, 0.1);
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.1);
             border-radius: 50%;
-            color: var(--lighter);
             transition: var(--transition);
-            font-size: 1.5rem;
+            font-size: 20px;
         }
-
+        
         .social-links a:hover {
-            background: var(--primary);
-            transform: translateY(-0.25rem);
+            background: var(--secondary);
+            transform: translateY(-8px);
         }
-
-        .footer-bottom {
-            background: rgba(0, 0, 0, 0.2);
-            padding: 1.5rem 0;
-            text-align: center;
-        }
-
-        [data-theme="dark"] .footer-bottom {
-            background: rgba(0, 0, 0, 0.4);
-        }
-
+        
         .copyright {
-            font-size: 1rem;
-            opacity: 0.7;
-        }
-
-        /* Project Showcase Section */
-        .projects {
-            background-color: var(--light);
-            padding: 5rem 0;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 70px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 16px;
+            color: #bbb;
         }
         
-        .project-card {
-            background: var(--lighter);
-            border-radius: 1rem;
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-            transition: var(--transition);
+        .footer-pattern {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
             height: 100%;
+            opacity: 0.03;
+            background: url('https://www.transparenttextures.com/patterns/45-degree-fabric-light.png');
+            z-index: 1;
         }
         
-        .project-card:hover {
-            transform: translateY(-0.5rem);
-            box-shadow: var(--shadow-lg);
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
-        .project-image {
-            height: 250px;
-            background-size: cover;
-            background-position: center;
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
         }
         
-        .project-content {
-            padding: 1.5rem;
+        .animated {
+            animation: fadeIn 1s ease forwards;
+            opacity: 0;
         }
         
-        .project-content h3 {
-            color: var(--primary);
-            margin-bottom: 0.75rem;
+        .float {
+            animation: float 6s ease-in-out infinite;
         }
         
-        .project-content p {
-            margin-bottom: 1.25rem;
-        }
-        
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 992px) {
-            .footer-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
+        /* Responsive Design */
+        @media (max-width: 1100px) {
             .hero h1 {
                 font-size: 3.5rem;
             }
-            
-            .about-content {
-                flex-direction: column;
-            }
-            
-            .about-image {
-                margin-top: 3rem;
-                max-width: 80%;
-                height: 350px;
-            }
         }
-
-        @media (max-width: 768px) {
-            .footer-container {
-                display: flex;
-                flex-direction: row;
-                overflow-x: auto;
-                scroll-snap-type: x mandatory;
-                scrollbar-width: none;
-                -ms-overflow-style: none;
-                padding-bottom: 1.5rem;
-                margin-bottom: 2rem;
-                gap: 0;
+        
+        @media (max-width: 991px) {
+            .hero h1 {
+                font-size: 3rem;
             }
             
-            .footer-container::-webkit-scrollbar {
-                display: none;
+            .section-title h2 {
+                font-size: 2.5rem;
             }
             
-            .footer-col {
-                flex: 0 0 90%;
-                scroll-snap-align: start;
-                padding: 0 1.5rem;
-                min-height: 100%;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
+            .mobile-toggle {
+                display: block;
             }
             
-            .footer-col h3 {
-                font-size: 1.5rem;
-                padding-bottom: 0.5rem;
-                margin-bottom: 1.2rem;
-            }
-            
-            .footer-col h3::after {
-                width: 2rem;
-                height: 0.2rem;
-            }
-            
-            .footer-links {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-            }
-            
-            .footer-links li {
-                margin-bottom: 0.5rem;
-            }
-            
-            .footer-links li a {
-                font-size: 1rem;
-                padding: 0.5rem 0;
-            }
-            
-            .contact-col .contact-info p {
-                margin-bottom: 0.8rem;
-                font-size: 0.95rem;
-                display: flex;
-                align-items: center;
-                flex-wrap: wrap;
-            }
-            
-            .contact-col .contact-info i {
-                font-size: 1.1rem;
-                min-width: 1.3rem;
-                margin-right: 0.5rem;
-                margin-top: 0;
-            }
-            
-            .social-links {
-                justify-content: flex-start;
-                margin-top: 1.5rem;
-                gap: 0.8rem;
-            }
-            
-            .social-links a {
-                width: 2.8rem;
-                height: 2.8rem;
-                font-size: 1.4rem;
-            }
-            
-            .footer-bottom {
-                padding: 1.5rem 1rem;
-            }
-            
-            .copyright {
-                font-size: 0.9rem;
-            }
-            
-            /* Header adjustments */
-            nav ul {
-                display: none;
+            .nav-menu {
                 position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100vh;
-                background: rgba(26, 58, 95, 0.98);
+                top: 90px;
+                left: -100%;
                 flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                padding: 1.25rem 0;
-                z-index: 999;
-                transform: translateY(-100%);
-                transition: var(--transition);
-            }
-            
-            [data-theme="dark"] nav ul {
-                background: rgba(18, 18, 18, 0.98);
-            }
-            
-            nav ul.show {
-                transform: translateY(0);
-                display: flex;
-            }
-            
-            nav ul li {
-                margin: 1.25rem 0;
+                background: var(--header-bg);
                 width: 100%;
+                padding: 30px 0;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                transition: var(--transition);
+                gap: 20px;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-menu li {
                 text-align: center;
             }
             
-            nav ul li a {
-                font-size: 1.5rem;
-                color: var(--lighter);
-                padding: 1rem 1.5rem;
-                display: block;
-                transition: all 0.3s ease;
-            }
-            
-            nav ul li a:hover {
-                background: rgba(255, 255, 255, 0.1);
-                border-radius: 0.5rem;
-            }
-            
-            .header-container {
-                padding: 0.8rem 1rem;
-            }
-            
-            .logo-text {
-                font-size: 1.4rem;
-            }
-            
-            .logo-icon {
-                width: 2.5rem;
-                height: 2.5rem;
-                font-size: 1rem;
-            }
-            
             .theme-toggle {
-                width: 50px;
-                height: 25px;
-                margin-left: 1rem;
+                margin: 20px auto 0;
             }
-            
-            .toggle-handle {
-                width: 20px;
-                height: 20px;
-            }
-            
-            [data-theme="dark"] .toggle-handle {
-                transform: translateX(25px);
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-                margin-left: 1rem;
-                font-size: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 700px;
             }
             
             .hero h1 {
-                font-size: 2.75rem;
+                font-size: 2.5rem;
             }
             
             .hero p {
                 font-size: 1.2rem;
             }
             
-            .hero-buttons {
+            .hero-btns {
                 flex-direction: column;
                 align-items: center;
-                gap: 1rem;
+                gap: 20px;
             }
             
-            .section-header h2 {
-                font-size: 2.3rem;
+            .section-title h2 {
+                font-size: 2.2rem;
             }
             
-            .features {
-                grid-template-columns: 1fr;
-            }
-            
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .stat-item .number {
+                font-size: 3.5rem;
             }
         }
-
+        
         @media (max-width: 576px) {
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-            
             .hero h1 {
-                font-size: 2.25rem;
+                font-size: 2.2rem;
             }
             
-            .hero p {
-                font-size: 1.1rem;
+            .logo-text {
+                font-size: 22px;
             }
             
-            .footer-links {
-                grid-template-columns: 1fr;
+            .section-title h2 {
+                font-size: 2rem;
             }
             
-            .social-links {
-                gap: 0.75rem;
+            .stat-item {
+                min-width: 100%;
             }
-        }
-
-        /* Back to Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 3rem;
-            height: 3rem;
-            background: var(--gradient-primary);
-            color: var(--lighter);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.25rem;
-            box-shadow: var(--shadow-md);
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-            z-index: 999;
-        }
-
-        .back-to-top.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .back-to-top:hover {
-            transform: translateY(-0.5rem);
-            box-shadow: var(--shadow-lg);
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(2rem);
+            
+            .feature-card, .service-card {
+                padding: 30px 20px;
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
+            
+            .testimonial {
+                padding: 30px 20px;
             }
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-1rem);
-            }
-        }
-
-        .animate {
-            animation: fadeInUp 0.8s ease-out forwards;
-            opacity: 0;
-        }
-
-        .delay-1 {
-            animation-delay: 0.1s;
-        }
-
-        .delay-2 {
-            animation-delay: 0.2s;
-        }
-
-        .delay-3 {
-            animation-delay: 0.3s;
-        }
-
-        .float {
-            animation: float 4s ease-in-out infinite;
         }
     </style>
 </head>
@@ -1277,261 +873,201 @@
     <!-- Header -->
     <header>
         <div class="container header-container">
-            <a href="#" class="logo">
-                <div class="logo-icon">MSE</div>
-                <div class="logo-text">MAHA<span>SHAKTI</span></div>
-            </a>
-            <nav>
-                <ul id="navMenu">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="service.html">Services</a></li>
-                    <li><a href="product.html">Products</a></li>
-                    <li><a href="global.html">Foreign Collaboration</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-                
-                <!-- Theme Toggle Button -->
-                <div class="theme-toggle" id="themeToggle">
-                    <div class="toggle-handle">
-                        <i class="fas fa-sun"></i>
-                    </div>
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-bolt"></i>
                 </div>
-                
-                <div class="mobile-menu-btn" id="mobileMenuBtn">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </nav>
+                <div class="logo-text">MAHASHAKTI <span>ENERGY</span></div>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" >Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="product.html">Product</a></li>
+<li><a href="golbal.html">Golbal</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="contact.html">contact</a></li>
+                <li>
+                    <div class="theme-toggle" id="themeToggle"></div>
+                </li>
+            </ul>
+            
+            <div class="mobile-toggle">
+                <i id="mobileToggleIcon" class="fas fa-bars"></i>
+            </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container hero-content animate">
-            <h1>Powering the Future with <span>Sustainable Energy</span></h1>
-            <p>MahaShakti Energy delivers innovative renewable energy solutions that drive progress while preserving our planet for future generations.</p>
-            <div class="hero-buttons">
-                <a href="#services" class="btn">Explore Solutions</a>
-                <a href="#contact" class="btn btn-secondary">Get Started</a>
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Powering Nigeria's Future with Reliable Energy Solutions</h1>
+            <p>Mahashakti Energy is a leading provider of innovative power solutions for industrial, commercial, and residential applications across Nigeria.</p>
+            <div class="hero-btns">
+                <a href="#services" class="btn">Our Services</a>
+                <a href="#contact" class="btn btn-primary">Contact Us</a>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="section services" id="services">
+    <!-- Features Section -->
+    <section class="features" id="about">
         <div class="container">
-            <div class="section-header animate">
-                <h2>Our Services</h2>
-                <p>Comprehensive energy solutions for industrial, commercial and residential needs</p>
+            <div class="section-title">
+                <h2>Why Choose Mahashakti Energy</h2>
+                <p>Superior Quality and Unmatched Reliability</p>
             </div>
-            <div class="services-grid">
-                <div class="service-card animate delay-1">
-                    <div class="service-icon">
-                        <i class="fas fa-solar-panel"></i>
+            
+            <div class="features-grid">
+                <div class="feature-card animated">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
                     </div>
-                    <h3>Solar Power</h3>
-                    <p>Cutting-edge solar energy systems designed for maximum efficiency and sustainability.</p>
-                    <a href="#" class="btn btn-accent" style="margin-top: 1.5rem; padding: 0.75rem 1.5rem; font-size: 0.875rem;">Learn More</a>
+                    <h3>High Efficiency</h3>
+                    <p>Our solutions are engineered for optimal energy efficiency, reducing power losses and operational costs by up to 30% compared to standard systems.</p>
                 </div>
-                <div class="service-card animate delay-2">
-                    <div class="service-icon">
-                        <i class="fas fa-wind"></i>
+                
+                <div class="feature-card animated">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
                     </div>
-                    <h3>Wind Energy</h3>
-                    <p>Advanced wind power solutions with our turbine technology and installation services.</p>
-                    <a href="#" class="btn btn-accent" style="margin-top: 1.5rem; padding: 0.75rem 1.5rem; font-size: 0.875rem;">Learn More</a>
+                    <h3>Robust Protection</h3>
+                    <p>Advanced safety features ensure reliable performance even in challenging environmental conditions, with industry-leading protection standards.</p>
                 </div>
-                <div class="service-card animate delay-3">
-                    <div class="service-icon">
-                        <i class="fas fa-battery-full"></i>
+                
+                <div class="feature-card animated">
+                    <div class="feature-icon">
+                        <i class="fas fa-cogs"></i>
                     </div>
-                    <h3>Energy Storage</h3>
-                    <p>Battery storage solutions to maximize your energy independence and reliability.</p>
-                    <a href="#" class="btn btn-accent" style="margin-top: 1.5rem; padding: 0.75rem 1.5rem; font-size: 0.875rem;">Learn More</a>
+                    <h3>Custom Solutions</h3>
+                    <p>We design power solutions tailored to your specific requirements and application needs, with scalable capacities for any project size.</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="section about" id="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text animate">
-                    <h2>Leading the Energy Revolution</h2>
-                    <p>Founded in 2010, MahaShakti Energy has emerged as a pioneer in the renewable energy sector. Our commitment to innovation, sustainability, and excellence has positioned us at the forefront of the energy transition.</p>
-                    <p>With a team of over 200 dedicated professionals, we've successfully delivered more than 500 projects across the country.</p>
-                    
-                    <div class="features">
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-leaf"></i>
-                            </div>
-                            <div>
-                                <h4>Sustainable Solutions</h4>
-                                <p>Eco-friendly energy for a greener tomorrow</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-lightbulb"></i>
-                            </div>
-                            <div>
-                                <h4>Innovative Technology</h4>
-                                <p>Cutting-edge renewable energy systems</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-hand-holding-usd"></i>
-                            </div>
-                            <div>
-                                <h4>Cost Efficiency</h4>
-                                <p>Reduce your energy expenses significantly</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-headset"></i>
-                            </div>
-                            <div>
-                                <h4>24/7 Support</h4>
-                                <p>Dedicated customer service team</p>
-                            </div>
-                        </div>
+                
+                <div class="feature-card animated">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
                     </div>
-                    
-                    <div style="margin-top: 2.5rem;">
-                        <a href="#" class="btn">Learn More About Us</a>
-                    </div>
-                </div>
-                <div class="about-image animate delay-1 float">
-                    <!-- Image is set via CSS background -->
+                    <h3>24/7 Support</h3>
+                    <p>Our technical team provides round-the-clock support and maintenance services with guaranteed response times under 4 hours.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Stats Section -->
-    <section class="stats">
+    <section class="stats-section">
         <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item animate">
-                    <h3>500+</h3>
-                    <p>Projects Completed</p>
+            <div class="stats-container">
+                <div class="stat-item animated">
+                    <div class="number">15+</div>
+                    <div class="label">Years Experience</div>
                 </div>
-                <div class="stat-item animate delay-1">
-                    <h3>250MW</h3>
-                    <p>Renewable Capacity</p>
+                <div class="stat-item animated">
+                    <div class="number">5000+</div>
+                    <div class="label">Projects Completed</div>
                 </div>
-                <div class="stat-item animate delay-2">
-                    <h3>1200+</h3>
-                    <p>Satisfied Clients</p>
+                <div class="stat-item animated">
+                    <div class="number">250+</div>
+                    <div class="label">Satisfied Clients</div>
                 </div>
-                <div class="stat-item animate delay-3">
-                    <h3>15+</h3>
-                    <p>Years of Experience</p>
+                <div class="stat-item animated">
+                    <div class="number">98%</div>
+                    <div class="label">Client Retention</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Project Showcase Section -->
-    <section class="section projects" id="projects">
+    <!-- Services Section -->
+    <section id="services" class="services">
         <div class="container">
-            <div class="section-header animate">
-                <h2>Featured Projects</h2>
-                <p>Discover our innovative renewable energy solutions in action</p>
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>Comprehensive Solutions for Your Power Needs</p>
             </div>
-            <div class="project-grid">
-                <div class="animate delay-1">
-                    <div class="project-card">
-                        <div class="project-image" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), var(--project1-image-light);"></div>
-                        <div class="project-content">
-                            <h3>Solar Farm Installation</h3>
-                            <p>50MW solar farm providing clean energy to 30,000 households in Maharashtra.</p>
-                            <a href="#" class="btn btn-accent" style="padding: 0.75rem 1.5rem; font-size: 0.875rem;">View Project</a>
-                        </div>
+            
+            <div class="services-grid">
+                <div class="service-card animated">
+                    <div class="service-icon">
+                        <i class="fas fa-solar-panel"></i>
+                    </div>
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3" alt="Energy Consulting">
+                    </div>
+                    <div class="service-content">
+                        <h3>Energy Consulting</h3>
+                        <p>Expert analysis and recommendations to optimize your energy consumption and reduce operational costs.</p>
+                        <a href="#" class="btn btn-primary">Learn More</a>
                     </div>
                 </div>
-                <div class="animate delay-2">
-                    <div class="project-card">
-                        <div class="project-image" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), var(--project2-image-light);"></div>
-                        <div class="project-content">
-                            <h3>Wind Power Complex</h3>
-                            <p>120MW wind energy facility powering industrial zones in Gujarat.</p>
-                            <a href="#" class="btn btn-accent" style="padding: 0.75rem 1.5rem; font-size: 0.875rem;">View Project</a>
-                        </div>
+                
+                <div class="service-card animated">
+                    <div class="service-icon">
+                        <i class="fas fa-charging-station"></i>
+                    </div>
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1624397640148-949b1732bb0a?ixlib=rb-4.0.3" alt="Power Infrastructure">
+                    </div>
+                    <div class="service-content">
+                        <h3>Power Infrastructure</h3>
+                        <p>Design and implementation of robust power distribution systems for industrial and commercial applications.</p>
+                        <a href="#" class="btn btn-primary">Learn More</a>
                     </div>
                 </div>
-                <div class="animate delay-3">
-                    <div class="project-card">
-                        <div class="project-image" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), var(--project3-image-light);"></div>
-                        <div class="project-content">
-                            <h3>Hybrid Energy System</h3>
-                            <p>Integrated solar-wind solution for remote communities in Rajasthan.</p>
-                            <a href="#" class="btn btn-accent" style="padding: 0.75rem 1.5rem; font-size: 0.875rem;">View Project</a>
-                        </div>
+                
+                <div class="service-card animated">
+                    <div class="service-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1489549132488-d00b7eee80f1?ixlib=rb-4.0.3" alt="Renewable Solutions">
+                    </div>
+                    <div class="service-content">
+                        <h3>Renewable Solutions</h3>
+                        <p>Implementation of solar, wind, and hybrid renewable energy systems for sustainable power generation.</p>
+                        <a href="#" class="btn btn-primary">Learn More</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="section testimonials" id="testimonials">
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
         <div class="container">
-            <div class="section-header animate">
+            <div class="section-title">
                 <h2>Client Testimonials</h2>
-                <p>Hear from businesses and communities we've powered</p>
+                <p>What Our Customers Say</p>
             </div>
-            <div class="testimonial-grid">
-                <div class="testimonial-card animate">
-                    <div class="testimonial-text">
-                        <p>"MahaShakti Energy transformed our manufacturing facility with their solar solution. We've reduced our energy costs by 60% and significantly lowered our carbon footprint."</p>
+            
+            <div class="testimonials-container">
+                <div class="testimonial animated">
+                    <div class="testimonial-content">
+                        <p>"Mahashakti Energy delivered our power infrastructure upgrade ahead of schedule. Their technical expertise and after-sales support have been exceptional. We've achieved 30% energy savings since implementation."</p>
                     </div>
-                    <div class="testimonial-author">
-                        <div class="author-image">
-                            <div style="background-color:#ddd; width:100%; height:100%; display:flex; align-items:center; justify-content:center;">
-                                <i class="fas fa-user" style="font-size:1.5rem; color:#777;"></i>
-                            </div>
+                    <div class="client">
+                        <div class="client-img">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3" alt="Client">
                         </div>
-                        <div class="author-info">
-                            <h4>Rajesh Sharma</h4>
-                            <p>CTO, Sharma Industries</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card animate delay-1">
-                    <div class="testimonial-text">
-                        <p>"The wind energy project delivered by MahaShakti has exceeded our expectations. Their team's expertise and commitment to quality are unmatched in the industry."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-image">
-                            <div style="background-color:#ddd; width:100%; height:100%; display:flex; align-items:center; justify-content:center;">
-                                <i class="fas fa-user" style="font-size:1.5rem; color:#777;"></i>
-                            </div>
-                        </div>
-                        <div class="author-info">
-                            <h4>Priya Patel</h4>
-                            <p>Energy Manager, GreenTech Parks</p>
+                        <div class="client-info">
+                            <h4>David Okonkwo</h4>
+                            <p>Technical Director, PowerGrid Nigeria</p>
                         </div>
                     </div>
                 </div>
-                <div class="testimonial-card animate delay-2">
-                    <div class="testimonial-text">
-                        <p>"Their energy storage solution has provided us with uninterrupted power supply during outages, saving us thousands in potential lost productivity."</p>
+                
+                <div class="testimonial animated">
+                    <div class="testimonial-content">
+                        <p>"The reliability of Mahashakti solutions has significantly reduced our maintenance costs. Their team went above and beyond to ensure our power requirements were met during a critical expansion project."</p>
                     </div>
-                    <div class="testimonial-author">
-                        <div class="author-image">
-                            <div style="background-color:#ddd; width:100%; height:100%; display:flex; align-items:center; justify-content:center;">
-                                <i class="fas fa-user" style="font-size:1.5rem; color:#777;"></i>
-                            </div>
+                    <div class="client">
+                        <div class="client-img">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3" alt="Client">
                         </div>
-                        <div class="author-info">
-                            <h4>Amit Kumar</h4>
-                            <p>Operations Director, Urban Hospitals</p>
+                        <div class="client-info">
+                            <h4>Amina Ibrahim</h4>
+                            <p>Operations Manager, Lagos Industrial Park</p>
                         </div>
                     </div>
                 </div>
@@ -1540,113 +1076,97 @@
     </section>
 
     <!-- Footer -->
-    <footer id="contact">
+    <footer>
+        <div class="footer-pattern"></div>
         <div class="container">
             <div class="footer-container">
-                <!-- Quick Links Column -->
+                <div class="footer-col">
+                    <div class="logo-text">MAHASHAKTI <span>ENERGY</span></div>
+                    <p>Leading energy solutions provider powering Nigeria's future since 2008 with reliable and efficient power systems.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
                 <div class="footer-col">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#testimonials">Testimonials</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="#testimonials"><i class="fas fa-chevron-right"></i> Testimonials</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Careers</a></li>
                     </ul>
                 </div>
                 
-                <!-- Services Column -->
                 <div class="footer-col">
                     <h3>Our Services</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Solar Power Systems</a></li>
-                        <li><a href="#">Wind Energy Solutions</a></li>
-                        <li><a href="#">Energy Storage</a></li>
-                        <li><a href="#">Commercial Projects</a></li>
-                        <li><a href="#">Residential Solutions</a></li>
-                        <li><a href="#">Energy Consulting</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Energy Consulting</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Power Infrastructure</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Renewable Solutions</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Maintenance Services</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Emergency Support</a></li>
                     </ul>
                 </div>
                 
-                <!-- Resources Column -->
                 <div class="footer-col">
-                    <h3>Resources</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">News & Media</a></li>
-                        <li><a href="#">Case Studies</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Sustainability Reports</a></li>
-                        <li><a href="#">Blog</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Contact Us Column -->
-                <div class="footer-col contact-col">
                     <h3>Contact Us</h3>
-                    <div class="contact-info">
-                        <p><i class="fas fa-map-marker-alt"></i> 123 Energy Park, Mumbai, India</p>
-                        <p><i class="fas fa-phone-alt"></i> +91 98765 43210</p>
-                        <p><i class="fas fa-envelope"></i> info@mahashakti.com</p>
-                        <p><i class="fas fa-clock"></i> Mon-Fri: 9AM - 6PM</p>
-                        <p><i class="fas fa-globe"></i> www.mahashaktienergy.com</p>
-                    </div>
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    </div>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> 123 Energy Street, Lagos, Nigeria</a></li>
+                        <li><a href="tel:+2348123456789"><i class="fas fa-phone"></i> +234 812 345 6789</a></li>
+                        <li><a href="mailto:info@mahashaktienergy.com"><i class="fas fa-envelope"></i> info@mahashaktienergy.com</a></li>
+                        <li><a href="#"><i class="fas fa-clock"></i> Mon-Fri: 8AM - 6PM</a></li>
+                    </ul>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <p class="copyright">&copy; 2023 MahaShakti Energy. All Rights Reserved. | 
-                    <a href="#" style="color: rgba(255,255,255,0.7);">Privacy Policy</a> | 
-                    <a href="#" style="color: rgba(255,255,255,0.7);">Terms of Service</a>
-                </p>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Mahashakti Energy Pvt Limited. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: var(--secondary);"></i> for Nigeria's Energy Future</p>
             </div>
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <div class="back-to-top" id="backToTop">
-        <i class="fas fa-arrow-up"></i>
-    </div>
-
     <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navMenu = document.getElementById('navMenu');
+        // Mobile Navigation Toggle
+        const mobileToggle = document.querySelector('.mobile-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        const mobileToggleIcon = document.getElementById('mobileToggleIcon');
         
-        mobileMenuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('show');
-            mobileMenuBtn.querySelector('i').classList.toggle('fa-bars');
-            mobileMenuBtn.querySelector('i').classList.toggle('fa-times');
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            if (navMenu.classList.contains('active')) {
+                mobileToggleIcon.classList.remove('fa-bars');
+                mobileToggleIcon.classList.add('fa-times');
+            } else {
+                mobileToggleIcon.classList.remove('fa-times');
+                mobileToggleIcon.classList.add('fa-bars');
+            }
         });
         
-        // Smooth Scrolling for Navigation Links
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileToggleIcon.classList.remove('fa-times');
+                mobileToggleIcon.classList.add('fa-bars');
+            });
+        });
+        
+        // Smooth Scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 
-                const targetId = this.getAttribute('href');
-                const target = document.querySelector(targetId);
+                const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     window.scrollTo({
-                        top: target.offsetTop - 80,
+                        top: target.offsetTop - 90,
                         behavior: 'smooth'
                     });
-                    
-                    // Close mobile menu if open
-                    if (navMenu.classList.contains('show')) {
-                        navMenu.classList.remove('show');
-                        mobileMenuBtn.querySelector('i').classList.add('fa-bars');
-                        mobileMenuBtn.querySelector('i').classList.remove('fa-times');
-                    }
                 }
             });
         });
@@ -1654,123 +1174,52 @@
         // Header scroll effect
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
-            const backToTop = document.getElementById('backToTop');
-            
             if (window.scrollY > 100) {
-                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+                header.style.backdropFilter = 'blur(10px)';
             } else {
-                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
-            }
-            
-            if (document.body.getAttribute('data-theme') === 'dark') {
-                if (window.scrollY > 100) {
-                    header.style.background = 'rgba(30, 30, 30, 0.98)';
-                } else {
-                    header.style.background = 'rgba(30, 30, 30, 0.98)';
-                }
-            }
-            
-            // Back to top button
-            if (window.scrollY > 300) {
-                backToTop.classList.add('active');
-            } else {
-                backToTop.classList.remove('active');
+                header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.05)';
+                header.style.backdropFilter = 'blur(10px)';
             }
         });
         
-        // Back to top functionality
-        document.getElementById('backToTop').addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+        // Dark/Light Mode Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+        
+        // Set initial theme
+        if (prefersDarkScheme.matches) {
+            document.body.classList.add('dark-mode');
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
         });
         
         // Animation on scroll
-        const animateElements = document.querySelectorAll('.animate');
+        const animatedElements = document.querySelectorAll('.animated');
         
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = 1;
                     entry.target.style.animationPlayState = 'running';
+                    entry.target.style.opacity = '1';
                 }
             });
-        }, { 
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+        }, {
+            threshold: 0.1
         });
         
-        animateElements.forEach(element => {
+        animatedElements.forEach(element => {
+            element.style.opacity = '0';
             observer.observe(element);
         });
-
-        // Add floating animation to elements with .float class
-        const floatElements = document.querySelectorAll('.float');
-        floatElements.forEach(el => {
-            el.style.animationDelay = `${Math.random() * 2}s`;
-        });
-
-        // Theme Toggle Functionality
-        const themeToggle = document.getElementById('themeToggle');
-        const toggleIcon = themeToggle.querySelector('i');
-        const currentTheme = localStorage.getItem('theme') || 'light';
-
-        // Set initial theme
-        document.body.setAttribute('data-theme', currentTheme);
-        toggleIcon.className = currentTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
-
-        // Toggle theme
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = document.body.getAttribute('data-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            
-            document.body.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            
-            // Update icon
-            toggleIcon.className = newTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
-            
-            // Update project images based on theme
-            updateProjectImages(newTheme);
-        });
-
-        // Function to update project images based on theme
-        function updateProjectImages(theme) {
-            const projectImages = document.querySelectorAll('.project-image');
-            
-            projectImages.forEach((image, index) => {
-                const imageVar = `--project${index + 1}-image-${theme}`;
-                const newImage = getComputedStyle(document.documentElement).getPropertyValue(imageVar).trim();
-                image.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), ${newImage}`;
-            });
-        }
-
-        // Detect system preference
-        if (currentTheme === 'system' || !currentTheme) {
-            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                document.body.setAttribute('data-theme', 'dark');
-                toggleIcon.className = 'fas fa-moon';
-                updateProjectImages('dark');
-            } else {
-                document.body.setAttribute('data-theme', 'light');
-                toggleIcon.className = 'fas fa-sun';
-                updateProjectImages('light');
-            }
-        } else {
-            // Initialize project images based on current theme
-            updateProjectImages(currentTheme);
-        }
-
-        // Listen for system theme changes
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-            const newTheme = e.matches ? 'dark' : 'light';
-            document.body.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            toggleIcon.className = newTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
-            updateProjectImages(newTheme);
+        
+        // Add floating animation to hero elements
+        const heroElements = document.querySelectorAll('.hero h1, .hero p, .hero-btns');
+        heroElements.forEach((el, index) => {
+            el.style.animationDelay = `${index * 0.2}s`;
+            el.classList.add('float');
         });
     </script>
 </body>
