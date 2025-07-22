@@ -764,6 +764,134 @@
             animation: float 6s ease-in-out infinite;
         }
         
+        /* New styles for product detail page */
+        .detail-hero {
+            height: 50vh;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+            text-align: center;
+            background: var(--gradient);
+            margin-top: 80px;
+        }
+        
+        .detail-hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .detail-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        .detail-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        .product-detail-section {
+            padding: 80px 0;
+        }
+        
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .specs-table th {
+            background: var(--primary);
+            color: white;
+            text-align: left;
+            padding: 15px 20px;
+            font-weight: 600;
+        }
+        
+        .specs-table td {
+            padding: 15px 20px;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .specs-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .specs-table tr:nth-child(even) {
+            background: rgba(0,0,0,0.03);
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            height: 200px;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .back-to-products {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            color: var(--primary);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .back-to-products:hover {
+            color: var(--secondary);
+            transform: translateX(-5px);
+        }
+        
+        .btn-details {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            padding: 12px 0;
+            background: var(--primary);
+            color: white;
+            border-radius: 8px;
+            transition: var(--transition);
+            margin-top: 15px;
+        }
+        
+        .btn-details:hover {
+            background: var(--secondary);
+        }
+        
         /* Responsive Design */
         @media (max-width: 1100px) {
             .page-hero h1 {
@@ -829,6 +957,14 @@
             
             .product-detail-container, .applications-container {
                 flex-direction: column;
+            }
+            
+            .detail-hero {
+                min-height: 350px;
+            }
+            
+            .detail-hero h1 {
+                font-size: 2.2rem;
             }
         }
         
@@ -924,7 +1060,7 @@
                             <li><i class="fas fa-check-circle"></i> <span>Tamper Detection: Advanced anti-theft</span></li>
                             <li><i class="fas fa-check-circle"></i> <span>Load Profile: 15-minute intervals</span></li>
                         </ul>
-                        <a href="#smart-meter-detail" class="btn btn-primary">View Details</a>
+                        <a href="#product-detail" class="btn-details" data-product="smart-meter-1">View Details</a>
                     </div>
                 </div>
                 
@@ -945,7 +1081,91 @@
                             <li><i class="fas fa-check-circle"></i> <span>Cooling: ONAN/ONAF</span></li>
                             <li><i class="fas fa-check-circle"></i> <span>Efficiency: Up to 99.5%</span></li>
                         </ul>
-                        <a href="#transformer-detail" class="btn btn-primary">View Details</a>
+                        <a href="#product-detail" class="btn-details" data-product="transformer-1">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Transformer 2 -->
+                <div class="product-card animated active" data-category="transformers">
+                    <div class="product-icon">
+                        <i class="fas fa-charging-station"></i>
+                    </div>
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1565958011705-4c0b0438d7dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Power Transformer">
+                    </div>
+                    <div class="product-content">
+                        <h3>Power Transformer</h3>
+                        <p>High-capacity transformers for transmission networks and industrial applications.</p>
+                        <ul class="specs-list">
+                            <li><i class="fas fa-check-circle"></i> <span>Capacity: 5MVA to 500MVA</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span>Voltage: Up to 400kV</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span>Cooling: OFAF/ODAF</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span>Efficiency: Up to 99.8%</span></li>
+                        </ul>
+                        <a href="#product-detail" class="btn-details" data-product="transformer-2">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Transformer 3 -->
+                <div class="product-card animated active" data-category="transformers">
+                    <div class="product-icon">
+                        <i class="fas fa-sliders-h"></i>
+                    </div>
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1607773967205-8e5ee1c0a1f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Instrument Transformer">
+                    </div>
+                    <div class="product-content">
+                        <h3>Instrument Transformer</h3>
+                        <p>Precision transformers for metering and protection applications.</p>
+                        <ul class="specs-list">
+                            <li><i class="fas fa-check-circle"></i> <span>Types: Current & Voltage Transformers</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span>Accuracy: 0.1 to 0.5 Class</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span>Insulation: Oil or SF6 gas</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span>Applications: Protection, metering</span></li>
+                        </ul>
+                        <a href="#product-detail" class="btn-details" data-product="transformer-3">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Transformer 4 -->
+                <div class="product-card animated active" data-category="transformers">
+                    <div class="product-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1603739903239-8b6e64c3b185?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Step-up Transformer">
+                    </div>
+                    <div class="product-content">
+                        <h3>Step-up Transformer</h3>
+                        <p>Designed for power generation applications to increase voltage for transmission.</p>
+                        <ul class="specs-list">
+                            <li><i class="fas fa-check-circle"></i> <span>Voltage Ratio: 11kV/33kV to 400kV</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span>Cooling: ONAN/ONAF/OFAF</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span>Efficiency: Up to 99.7%</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span>Special Features: Low noise design</span></li>
+                        </ul>
+                        <a href="#product-detail" class="btn-details" data-product="transformer-4">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Transformer 5 -->
+                <div class="product-card animated active" data-category="transformers">
+                    <div class="product-icon">
+                        <i class="fas fa-compress-alt"></i>
+                    </div>
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1604603815783-2bd98c7d3d60?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Step-down Transformer">
+                    </div>
+                    <div class="product-content">
+                        <h3>Step-down Transformer</h3>
+                        <p>For reducing transmission voltages to distribution levels for consumer use.</p>
+                        <ul class="specs-list">
+                            <li><i class="fas fa-check-circle"></i> <span>Voltage Ratio: 33kV/11kV to 11kV/415V</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span>Capacity: 100kVA to 50MVA</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span>Cooling: ONAN/ONAF</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span>Special Features: Tropicalized design</span></li>
+                        </ul>
+                        <a href="#product-detail" class="btn-details" data-product="transformer-5">View Details</a>
                     </div>
                 </div>
                 
@@ -966,90 +1186,49 @@
                             <li><i class="fas fa-check-circle"></i> <span>Modules: Transformer, LV Panel, MV Panel</span></li>
                             <li><i class="fas fa-check-circle"></i> <span>Protection: IP54 standard</span></li>
                         </ul>
-                        <a href="#substation-detail" class="btn btn-primary">View Details</a>
+                        <a href="#product-detail" class="btn-details" data-product="substation-1">View Details</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Product Detail Section: Smart Meters -->
-    <section id="smart-meter-detail" class="product-detail">
+    <!-- Product Detail Page -->
+    <section id="product-detail" class="product-detail-section">
         <div class="container">
-            <div class="section-title">
-                <h2>Smart Metering Solutions</h2>
-                <p>Advanced technology for modern energy management</p>
+            <a href="#products" class="back-to-products">
+                <i class="fas fa-arrow-left"></i> Back to Products
+            </a>
+            
+            <div class="detail-hero">
+                <div class="container detail-hero-content">
+                    <h1 id="detail-title">Product Details</h1>
+                    <p id="detail-subtitle">Detailed specifications and features</p>
+                </div>
             </div>
             
             <div class="product-detail-container">
                 <div class="detail-image animated">
-                    <img src="https://images.unsplash.com/photo-1581093458799-6d0b0e6e45c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Smart Meter Detail">
+                    <img id="detail-img" src="https://images.unsplash.com/photo-1624397640148-949b1732bb0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Product Detail">
                 </div>
                 <div class="detail-content animated">
-                    <h2>Advanced Smart Metering Technology</h2>
-                    <p>Our smart meters provide real-time monitoring and analytics for both utilities and consumers. With bidirectional communication capabilities, these devices enable precise energy accounting and support dynamic pricing models.</p>
-                    <p>Designed for the Nigerian power sector, our meters are built to withstand harsh environmental conditions while maintaining accuracy and reliability. Tamper-proof design ensures revenue protection for utilities.</p>
+                    <h2 id="detail-name">Product Name</h2>
+                    <p id="detail-description">Product description will appear here with detailed information about the product features and benefits.</p>
                     
-                    <div class="features-grid">
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                            <div class="feature-text">
-                                <h4>Real-time Analytics</h4>
-                                <p>Monitor consumption patterns and identify inefficiencies</p>
-                            </div>
-                        </div>
-                        
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-shield-alt"></i>
-                            </div>
-                            <div class="feature-text">
-                                <h4>Tamper Detection</h4>
-                                <p>Advanced security features to prevent unauthorized access</p>
-                            </div>
-                        </div>
-                        
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-plug"></i>
-                            </div>
-                            <div class="feature-text">
-                                <h4>Remote Control</h4>
-                                <p>Enable/disable supply remotely for efficient operations</p>
-                            </div>
-                        </div>
-                        
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-mobile-alt"></i>
-                            </div>
-                            <div class="feature-text">
-                                <h4>Mobile Integration</h4>
-                                <p>Consumer apps for energy monitoring and bill payment</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Product Detail Section: Transformers -->
-    <section id="transformer-detail" class="product-detail" style="background: var(--bg-color);">
-        <div class="container">
-            <div class="section-title">
-                <h2>Transformer Solutions</h2>
-                <p>Powering Nigeria with reliable energy transformation</p>
-            </div>
-            
-            <div class="product-detail-container">
-                <div class="detail-content animated">
-                    <h2>High-Efficiency Transformers</h2>
-                    <p>Our transformers are designed for optimal performance in Nigeria's challenging climate conditions. Built with high-quality materials and advanced cooling technology, they ensure reliable power distribution with minimal energy loss.</p>
-                    <p>From distribution to specialized applications, our transformer range meets all regulatory standards while offering superior efficiency and longevity. Custom configurations available for specific project requirements.</p>
+                    <h3>Key Specifications</h3>
+                    <table class="specs-table">
+                        <thead>
+                            <tr>
+                                <th>Specification</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody id="specs-table-body">
+                            <!-- Specifications will be populated by JavaScript -->
+                        </tbody>
+                    </table>
                     
+                    <h3>Key Features</h3>
                     <div class="features-grid">
                         <div class="feature-item">
                             <div class="feature-icon">
@@ -1057,7 +1236,7 @@
                             </div>
                             <div class="feature-text">
                                 <h4>Energy Efficient</h4>
-                                <p>Up to 40% lower losses compared to conventional transformers</p>
+                                <p>Significant energy savings compared to conventional solutions</p>
                             </div>
                         </div>
                         
@@ -1086,14 +1265,28 @@
                                 <i class="fas fa-bolt"></i>
                             </div>
                             <div class="feature-text">
-                                <h4>High Capacity</h4>
-                                <p>Available up to 100MVA for industrial applications</p>
+                                <h4>High Performance</h4>
+                                <p>Reliable operation under demanding conditions</p>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="detail-image animated">
-                    <img src="https://images.unsplash.com/photo-1624397640148-949b1732bb0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Transformer Detail">
+                    
+                    <h3>Product Gallery</h3>
+                    <div class="gallery">
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1624397640148-949b1732bb0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Product Image 1">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1565958011705-4c0b0438d7dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Product Image 2">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1607773967205-8e5ee1c0a1f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Product Image 3">
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 40px; text-align: center;">
+                        <a href="contact.html" class="btn">Request a Quote</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1197,9 +1390,9 @@
                 <div class="footer-col">
                     <h3>Our Products</h3>
                     <ul class="footer-links">
-                        <li><a href="#smart-meter-detail"><i class="fas fa-chevron-right"></i> Smart Meters</a></li>
-                        <li><a href="#transformer-detail"><i class="fas fa-chevron-right"></i> Transformers</a></li>
-                        <li><a href="#substation-detail"><i class="fas fa-chevron-right"></i> Compact Substations</a></li>
+                        <li><a href="#product-detail"><i class="fas fa-chevron-right"></i> Smart Meters</a></li>
+                        <li><a href="#product-detail"><i class="fas fa-chevron-right"></i> Transformers</a></li>
+                        <li><a href="#product-detail"><i class="fas fa-chevron-right"></i> Compact Substations</a></li>
                         <li><a href="#"><i class="fas fa-chevron-right"></i> Switchgear</a></li>
                         <li><a href="#"><i class="fas fa-chevron-right"></i> Power Capacitors</a></li>
                     </ul>
@@ -1223,6 +1416,108 @@
     </footer>
 
     <script>
+        // Product data
+        const products = {
+            "smart-meter-1": {
+                name: "Advanced Smart Meter",
+                description: "Our smart meters provide real-time monitoring and analytics for both utilities and consumers. With bidirectional communication capabilities, these devices enable precise energy accounting and support dynamic pricing models. Designed for the Nigerian power sector, our meters are built to withstand harsh environmental conditions while maintaining accuracy and reliability. Tamper-proof design ensures revenue protection for utilities.",
+                image: "https://images.unsplash.com/photo-1581093458799-6d0b0e6e45c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                specs: [
+                    { name: "Accuracy Class", value: "0.5S / 0.2S" },
+                    { name: "Communication", value: "GSM/GPRS, PLC, RF" },
+                    { name: "Tamper Detection", value: "Advanced anti-theft" },
+                    { name: "Load Profile", value: "15-minute intervals" },
+                    { name: "Operating Voltage", value: "110V - 240V" },
+                    { name: "Temperature Range", value: "-25°C to +70°C" },
+                    { name: "Warranty", value: "5 years" }
+                ]
+            },
+            "transformer-1": {
+                name: "Distribution Transformer",
+                description: "Our transformers are designed for optimal performance in Nigeria's challenging climate conditions. Built with high-quality materials and advanced cooling technology, they ensure reliable power distribution with minimal energy loss. From distribution to specialized applications, our transformer range meets all regulatory standards while offering superior efficiency and longevity. Custom configurations available for specific project requirements.",
+                image: "https://images.unsplash.com/photo-1624397640148-949b1732bb0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                specs: [
+                    { name: "Capacity", value: "25kVA to 2500kVA" },
+                    { name: "Voltage", value: "Up to 33kV" },
+                    { name: "Cooling", value: "ONAN/ONAF" },
+                    { name: "Efficiency", value: "Up to 99.5%" },
+                    { name: "Frequency", value: "50/60 Hz" },
+                    { name: "Insulation Class", value: "A, B, F, H" },
+                    { name: "Warranty", value: "10 years" }
+                ]
+            },
+            "transformer-2": {
+                name: "Power Transformer",
+                description: "High-capacity transformers designed for transmission networks and industrial applications. These transformers feature advanced cooling systems and are built to handle the demanding requirements of Nigeria's power infrastructure. With superior efficiency and reliability, they ensure uninterrupted power supply even under heavy loads and challenging environmental conditions.",
+                image: "https://images.unsplash.com/photo-1565958011705-4c0b0438d7dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                specs: [
+                    { name: "Capacity", value: "5MVA to 500MVA" },
+                    { name: "Voltage", value: "Up to 400kV" },
+                    { name: "Cooling", value: "OFAF/ODAF" },
+                    { name: "Efficiency", value: "Up to 99.8%" },
+                    { name: "Frequency", value: "50/60 Hz" },
+                    { name: "Insulation Class", value: "A, B, F, H" },
+                    { name: "Warranty", value: "15 years" }
+                ]
+            },
+            "transformer-3": {
+                name: "Instrument Transformer",
+                description: "Precision transformers specifically designed for metering and protection applications. These transformers provide accurate measurement of electrical parameters for billing, monitoring, and protection systems. Built with high-quality materials and advanced insulation techniques, they ensure reliable performance in Nigeria's diverse climatic conditions.",
+                image: "https://images.unsplash.com/photo-1607773967205-8e5ee1c0a1f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                specs: [
+                    { name: "Types", value: "Current & Voltage Transformers" },
+                    { name: "Accuracy", value: "0.1 to 0.5 Class" },
+                    { name: "Insulation", value: "Oil or SF6 gas" },
+                    { name: "Applications", value: "Protection, metering" },
+                    { name: "Frequency", value: "50/60 Hz" },
+                    { name: "Rated Burden", value: "10VA to 100VA" },
+                    { name: "Warranty", value: "8 years" }
+                ]
+            },
+            "transformer-4": {
+                name: "Step-up Transformer",
+                description: "Specialized transformers designed for power generation applications to increase voltage for efficient transmission. These transformers feature advanced cooling systems and are optimized for high efficiency at various load conditions. With robust construction and tropicalized design, they are perfectly suited for Nigeria's power infrastructure requirements.",
+                image: "https://images.unsplash.com/photo-1603739903239-8b6e64c3b185?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                specs: [
+                    { name: "Voltage Ratio", value: "11kV/33kV to 400kV" },
+                    { name: "Cooling", value: "ONAN/ONAF/OFAF" },
+                    { name: "Efficiency", value: "Up to 99.7%" },
+                    { name: "Special Features", value: "Low noise design" },
+                    { name: "Frequency", value: "50/60 Hz" },
+                    { name: "Insulation Class", value: "A, B, F, H" },
+                    { name: "Warranty", value: "12 years" }
+                ]
+            },
+            "transformer-5": {
+                name: "Step-down Transformer",
+                description: "Transformers specifically engineered for reducing transmission voltages to distribution levels for consumer use. These units feature advanced tap-changing mechanisms for voltage regulation and are designed for high reliability and minimal maintenance. With tropicalized components, they perform exceptionally well in Nigeria's hot and humid climate.",
+                image: "https://images.unsplash.com/photo-1604603815783-2bd98c7d3d60?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                specs: [
+                    { name: "Voltage Ratio", value: "33kV/11kV to 11kV/415V" },
+                    { name: "Capacity", value: "100kVA to 50MVA" },
+                    { name: "Cooling", value: "ONAN/ONAF" },
+                    { name: "Special Features", value: "Tropicalized design" },
+                    { name: "Frequency", value: "50/60 Hz" },
+                    { name: "Insulation Class", value: "A, B, F, H" },
+                    { name: "Warranty", value: "10 years" }
+                ]
+            },
+            "substation-1": {
+                name: "Compact Substation",
+                description: "Integrated power distribution solution designed for urban and industrial applications. These substations combine transformers, switchgear, and protection systems in a single compact enclosure. Built with weatherproof materials and advanced ventilation systems, they are ideal for Nigeria's challenging environmental conditions while providing reliable power distribution.",
+                image: "https://images.unsplash.com/photo-1576675466969-38eeae4b41a4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                specs: [
+                    { name: "Voltage", value: "Up to 36kV" },
+                    { name: "Enclosure", value: "Weatherproof steel" },
+                    { name: "Modules", value: "Transformer, LV Panel, MV Panel" },
+                    { name: "Protection", value: "IP54 standard" },
+                    { name: "Dimensions", value: "Customizable" },
+                    { name: "Installation", value: "Pad-mounted or underground" },
+                    { name: "Warranty", value: "8 years" }
+                ]
+            }
+        };
+
         // Mobile Navigation Toggle
         const mobileToggle = document.querySelector('.mobile-toggle');
         const navMenu = document.querySelector('.nav-menu');
@@ -1328,6 +1623,77 @@
                         card.classList.remove('active');
                     }
                 });
+            });
+        });
+        
+        // Product detail functionality
+        const detailButtons = document.querySelectorAll('.btn-details');
+        const detailSection = document.getElementById('product-detail');
+        const detailTitle = document.getElementById('detail-title');
+        const detailSubtitle = document.getElementById('detail-subtitle');
+        const detailName = document.getElementById('detail-name');
+        const detailDescription = document.getElementById('detail-description');
+        const detailImg = document.getElementById('detail-img');
+        const specsTableBody = document.getElementById('specs-table-body');
+        
+        // Hide detail section by default
+        detailSection.style.display = 'none';
+        
+        detailButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const productId = this.dataset.product;
+                const product = products[productId];
+                
+                if (product) {
+                    // Update detail section with product data
+                    detailTitle.textContent = product.name;
+                    detailSubtitle.textContent = "Detailed specifications and features";
+                    detailName.textContent = product.name;
+                    detailDescription.textContent = product.description;
+                    detailImg.src = product.image;
+                    detailImg.alt = product.name;
+                    
+                    // Clear existing specs
+                    specsTableBody.innerHTML = '';
+                    
+                    // Add new specs
+                    product.specs.forEach(spec => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${spec.name}</td>
+                            <td>${spec.value}</td>
+                        `;
+                        specsTableBody.appendChild(row);
+                    });
+                    
+                    // Show the detail section and hide the product list
+                    document.getElementById('products').style.display = 'none';
+                    detailSection.style.display = 'block';
+                    
+                    // Scroll to the detail section
+                    window.scrollTo({
+                        top: detailSection.offsetTop - 90,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Back to products functionality
+        const backButton = document.querySelector('.back-to-products');
+        backButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Show the product list and hide the detail section
+            document.getElementById('products').style.display = 'block';
+            detailSection.style.display = 'none';
+            
+            // Scroll to the products section
+            window.scrollTo({
+                top: document.getElementById('products').offsetTop - 90,
+                behavior: 'smooth'
             });
         });
     </script>
