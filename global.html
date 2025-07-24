@@ -7,38 +7,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* Reusing existing styles from index.html */
         :root {
-            --primary: #0a4d7a;
-            --secondary: #f39c12;
-            --accent: #27ae60;
-            --light: #f5f5f5;
-            --dark: #121212;
-            --gray: #777;
-            --shadow: 0 5px 15px rgba(0,0,0,0.1);
-            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            --bg-color: #ffffff;
-            --text-color: #333;
-            --card-bg: #ffffff;
-            --header-bg: rgba(255, 255, 255, 0.95);
-            --footer-bg: #222;
-            --gradient: linear-gradient(135deg, var(--primary), #08385a);
-        }
-
-        .dark-mode {
-            --primary: #4da6ff;
-            --secondary: #ffb733;
-            --accent: #2ecc71;
-            --light: #1a1a1a;
-            --dark: #f0f0f0;
-            --gray: #aaa;
-            --shadow: 0 5px 15px rgba(0,0,0,0.4);
-            --bg-color: #121212;
-            --text-color: #f0f0f0;
-            --card-bg: #1e1e1e;
-            --header-bg: rgba(26, 26, 26, 0.95);
-            --footer-bg: #111;
-            --gradient: linear-gradient(135deg, #0a4d7a, #08385a);
+            --primary-blue: #0a4a8d;
+            --accent-orange: #ff7a00;
+            --dark-gray: #2d3748;
+            --light-gray: #f8f9fa;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
         }
         
         * {
@@ -49,185 +26,112 @@
         
         body {
             font-family: 'Roboto', sans-serif;
-            line-height: 1.7;
-            color: var(--text-color);
-            background-color: var(--bg-color);
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--light-gray);
             overflow-x: hidden;
-            transition: background-color 0.5s ease, color 0.5s ease;
+            padding-top: 80px; /* Added for fixed header */
         }
         
-        h1, h2, h3, h4, h5, h6 {
+        h1, h2, h3, h4 {
             font-family: 'Poppins', sans-serif;
             font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--primary);
             line-height: 1.2;
-        }
-        
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: var(--transition);
-        }
-        
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
+            margin-bottom: 15px;
         }
         
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 15px;
         }
         
         .btn {
             display: inline-block;
-            padding: 14px 32px;
-            background: var(--secondary);
-            color: white;
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            transition: var(--transition);
-            cursor: pointer;
-            font-size: 15px;
-            box-shadow: 0 4px 12px rgba(243, 156, 18, 0.25);
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-        
-        .btn:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 100%;
-            background: rgba(255,255,255,0.2);
-            transition: var(--transition);
-            z-index: -1;
-        }
-        
-        .btn:hover:before {
-            width: 100%;
-        }
-        
-        .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(243, 156, 18, 0.4);
+            padding: 12px 28px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            text-align: center;
         }
         
         .btn-primary {
-            background: var(--primary);
-            box-shadow: 0 4px 12px rgba(10, 77, 122, 0.25);
+            background-color: var(--accent-orange);
+            color: var(--white);
+            border: 2px solid var(--accent-orange);
         }
         
         .btn-primary:hover {
-            box-shadow: 0 8px 20px rgba(10, 77, 122, 0.4);
+            background-color: #e06a00;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
         }
         
-        section {
-            padding: 100px 0;
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-blue);
         }
         
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-            position: relative;
+        .btn-outline:hover {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            transform: translateY(-2px);
         }
         
-        .section-title h2 {
-            font-size: 2.8rem;
-            text-transform: capitalize;
-            margin-bottom: 20px;
-        }
-        
-        .section-title p {
-            max-width: 700px;
-            margin: 0 auto;
-            font-size: 1.2rem;
-            color: var(--gray);
-        }
-        
-        .section-title:after {
-            content: '';
-            position: absolute;
-            bottom: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 5px;
-            background: var(--secondary);
-            border-radius: 3px;
-        }
-        
-        /* Header */
-        header {
-            background-color: var(--header-bg);
+        /* Updated Header Styles */
+        .main-header {
+            background-color: white;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
             transition: all 0.5s ease;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
         }
         
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            padding: 15px 30px;
+            flex-wrap: wrap;
         }
         
-        .logo {
+        .logo-area {
             display: flex;
             align-items: center;
-            gap: 15px;
+            font-weight: bold;
+            font-size: 22px;
+            gap: 10px;
+            color: var(--accent-orange);
         }
         
-        .logo-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 24px;
-            box-shadow: 0 4px 10px rgba(10, 77, 122, 0.3);
+        .logo-area i {
+            color: inherit;
         }
         
         .logo-text {
-            font-size: 26px;
-            font-weight: 800;
-            color: var(--primary);
-            letter-spacing: 1px;
-        }
-        
-        .logo-text span {
-            color: var(--secondary);
+            color: inherit;
+            font-weight: 700;
         }
         
         .nav-menu {
             display: flex;
             list-style: none;
-            align-items: center;
-            gap: 30px;
+            gap: 20px;
         }
         
         .nav-menu li a {
-            font-weight: 600;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 16px;
             position: relative;
             padding: 5px 0;
-            font-size: 17px;
+            transition: all 0.3s ease;
         }
         
         .nav-menu li a:after {
@@ -237,13 +141,18 @@
             left: 0;
             width: 0;
             height: 3px;
-            background: var(--secondary);
-            transition: var(--transition);
+            background: var(--accent-orange);
+            transition: all 0.3s ease;
             border-radius: 2px;
         }
         
-        .nav-menu li a:hover:after,
-        .nav-menu li a.active:after {
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--accent-orange);
+        }
+        
+        .nav-menu a:hover:after,
+        .nav-menu a.active:after {
             width: 100%;
         }
         
@@ -251,149 +160,110 @@
             display: none;
             font-size: 28px;
             cursor: pointer;
-            color: var(--primary);
+            color: var(--primary-blue);
         }
         
-        /* Theme Toggle */
-        .theme-toggle {
-            width: 60px;
-            height: 30px;
-            background: var(--light);
-            border-radius: 50px;
-            position: relative;
-            cursor: pointer;
-            box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
-        }
-        
-        .theme-toggle:before {
-            content: '';
-            position: absolute;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            background: var(--secondary);
-            top: 3px;
-            left: 3px;
-            transition: var(--transition);
-        }
-        
-        .dark-mode .theme-toggle:before {
-            left: 33px;
-            background: var(--primary);
-        }
-        
-        /* Hero Section for Global Page */
+        /* Global Page Specific Styles */
         .global-hero {
+            background: linear-gradient(rgba(10, 74, 141, 0.85), rgba(10, 74, 141, 0.9)), url('https://images.unsplash.com/photo-1558442074-3c19857bc1dc?ixlib=rb-4.0.3') center/cover no-repeat;
             height: 70vh;
             min-height: 600px;
             display: flex;
             align-items: center;
-            position: relative;
-            overflow: hidden;
-            padding-top: 120px;
+            color: var(--white);
         }
         
-        .global-hero:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient);
-            opacity: 0.95;
-            z-index: -1;
-        }
-        
-        .global-hero:after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://images.unsplash.com/photo-1558442074-3c19857bc1dc?ixlib=rb-4.0.3') no-repeat center center/cover;
-            z-index: -2;
-        }
-        
-        .hero-content {
+        .global-hero .hero-content {
             max-width: 900px;
             margin: 0 auto;
             text-align: center;
-            color: white;
-            position: relative;
-            z-index: 2;
         }
         
         .global-hero h1 {
-            font-size: 4.2rem;
+            font-size: 48px;
             margin-bottom: 25px;
-            color: white;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-            line-height: 1.1;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            color: var(--white);
         }
         
         .global-hero p {
-            font-size: 1.4rem;
-            margin-bottom: 40px;
+            font-size: 22px;
+            margin-bottom: 30px;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
             opacity: 0.9;
         }
         
-        /* Collaborations Section */
-        .collaborations {
-            background: var(--light);
-            padding: 100px 0;
+        .section-title {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--primary-blue);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-orange);
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            color: var(--text-light);
+            font-size: 18px;
         }
         
         .collaborations-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
+            gap: 30px;
         }
         
         .partner-card {
-            background: var(--card-bg);
-            border-radius: 15px;
+            background: var(--white);
+            border-radius: 8px;
             overflow: hidden;
             box-shadow: var(--shadow);
-            transition: var(--transition);
+            transition: transform 0.3s ease;
             position: relative;
-            text-align: center;
-            padding: 40px 30px;
         }
         
         .partner-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 20px 30px rgba(0,0,0,0.15);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
         }
         
-        .partner-logo {
-            height: 120px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 30px;
+        .partner-img {
+            height: 200px;
+            overflow: hidden;
         }
         
-        .partner-logo img {
-            max-height: 100%;
-            max-width: 100%;
-            object-fit: contain;
+        .partner-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
         }
         
-        .partner-content h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-            color: var(--primary);
+        .partner-card:hover .partner-img img {
+            transform: scale(1.05);
         }
         
-        .partner-content p {
-            color: var(--gray);
-            margin-bottom: 25px;
-            font-size: 17px;
+        .partner-content {
+            padding: 25px;
         }
         
         .country-flag {
@@ -405,43 +275,27 @@
             border-radius: 50%;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 2px solid var(--white);
         }
         
-        /* Benefits Section */
-        .benefits {
-            background: var(--bg-color);
-            padding: 100px 0;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .benefits:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://www.transparenttextures.com/patterns/45-degree-fabric-light.png');
-            opacity: 0.05;
-            z-index: 1;
+        .partner-content h3 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
         }
         
         .benefits-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
+            gap: 30px;
         }
         
         .benefit-card {
-            background: var(--card-bg);
-            border-radius: 15px;
-            padding: 40px 30px;
+            background: var(--white);
+            border-radius: 8px;
+            padding: 30px;
             text-align: center;
             box-shadow: var(--shadow);
-            transition: var(--transition);
-            position: relative;
-            z-index: 2;
+            transition: transform 0.3s ease;
         }
         
         .benefit-card:hover {
@@ -450,102 +304,127 @@
         }
         
         .benefit-icon {
-            font-size: 60px;
-            color: var(--secondary);
-            margin-bottom: 25px;
+            font-size: 48px;
+            color: var(--accent-orange);
+            margin-bottom: 20px;
         }
         
         .benefit-card h3 {
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: var(--primary);
+            color: var(--primary-blue);
+            margin-bottom: 15px;
         }
         
-        .benefit-card p {
-            color: var(--gray);
-            font-size: 17px;
-        }
-        
-        /* Partnership Section */
         .partnership {
-            background: var(--gradient);
-            color: white;
-            text-align: center;
+            background: linear-gradient(rgba(10, 74, 141, 0.85), rgba(10, 74, 141, 0.9)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3') center/cover no-repeat;
             padding: 100px 0;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .partnership:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3') no-repeat center center/cover;
-            opacity: 0.1;
-            z-index: 1;
+            color: var(--white);
+            text-align: center;
         }
         
         .partnership-content {
             max-width: 800px;
             margin: 0 auto;
-            position: relative;
-            z-index: 2;
         }
         
         .partnership-content h2 {
-            color: white;
+            font-size: 36px;
             margin-bottom: 30px;
+            color: var(--white);
         }
         
         .partnership-content p {
-            font-size: 1.3rem;
+            font-size: 20px;
             margin-bottom: 40px;
             opacity: 0.9;
         }
         
         /* Footer */
         footer {
-            background: var(--footer-bg);
-            color: white;
-            padding: 100px 0 0;
+            background: linear-gradient(to right, #0a3d7a, var(--primary-blue));
+            color: var(--white);
+            padding: 70px 0 20px;
             position: relative;
         }
         
-        .footer-container {
+        .footer-top {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            position: relative;
-            z-index: 2;
+            gap: 30px;
+            margin-bottom: 50px;
         }
         
         .footer-col h3 {
-            color: white;
-            margin-bottom: 30px;
-            font-size: 24px;
+            color: var(--accent-orange);
+            margin-bottom: 25px;
+            font-size: 20px;
             position: relative;
-            display: inline-block;
-            padding-bottom: 15px;
+            padding-bottom: 10px;
         }
         
-        .footer-col h3:after {
+        .footer-col h3::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
             width: 50px;
             height: 3px;
-            background: var(--secondary);
-            border-radius: 2px;
+            background-color: var(--accent-orange);
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo .logo-icon {
+            background-color: var(--accent-orange);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+        }
+        
+        .footer-logo .logo-text {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 22px;
+            color: var(--white);
+        }
+        
+        .footer-logo .logo-text span {
+            color: var(--accent-orange);
         }
         
         .footer-col p {
-            margin-bottom: 25px;
-            font-size: 17px;
-            opacity: 0.8;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent-orange);
+            transform: translateY(-3px);
         }
         
         .footer-links {
@@ -553,192 +432,135 @@
         }
         
         .footer-links li {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
         
         .footer-links a {
-            color: #bbb;
-            transition: var(--transition);
-            font-size: 17px;
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.9;
+            transition: all 0.3s ease;
             display: flex;
             align-items: center;
-            gap: 10px;
-        }
-        
-        .footer-links a i {
-            color: var(--secondary);
-            transition: var(--transition);
         }
         
         .footer-links a:hover {
-            color: var(--secondary);
+            opacity: 1;
+            color: var(--accent-orange);
             padding-left: 5px;
         }
         
-        .footer-links a:hover i {
-            transform: translateX(5px);
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 25px;
-        }
-        
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            transition: var(--transition);
-            font-size: 20px;
-        }
-        
-        .social-links a:hover {
-            background: var(--secondary);
-            transform: translateY(-8px);
+        .footer-links a i {
+            margin-right: 8px;
+            color: var(--accent-orange);
         }
         
         .copyright {
             text-align: center;
-            padding: 30px 0;
-            margin-top: 70px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 16px;
-            color: #bbb;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.8;
+            font-size: 14px;
         }
         
-        .footer-pattern {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.03;
-            background: url('https://www.transparenttextures.com/patterns/45-degree-fabric-light.png');
-            z-index: 1;
+        .copyright i {
+            color: var(--accent-orange);
         }
         
-        /* Animation */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .animated {
-            animation: fadeIn 1s ease forwards;
-            opacity: 0;
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         /* Responsive Design */
-        @media (max-width: 1100px) {
-            .global-hero h1 {
-                font-size: 3.5rem;
-            }
-        }
-        
-        @media (max-width: 991px) {
-            .global-hero h1 {
-                font-size: 3rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2.5rem;
-            }
-            
+        @media (max-width: 768px) {
             .mobile-toggle {
                 display: block;
             }
-            
+        
             .nav-menu {
                 position: fixed;
-                top: 90px;
-                left: -100%;
+                top: 70px;
+                right: -100%;
+                background: var(--white);
                 flex-direction: column;
-                background: var(--header-bg);
-                width: 100%;
-                padding: 30px 0;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-                transition: var(--transition);
-                gap: 20px;
+                align-items: flex-start;
+                width: 80%;
+                height: calc(100vh - 70px);
+                padding: 40px 20px;
+                transition: right 0.3s ease;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
             }
-            
-            .nav-menu.active {
-                left: 0;
-            }
-            
-            .nav-menu li {
-                text-align: center;
-            }
-            
-            .theme-toggle {
-                margin: 20px auto 0;
-            }
-        }
         
-        @media (max-width: 768px) {
-            .global-hero {
-                min-height: 500px;
+            .nav-menu.active {
+                right: 0;
+            }
+        
+            .nav-menu li {
+                width: 100%;
+                padding: 10px 0;
+            }
+        
+            .nav-menu li a {
+                width: 100%;
+                display: block;
+                color: var(--text-dark);
             }
             
             .global-hero h1 {
-                font-size: 2.5rem;
+                font-size: 36px;
             }
             
             .global-hero p {
-                font-size: 1.2rem;
+                font-size: 18px;
             }
             
             .section-title h2 {
-                font-size: 2.2rem;
+                font-size: 28px;
             }
         }
         
         @media (max-width: 576px) {
             .global-hero h1 {
-                font-size: 2.2rem;
+                font-size: 28px;
             }
             
-            .logo-text {
-                font-size: 22px;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
+            .header-container {
+                padding: 15px;
             }
         }
     </style>
 </head>
 <body>
     <!-- Header -->
-    <header>
+    <header class="main-header">
         <div class="container header-container">
-            <div class="logo">
-                <div class="logo-icon">
-                    <i class="fas fa-bolt"></i>
-                </div>
-                <div class="logo-text">MAHASHAKTI <span>ENERGY</span></div>
+            <div class="logo-area">
+                <div class="logo-icon"><i class="fas fa-bolt"></i></div>
+                <div class="logo-text">MAHASHAKTI ENERGY</div>
             </div>
-            
+        
+            <div class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="service.html">Services</a></li>
-                <li><a href="product.html">Product</a></li>
-                <li><a href="global.html" class="active">Global</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li>
-                    <div class="theme-toggle" id="themeToggle"></div>
-                </li>
+                <li><a href="about.html">Company Info</a></li>
+                <li><a href="service.html">Service List</a></li>
+                <li><a href="product.html">The Goods</a></li>
+                <li><a href="global.html" class="active">Our Global Network</a></li>
+                <li><a href="gallery.html">Past Projects</a></li>
+                <li><a href="contact.html">Get in Touch</a></li>
             </ul>
-            
-            <div class="mobile-toggle">
-                <i id="mobileToggleIcon" class="fas fa-bars"></i>
-            </div>
         </div>
     </header>
 
@@ -747,11 +569,12 @@
         <div class="container hero-content">
             <h1>Global Collaborations</h1>
             <p>Building international partnerships to power Nigeria's energy future with world-class technology and expertise.</p>
+            <a href="#collaborations" class="btn btn-primary">Explore Our Partners</a>
         </div>
     </section>
 
     <!-- Collaborations Section -->
-    <section class="collaborations">
+    <section class="features-section" id="collaborations">
         <div class="container">
             <div class="section-title">
                 <h2>Our International Partners</h2>
@@ -759,59 +582,59 @@
             </div>
             
             <div class="collaborations-grid">
-                <div class="partner-card animated">
+                <div class="partner-card">
+                    <div class="partner-img">
+                        <img src="https://images.unsplash.com/photo-1581093458791-8a4814b37b1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="GE Energy">
+                    </div>
                     <div class="country-flag">
                         <img src="https://flagcdn.com/us.svg" alt="USA Flag">
                     </div>
-                    <div class="partner-logo">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/General_Electric_logo.svg/1280px-General_Electric_logo.svg.png" alt="GE Energy">
-                    </div>
                     <div class="partner-content">
                         <h3>GE Energy</h3>
-                        <p>Strategic partnership for advanced gas turbine technology and power generation solutions. Providing cutting-edge equipment for Nigeria's power infrastructure.</p>
-                        <a href="#" class="btn btn-primary">Learn More</a>
+                        <p>Strategic partnership for advanced gas turbine technology and power generation solutions.</p>
+                        <a href="#" class="btn btn-outline">Learn More</a>
                     </div>
                 </div>
                 
-                <div class="partner-card animated">
+                <div class="partner-card">
+                    <div class="partner-img">
+                        <img src="https://images.unsplash.com/photo-1581094794325-7671a8f7d5ec?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Siemens">
+                    </div>
                     <div class="country-flag">
                         <img src="https://flagcdn.com/de.svg" alt="Germany Flag">
                     </div>
-                    <div class="partner-logo">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Siemens_AG_logo.svg/1280px-Siemens_AG_logo.svg.png" alt="Siemens">
-                    </div>
                     <div class="partner-content">
                         <h3>Siemens Energy</h3>
-                        <p>Collaboration on grid management systems, renewable integration, and smart grid technologies for Nigeria's evolving energy landscape.</p>
-                        <a href="#" class="btn btn-primary">Learn More</a>
+                        <p>Collaboration on grid management systems and smart grid technologies for Nigeria.</p>
+                        <a href="#" class="btn btn-outline">Learn More</a>
                     </div>
                 </div>
                 
-                <div class="partner-card animated">
+                <div class="partner-card">
+                    <div class="partner-img">
+                        <img src="https://images.unsplash.com/photo-1573152958734-1922c188fba3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sungrow">
+                    </div>
                     <div class="country-flag">
                         <img src="https://flagcdn.com/cn.svg" alt="China Flag">
                     </div>
-                    <div class="partner-logo">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Sungrow_logo.svg/1280px-Sungrow_logo.svg.png" alt="Sungrow">
-                    </div>
                     <div class="partner-content">
                         <h3>Sungrow Power</h3>
-                        <p>Partnership for solar inverter technology and energy storage solutions, bringing world-class renewable energy products to Nigerian markets.</p>
-                        <a href="#" class="btn btn-primary">Learn More</a>
+                        <p>Partnership for solar inverter technology and energy storage solutions.</p>
+                        <a href="#" class="btn btn-outline">Learn More</a>
                     </div>
                 </div>
                 
-                <div class="partner-card animated">
+                <div class="partner-card">
+                    <div class="partner-img">
+                        <img src="https://images.unsplash.com/photo-1595981267035-7b04ca84a82d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Masdar">
+                    </div>
                     <div class="country-flag">
                         <img src="https://flagcdn.com/ae.svg" alt="UAE Flag">
                     </div>
-                    <div class="partner-logo">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Masdar_logo.svg/1280px-Masdar_logo.svg.png" alt="Masdar">
-                    </div>
                     <div class="partner-content">
                         <h3>Masdar Clean Energy</h3>
-                        <p>Joint initiatives for developing large-scale solar power projects and sustainable energy solutions across Nigeria.</p>
-                        <a href="#" class="btn btn-primary">Learn More</a>
+                        <p>Joint initiatives for developing large-scale solar power projects in Nigeria.</p>
+                        <a href="#" class="btn btn-outline">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -819,7 +642,7 @@
     </section>
 
     <!-- Benefits Section -->
-    <section class="benefits">
+    <section class="services-section" id="benefits">
         <div class="container">
             <div class="section-title">
                 <h2>Benefits of Our Collaborations</h2>
@@ -827,74 +650,78 @@
             </div>
             
             <div class="benefits-container">
-                <div class="benefit-card animated">
+                <div class="benefit-card">
                     <div class="benefit-icon">
                         <i class="fas fa-exchange-alt"></i>
                     </div>
                     <h3>Technology Transfer</h3>
-                    <p>Access to cutting-edge global technologies and implementation methodologies for Nigeria's energy infrastructure.</p>
+                    <p>Access to cutting-edge global technologies for Nigeria's energy infrastructure.</p>
                 </div>
                 
-                <div class="benefit-card animated">
+                <div class="benefit-card">
                     <div class="benefit-icon">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
                     <h3>Knowledge Sharing</h3>
-                    <p>Training programs and knowledge exchange that build local expertise and technical capacity.</p>
+                    <p>Training programs and knowledge exchange to build local expertise.</p>
                 </div>
                 
-                <div class="benefit-card animated">
+                <div class="benefit-card">
                     <div class="benefit-icon">
                         <i class="fas fa-hand-holding-usd"></i>
                     </div>
                     <h3>Investment Opportunities</h3>
-                    <p>Attracting foreign direct investment for energy projects that create jobs and economic growth.</p>
+                    <p>Attracting foreign direct investment for energy projects and economic growth.</p>
                 </div>
                 
-                <div class="benefit-card animated">
+                <div class="benefit-card">
                     <div class="benefit-icon">
                         <i class="fas fa-solar-panel"></i>
                     </div>
                     <h3>Renewable Integration</h3>
-                    <p>Accelerating the adoption of renewable energy technologies through global expertise.</p>
+                    <p>Accelerating adoption of renewable energy through global expertise.</p>
                 </div>
                 
-                <div class="benefit-card animated">
+                <div class="benefit-card">
                     <div class="benefit-icon">
                         <i class="fas fa-lightbulb"></i>
                     </div>
                     <h3>Innovation Culture</h3>
-                    <p>Fostering innovation and research in energy solutions tailored for Nigerian conditions.</p>
+                    <p>Fostering innovation in energy solutions tailored for Nigerian conditions.</p>
                 </div>
                 
-                <div class="benefit-card animated">
+                <div class="benefit-card">
                     <div class="benefit-icon">
                         <i class="fas fa-globe-africa"></i>
                     </div>
                     <h3>Global Standards</h3>
-                    <p>Implementing international quality and safety standards in Nigeria's energy sector.</p>
+                    <p>Implementing international quality and safety standards in Nigeria.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Partnership Section -->
-    <section class="partnership">
+    <section class="partnership" id="partnership">
         <div class="container partnership-content">
             <h2>Become Our Global Partner</h2>
-            <p>We're actively seeking international companies to collaborate on energy projects in Nigeria. Partner with us to access one of Africa's fastest-growing energy markets while contributing to sustainable development.</p>
-            <a href="contact.html" class="btn">Contact Us for Partnership</a>
+            <p>We're seeking international companies to collaborate on energy projects in Nigeria. Partner with us to access one of Africa's fastest-growing energy markets.</p>
+            <a href="contact.html" class="btn btn-primary">Contact Us for Partnership</a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-pattern"></div>
+    <footer id="contact">
         <div class="container">
-            <div class="footer-container">
+            <div class="footer-top">
                 <div class="footer-col">
-                    <div class="logo-text">MAHASHAKTI <span>ENERGY</span></div>
-                    <p>Leading energy solutions provider powering Nigeria's future since 2008 with reliable and efficient power systems.</p>
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="logo-text">MAHASHAKTI <span>ENERGY</span></div>
+                    </div>
+                    <p>A leading energy solutions provider, powering Nigeria's future since 2008 with reliable, efficient, and innovative power systems.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -908,8 +735,8 @@
                     <ul class="footer-links">
                         <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
                         <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
-                        <li><a href="service.html"><i class="fas fa-chevron-right"></i> Services</a></li>
-                        <li><a href="golbal.html"><i class="fas fa-chevron-right"></i> Global</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="#collaborations"><i class="fas fa-chevron-right"></i> Global Network</a></li>
                         <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
                     </ul>
                 </div>
@@ -926,7 +753,7 @@
                 </div>
                 
                 <div class="footer-col">
-                    <h3>Contact Us</h3>
+                    <h3>Contact Info</h3>
                     <ul class="footer-links">
                         <li><a href="#"><i class="fas fa-map-marker-alt"></i> 123 Energy Street, Lagos, Nigeria</a></li>
                         <li><a href="tel:+2348123456789"><i class="fas fa-phone"></i> +234 812 345 6789</a></li>
@@ -937,38 +764,61 @@
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 Mahashakti Energy Pvt Limited. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: var(--secondary);"></i> for Nigeria's Energy Future</p>
+                <p>&copy; 2023 Mahashakti Energy Ltd. All Rights Reserved. | Designed with <i class="fas fa-heart"></i> for Nigeria's Energy Future</p>
             </div>
         </div>
     </footer>
-
+    
     <script>
-        // Mobile Navigation Toggle
+        // Mobile menu toggle
         const mobileToggle = document.querySelector('.mobile-toggle');
         const navMenu = document.querySelector('.nav-menu');
-        const mobileToggleIcon = document.getElementById('mobileToggleIcon');
-        
+
         mobileToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active');
-            if (navMenu.classList.contains('active')) {
-                mobileToggleIcon.classList.remove('fa-bars');
-                mobileToggleIcon.classList.add('fa-times');
-            } else {
-                mobileToggleIcon.classList.remove('fa-times');
-                mobileToggleIcon.classList.add('fa-bars');
-            }
+            const icon = mobileToggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
         });
-        
-        // Close mobile menu when clicking on a link
+
         document.querySelectorAll('.nav-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
-                mobileToggleIcon.classList.remove('fa-times');
-                mobileToggleIcon.classList.add('fa-bars');
+                const icon = mobileToggle.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            header.style.backgroundColor = 'white';
+            header.style.boxShadow = (window.scrollY > 100)
+                ? '0 5px 20px rgba(0,0,0,0.1)'
+                : 'none';
+        });
+
+        // Active link highlighting
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const scrollY = window.scrollY;
+            
+            sections.forEach(current => {
+                const sectionHeight = current.offsetHeight;
+                const sectionTop = current.offsetTop - 150;
+                const sectionId = current.getAttribute('id');
+                
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    document.querySelector(`.nav-menu a[href*="${sectionId}"]`).classList.add('active');
+                } else {
+                    const link = document.querySelector(`.nav-menu a[href*="${sectionId}"]`);
+                    if (link) link.classList.remove('active');
+                }
             });
         });
         
-        // Smooth Scrolling
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -976,55 +826,30 @@
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     window.scrollTo({
-                        top: target.offsetTop - 90,
+                        top: target.offsetTop - 80,
                         behavior: 'smooth'
                     });
                 }
             });
         });
         
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
-                header.style.backdropFilter = 'blur(10px)';
-            } else {
-                header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.05)';
-                header.style.backdropFilter = 'blur(10px)';
-            }
-        });
-        
-        // Dark/Light Mode Toggle
-        const themeToggle = document.getElementById('themeToggle');
-        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-        
-        // Set initial theme
-        if (prefersDarkScheme.matches) {
-            document.body.classList.add('dark-mode');
-        }
-        
-        themeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-        });
-        
         // Animation on scroll
-        const animatedElements = document.querySelectorAll('.animated');
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
         
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.animationPlayState = 'running';
-                    entry.target.style.opacity = '1';
+                    entry.target.classList.add('animated');
                 }
             });
-        }, {
-            threshold: 0.1
-        });
+        }, observerOptions);
         
-        animatedElements.forEach(element => {
-            element.style.opacity = '0';
-            observer.observe(element);
+        document.querySelectorAll('.partner-card, .benefit-card').forEach(el => {
+            observer.observe(el);
         });
     </script>
 </body>
